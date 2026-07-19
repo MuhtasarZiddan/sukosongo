@@ -70,7 +70,7 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('berita')" :active="request()->routeIs('berita')">
+            {{-- <x-responsive-nav-link :href="route('berita')" :active="request()->routeIs('berita')">
                 {{ __('Berita') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('umkm')" :active="request()->routeIs('umkm')">
@@ -78,7 +78,7 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('settings')" :active="request()->routeIs('settings')">
                 {{ __('Settings') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
         </div>
 
         <!-- Responsive Settings Options -->

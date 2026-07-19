@@ -27,7 +27,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
-
 // Memanggil route khusus login/register
 require __DIR__.'/auth.php';
