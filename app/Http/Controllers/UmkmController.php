@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PerangkatDesa;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class UmkmController extends Controller
 {
-    // Menampilkan halaman Dashboard beserta data UMKM
     public function index()
-    {
-        $umkms = Umkm::latest()->get();
-        return view('dashboard', compact('umkms'));
-    }
+ {
+     // Mengambil semua data UMKM
+     $umkms = Umkm::latest()->get();
+
+     // Mengambil semua data Perangkat Desa
+     $perangkat = PerangkatDesa::latest()->get(); 
+
+     // Mengirim kedua data tersebut ke halaman dashboard
+     return view('dashboard', compact('umkms', 'perangkat'));
+ }
 
     // Menampilkan form tambah
     public function create()
