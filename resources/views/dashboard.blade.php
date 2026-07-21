@@ -20,7 +20,7 @@
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-bold">Daftar UMKM Desa Sukosongo</h3>
                     <a href="{{ route('umkm.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        + Tambah UMKM
+                        + Tambah
                     </a>
                 </div>
 
@@ -59,14 +59,17 @@
                         @endforeach
                     </tbody>
                 </table>
+                    <div class="mt-6">
+                        {{ $umkms->links('components.pagination') }}
+                    </div>
             </div>
 
             <!-- ================= BAGIAN 2: TABEL PERANGKAT DESA ================= -->
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold">Struktur Organisasi Desa</h3>
+                    <h3 class="text-lg font-bold">Perangkat Desa</h3>
                     <a href="{{ route('perangkat.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        + Tambah Orang
+                        + Tambah
                     </a>
                 </div>
 
@@ -104,6 +107,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                    <div class="mt-6">
+                        {{ $perangkat->links('components.pagination') }}
+                    </div>
             </div>
 
         </div>

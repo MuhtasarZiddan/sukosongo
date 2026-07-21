@@ -12,10 +12,16 @@ class UmkmController extends Controller
     public function index()
  {
      // Mengambil semua data UMKM
-     $umkms = Umkm::latest()->get();
+     $umkms = Umkm::latest()->paginate(
+     perPage:5,
+     pageName: 'umkm_page'
+     );
 
      // Mengambil semua data Perangkat Desa
-     $perangkat = PerangkatDesa::latest()->get(); 
+     $perangkat = PerangkatDesa::latest()->paginate(
+        perPage:5,
+        pageName: 'perangkat_page'
+     ); 
 
      // Mengirim kedua data tersebut ke halaman dashboard
      return view('dashboard', compact('umkms', 'perangkat'));
