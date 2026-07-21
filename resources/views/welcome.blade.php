@@ -7,6 +7,7 @@
     <meta name="description" content="Website resmi Desa Sukosongo: profil desa, berita, UMKM, dan wisata religi.">
 
     <!-- Fonts -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -69,13 +70,14 @@
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="#beranda" class="flex items-center gap-3 shrink-0">
-                    {{-- Logo desa: ganti src dengan logo asli PNG dari perangkat desa --}}
-                    <div class="w-10 h-10 rounded-full bg-[color:var(--gold)] flex items-center justify-center font-display font-semibold text-[color:var(--forest)] text-sm">
-                        DS
-                    </div>
+                    <img
+                        src="{{ asset('images/logo.png') }}"
+                        alt="Logo Desa Sukosongo"
+                        class="w-7 h-8 object-cover"
+                    />
                     <div class="leading-tight">
                         <p class="font-display text-white text-base font-semibold">Desa Sukosongo</p>
-                        <p class="text-[11px] text-white/60 tracking-wide uppercase">Kabupaten &middot; Provinsi</p>
+                        <p class="text-[11px] text-white/60 tracking-wide uppercase">Lamongan &middot; Jawa Timur</p>
                     </div>
                 </a>
 
