@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'Desa Sukosongo') }} — Website Resmi Desa Sukosongo</title>
+    <title>{{ config('app.name', 'Desa Sukosongo') }}</title>
     <meta name="description" content="Website resmi Desa Sukosongo: profil desa, berita, UMKM, dan wisata religi.">
 
     <!-- Fonts -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -69,17 +70,18 @@
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="#beranda" class="flex items-center gap-3 shrink-0">
-                    {{-- Logo desa: ganti src dengan logo asli PNG dari perangkat desa --}}
-                    <div class="w-10 h-10 rounded-full bg-[color:var(--gold)] flex items-center justify-center font-display font-semibold text-[color:var(--forest)] text-sm">
-                        DS
-                    </div>
+                    <img
+                        src="{{ asset('images/logo.png') }}"
+                        alt="Logo Desa Sukosongo"
+                        class="w-7 h-8 object-cover"
+                    />
                     <div class="leading-tight">
                         <p class="font-display text-white text-base font-semibold">Desa Sukosongo</p>
-                        <p class="text-[11px] text-white/60 tracking-wide uppercase">Kabupaten &middot; Provinsi</p>
+                        <p class="text-[11px] text-white/60 tracking-wide uppercase">Lamongan &middot; Jawa Timur</p>
                     </div>
                 </a>
 
-                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/85">
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-black/85">
                     <a href="#beranda" class="nav-link">Beranda</a>
                     <a href="/profil-desa" class="nav-link">Profil Desa</a>
                     <a href="/berita" class="nav-link">Berita</a>
@@ -113,21 +115,25 @@
     </header>
 
     {{-- ============ HERO / PROFIL SINGKAT ============ --}}
-    <section id="beranda" class="relative pt-32 pb-24 lg:pt-44 lg:pb-32 bg-[color:var(--forest)] contour-bg grain overflow-hidden">
+    <section
+    id="beranda"
+        class="relative pt-32 pb-24 lg:pt-44 lg:pb-32 bg-cover bg-center bg-no-repeat overflow-hidden"
+        style="background-image: url('{{ asset('images/hero.jpg') }}');">
+        <div class="absolute inset-0 bg-black/40"></div>
         <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
         <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
 
-        <div class="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="reveal">
+        <div class="relative px-5 lg:px-8 max-w-3xl mx-auto flex flex-col gap-12 items-center">
+            <div class="reveal text-center">
                 <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-5">Selamat Datang di</p>
                 <h1 class="font-display text-white text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.08] mb-6">
                     Desa Sukosongo,<br>tumbuh dari gotong&nbsp;royong.
                 </h1>
-                <p class="text-white/70 text-base lg:text-lg leading-relaxed max-w-lg mb-8">
+                <p class="text-white/70 shadow-lg text-base lg:text-lg leading-relaxed max-w-lg mx-auto mb-8">
                     Portal informasi resmi warga: profil desa, kabar terbaru, produk UMKM lokal,
                     hingga wisata religi &mdash; semua dalam satu tempat.
                 </p>
-                <div class="flex flex-wrap gap-3">
+                <div class="flex flex-wrap gap-3 justify-center">
                     <a href="/profil-desa" class="px-6 py-3 rounded-full bg-[color:var(--gold)] text-[color:var(--forest)] font-semibold text-sm hover:bg-[color:var(--gold-light)] transition-colors">
                         Lihat Profil Desa
                     </a>
@@ -135,27 +141,7 @@
                         Hubungi Kami
                     </a>
                 </div>
-            </div>
-
-            {{-- Ringkasan statistik singkat di hero --}}
-            <div class="reveal grid grid-cols-2 gap-4">
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-                    <p class="stat-num font-display text-3xl text-white font-semibold" data-count="4">0</p>
-                    <p class="text-white/60 text-xs mt-1 uppercase tracking-wide">Dusun</p>
-                </div>
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-                    <p class="stat-num font-display text-3xl text-white font-semibold" data-count="3482">0</p>
-                    <p class="text-white/60 text-xs mt-1 uppercase tracking-wide">Jumlah Warga</p>
-                </div>
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-                    <p class="stat-num font-display text-3xl text-white font-semibold" data-count="56">0</p>
-                    <p class="text-white/60 text-xs mt-1 uppercase tracking-wide">UMKM Aktif</p>
-                </div>
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-                    <p class="stat-num font-display text-3xl text-white font-semibold" data-count="1">0</p>
-                    <p class="text-white/60 text-xs mt-1 uppercase tracking-wide">Wisata Religi</p>
-                </div>
-            </div>
+            </div>            
         </div>
     </section>
 
