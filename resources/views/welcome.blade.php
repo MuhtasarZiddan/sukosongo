@@ -194,15 +194,17 @@
     </section>
 
     {{-- ============ STRUKTUR ORGANISASI ============ --}}
-    <section class="bg-[color:var(--paper)] py-20 lg:py-28">
+    <section id="struktur" class="bg-[color:var(--paper)] py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+            {{-- Judul --}}
             <div class="reveal max-w-xl mb-14">
                 <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Pemerintahan Desa</p>
                 <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">Kepala Desa &amp; Perangkat</h2>
             </div>
 
             {{-- Kades --}}
-            <div class="reveal flex flex-col sm:flex-row items-center gap-6 bg-white rounded-2xl p-6 sm:p-8 mb-10 border border-[color:var(--forest)]/10">
+            <div class="reveal flex flex-col sm:flex-row items-center gap-3  bg-white rounded-2xl p-6 sm:p-8 mb-5 border border-[color:var(--forest)]/10">
                 <div class="w-28 h-28 rounded-full bg-[color:var(--forest)]/10 shrink-0 flex items-center justify-center font-display text-2xl text-[color:var(--forest)]">
                     Foto
                 </div>
@@ -213,90 +215,54 @@
                 </div>
             </div>
 
-            {{-- Carousel struktur organisasi --}}
-            <div class="reveal relative">
-                <div class="overflow-hidden">
-                    <div id="orgTrack" class="carousel-track flex gap-5">
+            {{-- Swiper perangkat desa (foto persegi panjang penuh) --}}
+            <div class="reveal relative pt-8">
+                <div class="swiper strukturSwiper">
+                    <div class="swiper-wrapper">
                         @php
                             $perangkat = ['Sekretaris Desa','Kaur Keuangan','Kaur Perencanaan','Kasi Pemerintahan','Kasi Kesejahteraan','Kadus I'];
                         @endphp
                         @foreach ($perangkat as $jabatan)
-                            <div class="min-w-[220px] sm:min-w-[240px] bg-white border border-[color:var(--forest)]/10 rounded-2xl p-6 text-center">
-                                <div class="w-20 h-20 mx-auto rounded-full bg-[color:var(--forest)]/10 flex items-center justify-center font-display text-sm text-[color:var(--forest)] mb-4">
-                                    Foto
-                                </div>
-                                <p class="font-semibold text-[color:var(--forest)] text-sm">Nama Perangkat</p>
-                                <p class="text-xs text-[color:var(--ink)]/50 mt-1">{{ $jabatan }}</p>
-                            </div>
+                            <x-perangkat-card
+                                image="{{ asset('images/perangkat/default.jpg') }}"
+                                nama="Nama Perangkat"
+                                jabatan="{{ $jabatan }}"
+                            />
                         @endforeach
                     </div>
                 </div>
-                <div class="flex justify-center gap-3 mt-8">
-                    <button id="orgPrev" aria-label="Sebelumnya" class="w-10 h-10 rounded-full border border-[color:var(--forest)]/20 flex items-center justify-center hover:bg-[color:var(--forest)] hover:text-white transition-colors text-[color:var(--forest)]">
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-                    </button>
-                    <button id="orgNext" aria-label="Berikutnya" class="w-10 h-10 rounded-full border border-[color:var(--forest)]/20 flex items-center justify-center hover:bg-[color:var(--forest)] hover:text-white transition-colors text-[color:var(--forest)]">
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </button>
-                </div>
+
+                <div class="swiper-button-prev struktur-prev">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="3">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15 19l-7-7 7-7"/>
+                </svg>
             </div>
+
+<div class="swiper-button-next struktur-next">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="w-6 h-6 text-white"
+         fill="none"
+         viewBox="0 0 24 24"
+         stroke="currentColor"
+         stroke-width="3">
+        <path stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5l7 7-7 7"/>
+    </svg>
+</div>
+            </div>
+
         </div>
     </section>
 
-    {{-- ============ STATISTIK DESA ============ --}}
-    <section class="bg-[color:var(--forest)] py-20 lg:py-28">
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="reveal max-w-xl mb-14">
-                <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Data Kependudukan</p>
-                <h2 class="font-display text-3xl lg:text-4xl font-semibold text-white">Statistik Desa Sukosongo</h2>
-            </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
-                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
-                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span data-count="4">0</span></p>
-                    <p class="text-white/60 text-sm mt-2">Jumlah Dusun</p>
-                </div>
-                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
-                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span data-count="978">0</span></p>
-                    <p class="text-white/60 text-sm mt-2">Kepala Keluarga</p>
-                </div>
-                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
-                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span data-count="1720">0</span></p>
-                    <p class="text-white/60 text-sm mt-2">Laki-laki</p>
-                </div>
-                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
-                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span data-count="1762">0</span></p>
-                    <p class="text-white/60 text-sm mt-2">Perempuan</p>
-                </div>
-            </div>
-
-            {{-- Warga per dusun --}}
-            <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
-                <p class="text-white/80 font-semibold text-sm mb-5 uppercase tracking-wide">Jumlah Warga per Dusun</p>
-                <div class="space-y-4">
-                    @php
-                        $dusun = [
-                            ['nama' => 'Dusun Krajan', 'jumlah' => 40],
-                            ['nama' => 'Dusun Sukosari', 'jumlah' => 28],
-                            ['nama' => 'Dusun Tegalrejo', 'jumlah' => 20],
-                            ['nama' => 'Dusun Sumberasri', 'jumlah' => 12],
-                        ];
-                    @endphp
-                    @foreach ($dusun as $d)
-                        <div>
-                            <div class="flex justify-between text-sm text-white/80 mb-1.5">
-                                <span>{{ $d['nama'] }}</span>
-                                <span class="text-white/50">{{ $d['jumlah'] }}%</span>
-                            </div>
-                            <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-                                <div class="h-full rounded-full bg-[color:var(--gold)]" style="width: {{ $d['jumlah'] }}%"></div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
 
     {{-- ============ BERITA ============ --}}
     <section id="berita-section" class="bg-[color:var(--cream)] py-20 lg:py-28">
