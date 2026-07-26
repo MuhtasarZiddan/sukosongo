@@ -66,53 +66,7 @@
 <body class="antialiased">
 
     {{-- ============ NAVBAR ============ --}}
-    <header id="navbar" class="fixed top-0 inset-x-0 z-50 bg-[color:var(--forest)]/95 backdrop-blur border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="#beranda" class="flex items-center gap-3 shrink-0">
-                    <img
-                        src="{{ asset('images/logo.png') }}"
-                        alt="Logo Desa Sukosongo"
-                        class="w-7 h-8 object-cover"
-                    />
-                    <div class="leading-tight">
-                        <p class="font-display text-white text-base font-semibold">Desa Sukosongo</p>
-                        <p class="text-[11px] text-white/60 tracking-wide uppercase">Lamongan &middot; Jawa Timur</p>
-                    </div>
-                </a>
-
-                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-black/85">
-                    <a href="#beranda" class="nav-link">Beranda</a>
-                    <a href="/profil-desa" class="nav-link">Profil Desa</a>
-                    <a href="/berita" class="nav-link">Berita</a>
-                    <a href="/umkm" class="nav-link">UMKM</a>
-                    <a href="/wisata" class="nav-link">Wisata</a>
-                    <a href="#kontak" class="nav-link">Kontak</a>
-                </nav>
-
-                <button id="menuBtn" aria-label="Buka menu" class="lg:hidden text-white p-2 -mr-2">
-                    <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-
-            {{-- Mobile menu (hamburger toggle) --}}
-            <div id="mobileMenu" class="lg:hidden max-h-0">
-                <nav class="flex flex-col gap-1 pb-5 text-white/90 text-sm font-medium">
-                    <a href="#beranda" class="px-2 py-2.5 rounded-md hover:bg-white/10">Beranda</a>
-                    <a href="/profil-desa" class="px-2 py-2.5 rounded-md hover:bg-white/10">Profil Desa</a>
-                    <a href="/berita" class="px-2 py-2.5 rounded-md hover:bg-white/10">Berita</a>
-                    <a href="/umkm" class="px-2 py-2.5 rounded-md hover:bg-white/10">UMKM</a>
-                    <a href="/wisata" class="px-2 py-2.5 rounded-md hover:bg-white/10">Wisata</a>
-                    <a href="#kontak" class="px-2 py-2.5 rounded-md hover:bg-white/10">Kontak</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <x-navbar transparent />
 
     {{-- ============ HERO / PROFIL SINGKAT ============ --}}
     <section
@@ -130,7 +84,7 @@
                     Desa Sukosongo,<br>tumbuh dari gotong&nbsp;royong.
                 </h1>
                 <p class="text-white/70 shadow-lg text-base lg:text-lg leading-relaxed max-w-lg mx-auto mb-8">
-                    Portal informasi resmi warga: profil desa, kabar terbaru, produk UMKM lokal,
+                    Portal informasi Desa Sukosongo: profil desa, kabar terbaru, produk UMKM lokal,
                     hingga wisata religi &mdash; semua dalam satu tempat.
                 </p>
                 <div class="flex flex-wrap gap-3 justify-center">
@@ -146,7 +100,7 @@
     </section>
 
     {{-- ============ MENU / ICON NAVIGASI ============ --}}
-    <section class="bg-[color:var(--cream)] py-20 lg:py-28">
+    <section id="menu" class="bg-[color:var(--cream)] py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
             <div class="reveal max-w-xl mb-14">
                 <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Jelajahi</p>
@@ -194,7 +148,7 @@
     </section>
 
     {{-- ============ STRUKTUR ORGANISASI ============ --}}
-    <section class="bg-[color:var(--paper)] py-20 lg:py-28">
+    <section id="struktur" class="bg-[color:var(--paper)] py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
             <div class="reveal max-w-xl mb-14">
                 <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Pemerintahan Desa</p>
@@ -244,7 +198,7 @@
     </section>
 
     {{-- ============ STATISTIK DESA ============ --}}
-    <section class="bg-[color:var(--forest)] py-20 lg:py-28">
+    <section id="statistik" class="bg-[color:var(--forest)] py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
             <div class="reveal max-w-xl mb-14">
                 <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Data Kependudukan</p>
@@ -299,52 +253,111 @@
     </section>
 
     {{-- ============ BERITA ============ --}}
-    <section id="berita-section" class="bg-[color:var(--cream)] py-20 lg:py-28">
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="reveal flex flex-wrap items-end justify-between gap-4 mb-14">
-                <div class="max-w-xl">
-                    <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Kabar Desa</p>
-                    <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">Berita Terbaru</h2>
-                </div>
-                <a href="/berita" class="text-sm font-semibold text-[color:var(--forest)] underline underline-offset-4 hover:text-[color:var(--gold)] transition-colors">
-                    Lihat Semua Berita →
-                </a>
+    <section id="berita" class="bg-[color:var(--cream)] py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="reveal flex flex-wrap items-end justify-between gap-4 mb-14">
+            <div class="max-w-xl">
+                <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">
+                    Kabar Desa
+                </p>
+
+                <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">
+                    Berita Terbaru
+                </h2>
+
+                <p class="mt-3 text-[color:var(--ink)]/70">
+                    Ikuti informasi dan kegiatan terbaru yang berlangsung di Desa Sukosongo.
+                </p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                @php
-                    $berita = [
-                        ['judul' => 'Musyawarah Desa Bahas Anggaran 2026', 'tanggal' => '10 Juli 2026'],
-                        ['judul' => 'Gotong Royong Bersih Sungai Dusun Krajan', 'tanggal' => '5 Juli 2026'],
-                        ['judul' => 'Pelatihan Digitalisasi UMKM bagi Warga', 'tanggal' => '28 Juni 2026'],
-                    ];
-                @endphp
-                @foreach ($berita as $b)
-                    <a href="/berita" class="reveal group block bg-white rounded-2xl overflow-hidden border border-[color:var(--forest)]/10 hover:shadow-lg transition-shadow">
-                        <div class="h-44 bg-[color:var(--forest)]/10 flex items-center justify-center text-[color:var(--forest)]/40 font-display text-sm">
-                            Foto Kegiatan
-                        </div>
-                        <div class="p-6">
-                            <p class="text-xs text-[color:var(--gold)] font-semibold uppercase tracking-wide mb-2">{{ $b['tanggal'] }}</p>
-                            <h3 class="font-display font-semibold text-lg text-[color:var(--forest)] leading-snug group-hover:text-[color:var(--brown)] transition-colors">
-                                {{ $b['judul'] }}
-                            </h3>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
+            <a href="{{ route('berita.page') }}"
+               class="inline-flex items-center gap-2 rounded-full border border-[color:var(--forest)] px-5 py-2.5 text-sm font-semibold text-[color:var(--forest)] hover:bg-[color:var(--forest)] hover:text-white transition">
+                Lihat Semua Berita ->
+            </a>
         </div>
-    </section>
+
+        @php
+            $berita = [
+                [
+                    'judul' => 'Musyawarah Desa Bahas Anggaran 2026',
+                    'tanggal' => '10 Juli 2026',
+                    'kategori' => 'Pemerintahan',
+                    'gambar' => asset('images/berita1.jpg'),
+                    'ringkasan' => 'Pemerintah Desa bersama BPD melaksanakan musyawarah desa dalam penyusunan anggaran tahun 2026.'
+                ],
+                [
+                    'judul' => 'Gotong Royong Bersih Sungai Dusun Krajan',
+                    'tanggal' => '5 Juli 2026',
+                    'kategori' => 'Kegiatan',
+                    'gambar' => asset('images/berita2.jpg'),
+                    'ringkasan' => 'Warga Desa Sukosongo bergotong royong membersihkan aliran sungai untuk menjaga lingkungan tetap bersih.'
+                ],
+                [
+                    'judul' => 'Pelatihan Digitalisasi UMKM bagi Warga',
+                    'tanggal' => '28 Juni 2026',
+                    'kategori' => 'UMKM',
+                    'gambar' => asset('images/berita3.jpg'),
+                    'ringkasan' => 'Pelaku UMKM mendapatkan pelatihan pemasaran digital dan branding produk agar mampu bersaing secara online.'
+                ],
+            ];
+        @endphp
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            @foreach ($berita as $b)
+
+            <a href="/berita"
+               class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+
+                <div class="relative overflow-hidden h-56">
+
+                    <img src="{{ $b['gambar'] }}"
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+                    <span class="absolute top-4 left-4 bg-[color:var(--gold)] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        {{ $b['kategori'] }}
+                    </span>
+
+                </div>
+
+                <div class="p-6">
+
+                    <p class="text-xs uppercase tracking-wider text-[color:var(--brown)] font-semibold mb-2">
+                        {{ $b['tanggal'] }}
+                    </p>
+
+                    <h3 class="font-display text-xl font-semibold text-[color:var(--forest)] group-hover:text-[color:var(--gold)] transition">
+                        {{ $b['judul'] }}
+                    </h3>
+
+                    <p class="mt-3 text-sm text-[color:var(--ink)]/70 leading-relaxed line-clamp-2">
+                        {{ $b['ringkasan'] }}
+                    </p>
+
+                    <div class="mt-5 flex items-center text-[color:var(--forest)] font-semibold group-hover:text-[color:var(--gold)]">
+                        Baca Selengkapnya →
+                    </div>
+
+                </div>
+
+            </a>
+
+            @endforeach
+
+        </div>
+
+    </div>
+</section>
 
     {{-- ============ PETA LOKASI ============ --}}
-    <section class="bg-[color:var(--paper)] py-20 lg:py-28">
+    <section id="lokasi" class="bg-[color:var(--paper)] py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
             <div class="reveal max-w-xl mb-10">
                 <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Lokasi</p>
                 <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">Peta Desa Sukosongo</h2>
             </div>
             <div class="reveal rounded-2xl overflow-hidden border border-[color:var(--forest)]/10 shadow-sm">
-                {{-- Ganti src berikut dengan link embed Google Maps lokasi asli Desa Sukosongo --}}
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7917.444166533023!2d112.32495505!3d-7.1580951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77f42f785b67fd%3A0x98eccb6251b092aa!2sSukosongo%2C%20Kec.%20Kembangbahu%2C%20Kabupaten%20Lamongan%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1784179103863!5m2!1sid!2sid"
                     class="w-full h-80 lg:h-96 border-0"
@@ -357,44 +370,7 @@
     </section>
 
     {{-- ============ FOOTER / KONTAK ============ --}}
-    <footer id="kontak" class="bg-[color:var(--forest)] text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-full bg-[color:var(--gold)] flex items-center justify-center font-display font-semibold text-[color:var(--forest)] text-sm">DS</div>
-                        <p class="font-display font-semibold">Desa Sukosongo</p>
-                    </div>
-                    <p class="text-white/60 text-sm leading-relaxed">Website Desa Sukosongo sebagai sarana informasi Desa Sukosongo</p>
-                </div>
-
-                <div>
-                    <p class="font-semibold text-sm mb-4 uppercase tracking-wide text-white/80">Navigasi</p>
-                    <ul class="space-y-2.5 text-sm text-white/60">
-                        <li><a href="/profil-desa" class="hover:text-white transition-colors">Profil Desa</a></li>
-                        <li><a href="/berita" class="hover:text-white transition-colors">Berita</a></li>
-                        <li><a href="/umkm" class="hover:text-white transition-colors">UMKM</a></li>
-                        <li><a href="/wisata" class="hover:text-white transition-colors">Wisata</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <p class="font-semibold text-sm mb-4 uppercase tracking-wide text-white/80">Kontak</p>
-                    <ul class="space-y-2.5 text-sm text-white/60">
-                        <li>desasukosongo@gmail.com</li>
-                        <li>+62 812-3456-7890</li>
-                        <li>@desasukosongo</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <p class="font-semibold text-sm mb-4 uppercase tracking-wide text-white/80">Alamat</p>
-                    <p class="text-sm text-white/60 leading-relaxed">Kantor Desa Sukosongo,<br>R8VH+VHX, Sukowati, Sukosongo, Kec. Kembangbahu, Kabupaten Lamongan</p>
-                </div>
-            </div>
-            <p class="text-center text-white/40 text-xs pt-6">© {{ date('Y') }} Desa Sukosongo. Seluruh hak cipta dilindungi.</p>
-        </div>
-    </footer>
+    <x-footer />
 
     <script>
         // Mobile hamburger menu
@@ -453,7 +429,6 @@
         }, { threshold: 0.4 });
         counters.forEach(el => counterObserver.observe(el));
 
-        // Struktur organisasi carousel
         const track = document.getElementById('orgTrack');
         const prevBtn = document.getElementById('orgPrev');
         const nextBtn = document.getElementById('orgNext');
@@ -492,6 +467,41 @@
                 }
             });
         });
+        const navbar = document.getElementById('navbar');
+
+const greenSections = [
+    'menu',
+    'struktur',
+    'statistik',
+    'berita',
+    'lokasi'
+];
+
+function updateNavbar() {
+    let isGreen = false;
+
+    greenSections.forEach(id => {
+        const section = document.getElementById(id);
+
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 80 && rect.bottom >= 80) {
+            isGreen = true;
+        }
+    });
+
+    if (isGreen) {
+        navbar.classList.remove('bg-transparent');
+        navbar.classList.add('bg-[color:var(--forest)]', 'shadow-lg');
+    } else {
+        navbar.classList.remove('bg-[color:var(--forest)]', 'shadow-lg');
+        navbar.classList.add('bg-transparent');
+    }}
+
+    window.addEventListener('scroll', updateNavbar);
+    window.addEventListener('load', updateNavbar);
     </script>
 </body>
 </html>

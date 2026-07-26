@@ -10,6 +10,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/berita', function () {
+    return view('berita');
+})->name('berita.page');
+
 // Route yang dikunci (Hanya bisa dibuka kalau sudah login sebagai admin)
 Route::middleware(['auth', 'verified'])->group(function () {
     
@@ -19,7 +23,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Route Struktur Organisasi / Perangkat Desa
     Route::resource('perangkat', PerangkatDesaController::class)->except(['show']);
-
+    
 });
 
 // Route untuk edit profil (Bawaan sistem login)
