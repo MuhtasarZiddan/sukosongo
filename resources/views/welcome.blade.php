@@ -14,6 +14,8 @@
 
     <!-- Tailwind (utility classes only, theme handled via CSS variables below) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 
     <style>
         :root{
@@ -193,7 +195,7 @@
         </div>
     </section>
 
-    {{-- ============ STRUKTUR ORGANISASI ============ --}}
+      {{-- ============ STRUKTUR ORGANISASI ============ --}}
     <section id="struktur" class="bg-[color:var(--paper)] py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
@@ -263,6 +265,61 @@
     </section>
 
 
+    {{-- ============ STATISTIK DESA ============ --}}
+    <section class="bg-[color:var(--forest)] py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="reveal max-w-xl mb-14">
+                <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Data Kependudukan</p>
+                <h2 class="font-display text-3xl lg:text-4xl font-semibold text-white">Statistik Desa Sukosongo</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span data-count="4">0</span></p>
+                    <p class="text-white/60 text-sm mt-2">Jumlah Dusun</p>
+                </div>
+                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span data-count="978">0</span></p>
+                    <p class="text-white/60 text-sm mt-2">Kepala Keluarga</p>
+                </div>
+                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span data-count="1720">0</span></p>
+                    <p class="text-white/60 text-sm mt-2">Laki-laki</p>
+                </div>
+                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span data-count="1762">0</span></p>
+                    <p class="text-white/60 text-sm mt-2">Perempuan</p>
+                </div>
+            </div>
+
+            {{-- Warga per dusun --}}
+            <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
+                <p class="text-white/80 font-semibold text-sm mb-5 uppercase tracking-wide">Jumlah Warga per Dusun</p>
+                <div class="space-y-4">
+                    @php
+                        $dusun = [
+                            ['nama' => 'Dusun Krajan', 'jumlah' => 40],
+                            ['nama' => 'Dusun Sukosari', 'jumlah' => 28],
+                            ['nama' => 'Dusun Tegalrejo', 'jumlah' => 20],
+                            ['nama' => 'Dusun Sumberasri', 'jumlah' => 12],
+                        ];
+                    @endphp
+                    @foreach ($dusun as $d)
+                        <div>
+                            <div class="flex justify-between text-sm text-white/80 mb-1.5">
+                                <span>{{ $d['nama'] }}</span>
+                                <span class="text-white/50">{{ $d['jumlah'] }}%</span>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                                <div class="h-full rounded-full bg-[color:var(--gold)]" style="width: {{ $d['jumlah'] }}%"></div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     {{-- ============ BERITA ============ --}}
     <section id="berita-section" class="bg-[color:var(--cream)] py-20 lg:py-28">
@@ -321,46 +378,9 @@
             </div>
         </div>
     </section>
-
-    {{-- ============ FOOTER / KONTAK ============ --}}
-    <footer id="kontak" class="bg-[color:var(--forest)] text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-full bg-[color:var(--gold)] flex items-center justify-center font-display font-semibold text-[color:var(--forest)] text-sm">DS</div>
-                        <p class="font-display font-semibold">Desa Sukosongo</p>
-                    </div>
-                    <p class="text-white/60 text-sm leading-relaxed">Website Desa Sukosongo sebagai sarana informasi Desa Sukosongo</p>
-                </div>
-
-                <div>
-                    <p class="font-semibold text-sm mb-4 uppercase tracking-wide text-white/80">Navigasi</p>
-                    <ul class="space-y-2.5 text-sm text-white/60">
-                        <li><a href="/profil-desa" class="hover:text-white transition-colors">Profil Desa</a></li>
-                        <li><a href="/berita" class="hover:text-white transition-colors">Berita</a></li>
-                        <li><a href="/umkm" class="hover:text-white transition-colors">UMKM</a></li>
-                        <li><a href="/wisata" class="hover:text-white transition-colors">Wisata</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <p class="font-semibold text-sm mb-4 uppercase tracking-wide text-white/80">Kontak</p>
-                    <ul class="space-y-2.5 text-sm text-white/60">
-                        <li>desasukosongo@gmail.com</li>
-                        <li>+62 812-3456-7890</li>
-                        <li>@desasukosongo</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <p class="font-semibold text-sm mb-4 uppercase tracking-wide text-white/80">Alamat</p>
-                    <p class="text-sm text-white/60 leading-relaxed">Kantor Desa Sukosongo,<br>R8VH+VHX, Sukowati, Sukosongo, Kec. Kembangbahu, Kabupaten Lamongan</p>
-                </div>
-            </div>
-            <p class="text-center text-white/40 text-xs pt-6">© {{ date('Y') }} Desa Sukosongo. Seluruh hak cipta dilindungi.</p>
-        </div>
-    </footer>
+    
+    {{-- ============ FOOTER ============ --}}
+    <x-footer />
 
     <script>
         // Mobile hamburger menu
@@ -418,33 +438,6 @@
             });
         }, { threshold: 0.4 });
         counters.forEach(el => counterObserver.observe(el));
-
-        // Struktur organisasi carousel
-        const track = document.getElementById('orgTrack');
-        const prevBtn = document.getElementById('orgPrev');
-        const nextBtn = document.getElementById('orgNext');
-        let orgIndex = 0;
-
-        function orgStep() {
-            const card = track.children[0];
-            return card ? card.offsetWidth + 20 : 260; // width + gap
-        }
-        function orgMaxIndex() {
-            const visible = Math.floor(track.parentElement.offsetWidth / orgStep());
-            return Math.max(track.children.length - visible, 0);
-        }
-        function updateOrgTrack() {
-            track.style.transform = `translateX(-${orgIndex * orgStep()}px)`;
-        }
-        nextBtn.addEventListener('click', () => {
-            orgIndex = Math.min(orgIndex + 1, orgMaxIndex());
-            updateOrgTrack();
-        });
-        prevBtn.addEventListener('click', () => {
-            orgIndex = Math.max(orgIndex - 1, 0);
-            updateOrgTrack();
-        });
-        window.addEventListener('resize', updateOrgTrack);
 
         // Smooth scroll offset for fixed navbar
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

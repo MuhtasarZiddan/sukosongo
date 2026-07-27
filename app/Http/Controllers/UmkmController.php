@@ -102,4 +102,12 @@ class UmkmController extends Controller
 
         return redirect()->route('dashboard')->with('success', 'Data UMKM berhasil dihapus!');
     }
+
+    // Method BARU buat halaman katalog publik
+   public function halamanumkm()
+{
+    $umkms = Umkm::all(); // Mengambil semua data UMKM dari database
+    return view('umkm', compact('umkms'));
+}
+
 }

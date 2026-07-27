@@ -69,7 +69,9 @@
             <div class="mb-10">
                 <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Ekonomi Desa</p>
                 <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">Katalog UMKM Desa Sukosongo</h2>
-                <p id="umkmCount" class="text-sm text-[color:var(--ink)]/60 mt-2">Menampilkan 6 dari 6 toko</p>
+                <p id="umkmCount" class="text-sm text-[color:var(--ink)]/60 mt-2">
+                    Menampilkan {{ $umkms->count() }} dari {{ $umkms->count() }} toko
+                </p>
             </div>
 
             {{-- Search bar --}}
@@ -98,70 +100,19 @@
 
             {{-- Grid card UMKM --}}
             <div id="umkmGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                @php
-                    $umkmList = [
-                        [
-                            'nama_toko' => 'Warung Bu Sri',
-                            'alamat'    => 'Dusun Krajan RT 02/RW 01',
-                            'pemilik'   => 'Sri Wahyuni',
-                            'telp'      => '0812-3456-7890',
-                            'produk'    => 'Sayur mayur, bumbu dapur, sembako',
-                            'gambar'    => null,
-                        ],
-                        [
-                            'nama_toko' => 'Kripik Singkong Barokah',
-                            'alamat'    => 'Dusun Sukosari RT 04/RW 02',
-                            'pemilik'   => 'Suparjo',
-                            'telp'      => '0813-2211-4455',
-                            'produk'    => 'Keripik singkong, keripik pisang',
-                            'gambar'    => null,
-                        ],
-                        [
-                            'nama_toko' => 'Konveksi Melati',
-                            'alamat'    => 'Dusun Tegalrejo RT 01/RW 03',
-                            'pemilik'   => 'Melati Kusuma',
-                            'telp'      => '0857-9988-1122',
-                            'produk'    => 'Baju seragam, jasa jahit',
-                            'gambar'    => null,
-                        ],
-                        [
-                            'nama_toko' => 'Ternak Lele Makmur',
-                            'alamat'    => 'Dusun Sumberasri RT 03/RW 01',
-                            'pemilik'   => 'Bambang Sutrisno',
-                            'telp'      => '0821-3344-5566',
-                            'produk'    => 'Bibit lele, lele konsumsi',
-                            'gambar'    => null,
-                        ],
-                        [
-                            'nama_toko' => 'Toko Kelontong Jaya',
-                            'alamat'    => 'Dusun Krajan RT 05/RW 01',
-                            'pemilik'   => 'Joko Santoso',
-                            'telp'      => '0878-1234-9900',
-                            'produk'    => 'Sembako, alat tulis, pulsa',
-                            'gambar'    => null,
-                        ],
-                        [
-                            'nama_toko' => 'Batik Sukosongo',
-                            'alamat'    => 'Dusun Sukosari RT 02/RW 02',
-                            'pemilik'   => 'Ratna Dewi',
-                            'telp'      => '0812-6677-8899',
-                            'produk'    => 'Kain batik tulis, batik cap',
-                            'gambar'    => null,
-                        ],
-                    ];
-                @endphp
-
-                @foreach ($umkmList as $umkm)
-                    <x-umkm-card
-                        nama_toko="{{ $umkm['nama_toko'] }}"
-                        alamat="{{ $umkm['alamat'] }}"
-                        pemilik="{{ $umkm['pemilik'] }}"
-                        telp="{{ $umkm['telp'] }}"
-                        produk="{{ $umkm['produk'] }}"
-                        gambar="{{ $umkm['gambar'] }}"
-                    />
-                @endforeach
-            </div>
+            @forelse ($umkms as $umkm)
+                <x-umkm-card
+                    nama_umkm="{{ $umkm->nama_umkm }}"
+                    alamat_usaha="{{ $umkm->alamat_usaha }}"
+                    nama_pemilik="{{ $umkm->nama_pemilik }}"
+                    no_wa="{{ $umkm->no_wa }}"
+                    nama_produk="{{ $umkm->nama_produk }}"
+                    foto="{{ $umkm->foto }}"
+                />
+            @empty
+                <p class="col-span-full text-center text-[color:var(--ink)]/50 py-16">Belum ada data UMKM.</p>
+            @endforelse
+        </div>
 
             {{-- Pesan kalau hasil pencarian kosong --}}
             <div id="umkmEmpty" class="hidden text-center py-16">
@@ -172,12 +123,8 @@
     </section>
 
     {{-- ============ FOOTER ============ --}}
-    <footer class="bg-[color:var(--forest)] text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <p class="text-center text-white/40 text-xs">© {{ date('Y') }} Desa Sukosongo. Seluruh hak cipta dilindungi.</p>
-        </div>
-    </footer>
-
+    <x-footer />
+    
     <script>
         const umkmSearch = document.getElementById('umkmSearch');
         const umkmReset  = document.getElementById('umkmReset');
