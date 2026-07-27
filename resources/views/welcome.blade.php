@@ -247,8 +247,10 @@
             </div>
 
             {{-- Kades --}}
-            <div class="reveal flex flex-col sm:flex-row items-center gap-3  bg-white rounded-2xl p-6 sm:p-8 mb-5 border border-[color:var(--forest)]/10">
-                <div class="w-28 h-28 rounded-full bg-[color:var(--forest)]/10 shrink-0 flex items-center justify-center font-display text-2xl text-[color:var(--forest)]">
+            <div
+                class="reveal flex flex-col sm:flex-row items-center gap-3  bg-white rounded-2xl p-6 sm:p-8 mb-5 border border-[color:var(--forest)]/10">
+                <div
+                    class="w-28 h-28 rounded-full bg-[color:var(--forest)]/10 shrink-0 flex items-center justify-center font-display text-2xl text-[color:var(--forest)]">
                     Foto
                 </div>
                 <div class="text-center sm:text-left">
@@ -275,40 +277,25 @@
                             ];
                         @endphp
                         @foreach ($perangkat as $jabatan)
-                            <x-perangkat-card
-                                image="{{ asset('images/perangkat/default.jpg') }}"
-                                nama="Nama Perangkat"
-                                jabatan="{{ $jabatan }}"
-                            />
+                            <x-perangkat-card image="{{ asset('images/perangkat/default.jpg') }}"
+                                nama="Nama Perangkat" jabatan="{{ $jabatan }}" />
                         @endforeach
                     </div>
                 </div>
 
                 <div class="swiper-button-prev struktur-prev">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="3">
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M15 19l-7-7 7-7"/>
-                </svg>
-            </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
 
-<div class="swiper-button-next struktur-next">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         class="w-6 h-6 text-white"
-         fill="none"
-         viewBox="0 0 24 24"
-         stroke="currentColor"
-         stroke-width="3">
-        <path stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5l7 7-7 7"/>
-    </svg>
-</div>
+                <div class="swiper-button-next struktur-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
             </div>
 
         </div>
