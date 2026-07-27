@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\PerangkatDesaController; // <-- Ini tambahan barunya
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 
 // Route halaman utama (welcome)
@@ -26,7 +27,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Route Struktur Organisasi / Perangkat Desa
     Route::resource('perangkat', PerangkatDesaController::class)->except(['show']);
-    
+
+    //Route Berita
+    Route::resource('berita', BeritaController::class)->except(['show', 'index']);
+
 });
 
 // Route untuk edit profil (Bawaan sistem login)

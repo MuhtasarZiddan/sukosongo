@@ -111,7 +111,53 @@
                         {{ $perangkat->links('components.pagination') }}
                     </div>
             </div>
+           <!-- ================= BAGIAN 3: TABEL BERITA ================= -->
+           <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold">Manajemen Berita Desa</h3>
+                    <a href="{{ route('berita.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        + Tulis Berita
+                    </a>
+                </div>
 
+                <table class="min-w-full bg-white border">
+                    <thead>
+                        <tr class="bg-gray-100 border-b">
+                            <th class="py-2 px-4 text-left">Gambar</th>
+                            <th class="py-2 px-4 text-left">Judul & Penulis</th>
+                            <th class="py-2 px-4 text-left">Status & Tanggal Publish</th>
+                            <th class="py-2 px-4 text-left">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($berita as $b)
+                        <tr class="border-b">
+                            <td class="py-2 px-4">
+                                <img src="{{ asset('storage/' . $b->gambar) }}" class="w-20 h-16 object-cover rounded border">
+                            </td>
+                            <td class="py-2 px-4">
+                                <strong>{{ $b->judul }}</strong><br>
+                                <span class="text-sm text-gray-500">Oleh: {{ $b->penulis }}</span>
+                            </td>
+                            <td class="py-2 px-4 text-sm">
+                                <span class="{{ $b->status == 'publish' ? 'text-green-600 font-bold' : 'text-gray-500 font-bold' }}">
+                                    {{ strtoupper($b->status) }}
+                                </span><br>
+                                {{ \Carbon\Carbon::parse($b->tanggal_publish)->translatedFormat('d M Y H:i') }}
+                            </td>
+                            <td class="py-2 px-4 flex gap-2">
+                                <a href="{{ route('berita.edit', $b->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded text-sm mt-2">Edit</a>
+                                <form action="{{ route('berita.destroy', $b->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus berita ini?');" class="mt-2">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded text-sm">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </x-app-layout>

@@ -4,28 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\PerangkatDesa;
 use App\Models\Umkm;
+use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class UmkmController extends Controller
 {
     public function index()
- {
-     // Mengambil semua data UMKM
-     $umkms = Umkm::latest()->paginate(
+    {
+        $umkms = Umkm::latest()->paginate(
      perPage:5,
      pageName: 'umkm_page'
      );
-
-     // Mengambil semua data Perangkat Desa
-     $perangkat = PerangkatDesa::latest()->paginate(
+        $perangkat = PerangkatDesa::latest()->paginate(
         perPage:5,
         pageName: 'perangkat_page'
      ); 
-
-     // Mengirim kedua data tersebut ke halaman dashboard
-     return view('dashboard', compact('umkms', 'perangkat'));
- }
+        $berita = Berita::latest()->get(); // <-- Mengambil semua berita
+   
+        return view('dashboard', compact('umkms', 'perangkat', 'berita')); // <-- Mengirim $berita ke view
+    }
 
     // Menampilkan form tambah
     public function create()
