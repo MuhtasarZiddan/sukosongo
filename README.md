@@ -15,3 +15,5 @@ npm install
 npm run dev
 
 php artisan serve
+
+DON'T TRY THIS AT HOME
