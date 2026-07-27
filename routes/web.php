@@ -14,6 +14,9 @@ Route::get('/berita', function () {
     return view('berita');
 })->name('berita.page');
 
+// Route katalog UMKM publik — bisa diakses siapa aja, tanpa login
+Route::get('/umkm', [UmkmController::class, 'halamanumkm'])->name('umkm.halamanumkm');
+
 // Route yang dikunci (Hanya bisa dibuka kalau sudah login sebagai admin)
 Route::middleware(['auth', 'verified'])->group(function () {
     

@@ -1,3 +1,143 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===========================
+   PERANGKAT DESA — card foto persegi panjang, lebar ramping
+=========================== */
+
+#perangkat-desa{
+    overflow: visible;
+}
+
+.perangkat-card{
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    max-width: 240px;
+    margin: 0 auto;
+    margin-top: 35px;
+    border-radius:16px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition: transform .3s ease-out, box-shadow .3s ease-out;
+    cursor:pointer;
+    will-change: transform;
+    transform-origin: center bottom;
+}
+
+.perangkat-card:hover{
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,.2);
+    z-index: 10;
+}
+
+.image-wrapper{
+    position:relative;
+    overflow:hidden;
+    aspect-ratio: 4 / 3.2;
+}
+
+.perangkat-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position: top;
+}
+
+.perangkat-footer{
+    background:#23281f;
+    color:white;
+    text-align:center;
+    padding:14px 10px;
+}
+
+.perangkat-footer h3{
+    font-size:16px;
+    font-weight:700;
+    word-break: break-word;
+}
+
+.perangkat-footer span{
+    font-size:12px;
+}
+
+/* ==========================
+   SWIPER STRUKTUR
+========================== */
+
+.strukturSwiper{
+    width:100%;
+    padding: 40px 24px 60px;
+    overflow: visible;
+}
+
+.strukturSwiper .swiper-wrapper{
+    overflow:visible;
+    align-items:stretch;
+}
+
+.strukturSwiper .swiper-slide{
+    height:auto;
+    display:flex;
+    overflow: visible;
+}
+
+.strukturSwiper .swiper-wrapper{
+    overflow:visible;
+    align-items:stretch;
+    transition-timing-function: linear !important; 
+}
+
+/* Tombol navigasi — TANPA background/border/shadow, cuma ikon polos */
+.struktur-prev,
+.struktur-next{
+    width: 48px;
+    height: 48px;
+    background: transparent;   /* WAJIB: hapus background */
+    border: none;              /* WAJIB: hapus border */
+    box-shadow: none;          /* WAJIB: hapus shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.struktur-prev:focus,
+.struktur-next:focus{
+    outline: none;
+}
+
+/* Warna ikon default */
+.struktur-prev svg,
+.struktur-next svg{
+    width: 32px;
+    height: 32px;
+    display: block;
+    color: #73B82B;            /* warna default ikon (misal: gelap/ink) */
+    transition: color .25s ease, transform .25s ease;
+}
+
+/* Hover: ikon berubah jadi hijau, tanpa background apapun muncul */
+.struktur-prev:hover svg,
+.struktur-next:hover svg{
+    color: #23281F;              /* ikon jadi hijau pas hover */
+    transform: scale(1.15);     /* opsional: ikon sedikit membesar biar ada feedback visual */
+}
+
+/* Matikan panah bawaan Swiper (pakai SVG custom) */
+.struktur-prev::after,
+.struktur-next::after{
+    display: none;
+}
+
+.struktur-prev{
+    left: -8px;
+}
+
+.struktur-next{
+    right: -8px;
+}
