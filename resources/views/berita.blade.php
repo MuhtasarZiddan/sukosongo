@@ -96,24 +96,24 @@
     <x-navbar active="berita" />
 
     {{-- ============ HERO / BREADCRUMB ============ --}}
-    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 bg-[color:var(--forest)] overflow-hidden">
+    <section class="relative pt-24 pb-10 lg:pt-28 lg:pb-12 bg-[color:var(--forest)] overflow-hidden">
         <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
         <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
 
         <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
             <div class="reveal">
-                <p class="text-white/50 text-sm mb-4">
+                <p class="text-white/50 text-sm mb-3">
                     <a href="/" class="hover:text-white transition-colors">Beranda</a>
                     <span class="mx-2">/</span>
                     <span class="text-white/80">Berita</span>
                 </p>
-                <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-4">Kabar
+                <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Kabar
                     Desa</p>
                 <h1
-                    class="font-display text-white text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight max-w-2xl">
+                    class="font-display text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight max-w-2xl">
                     Berita &amp; Kegiatan Desa Sukosongo
                 </h1>
-                <p class="text-white/70 text-base mt-4 max-w-xl">
+                <p class="text-white/70 text-sm mt-3 max-w-xl">
                     Informasi terbaru seputar pemerintahan, kegiatan warga, dan perkembangan UMKM di Desa Sukosongo.
                 </p>
             </div>
@@ -123,23 +123,35 @@
     {{-- ============ SEARCH ============ --}}
     <section class="bg-[color:var(--cream)] pt-10 pb-4">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="reveal flex justify-end">
-                <form id="searchForm" onsubmit="return false;" class="relative w-full lg:w-80">
-                    <input type="text" name="q" id="searchInput" autocomplete="off"
-                        placeholder="Cari berita..."
-                        class="w-full pl-11 pr-4 py-2.5 rounded-full border border-[color:var(--forest)]/20 bg-white text-sm text-[color:var(--ink)] placeholder:text-[color:var(--ink)]/40 focus:outline-none focus:border-[color:var(--forest)]" />
-                    <svg class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[color:var(--ink)]/40"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21 21l-4.35-4.35m1.35-5.15a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z" />
-                    </svg>
-                </form>
+            <div class="reveal">
+                <p id="beritaCount" class="text-sm text-[color:var(--ink)]/60 mb-4">
+                    Menampilkan {{ $berita->count() }} dari {{ $berita->count() }} berita
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-[color:var(--forest)]/40"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input type="text" id="searchInput" autocomplete="off" placeholder="Cari judul berita..."
+                            class="w-full pl-11 pr-4 py-3 rounded-full border border-[color:var(--forest)]/15 bg-white text-sm text-[color:var(--ink)] placeholder:text-[color:var(--ink)]/40 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]/50">
+                    </div>
+                    <button id="searchReset" type="button"
+                        class="hidden sm:flex items-center gap-2 px-5 py-3 rounded-full border border-[color:var(--forest)]/15 bg-white text-sm font-semibold text-[color:var(--forest)] hover:bg-[color:var(--forest)]/5 transition-colors">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        Reset
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
     {{-- ============ DAFTAR BERITA ============ --}}
-    <section class="bg-[color:var(--cream)] py-14 lg:py-20">
+    <section class="bg-[color:var(--cream)] pt-8 pb-14 lg:pb-20">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
             @php
@@ -268,10 +280,7 @@
             const kw = state.keyword.trim().toLowerCase();
             if (kw === '') return beritaData;
 
-            return beritaData.filter(b => {
-                const isiPolos = b.isi.replace(/<[^>]+>/g, '').toLowerCase();
-                return b.judul.toLowerCase().includes(kw) || isiPolos.includes(kw);
-            });
+            return beritaData.filter(b => b.judul.toLowerCase().includes(kw));
         }
 
         // ============ RENDER KARTU BERITA ============
@@ -327,6 +336,36 @@
                 empty.classList.add('hidden');
                 grid.innerHTML = pageItems.map(cardTemplate).join('');
             }
+
+            renderPagination(totalPages);
+        }
+
+        function renderBerita() {
+            const grid = document.getElementById('beritaGrid');
+            const empty = document.getElementById('beritaEmpty');
+
+            const filtered = getFilteredBerita();
+            const totalPages = Math.max(1, Math.ceil(filtered.length / state.perPage));
+
+            if (state.page > totalPages) state.page = totalPages;
+            if (state.page < 1) state.page = 1;
+
+            const start = (state.page - 1) * state.perPage;
+            const pageItems = filtered.slice(start, start + state.perPage);
+
+            if (pageItems.length === 0) {
+                grid.innerHTML = '';
+                grid.classList.add('hidden');
+                empty.classList.remove('hidden');
+            } else {
+                grid.classList.remove('hidden');
+                empty.classList.add('hidden');
+                grid.innerHTML = pageItems.map(cardTemplate).join('');
+            }
+
+            // update teks "Menampilkan X dari Y berita"
+            document.getElementById('beritaCount').textContent =
+                `Menampilkan ${filtered.length} dari ${beritaData.length} berita`;
 
             renderPagination(totalPages);
         }
@@ -390,15 +429,28 @@
         }
 
         // ============ PENCARIAN ============
+        // ============ PENCARIAN ============
         const searchInput = document.getElementById('searchInput');
+        const searchReset = document.getElementById('searchReset');
         let searchTimeout;
+
         searchInput.addEventListener('input', () => {
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(() => {
                 state.keyword = searchInput.value;
                 state.page = 1;
                 renderBerita();
+                searchReset.classList.toggle('hidden', searchInput.value.trim().length === 0);
             }, 300);
+        });
+
+        searchReset.addEventListener('click', () => {
+            searchInput.value = '';
+            state.keyword = '';
+            state.page = 1;
+            renderBerita();
+            searchReset.classList.add('hidden');
+            searchInput.focus();
         });
 
         // ============ MODAL BERITA ============

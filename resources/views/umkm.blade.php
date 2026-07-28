@@ -41,23 +41,15 @@
             font-family: 'Fraunces', serif;
         }
 
-        .nav-link {
-            position: relative;
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease;
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            height: 2px;
-            width: 0%;
-            background: var(--gold);
-            transition: width .25s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -65,61 +57,68 @@
 <body class="antialiased">
 
     {{-- ============ NAVBAR ============ --}}
-    <header class="bg-[color:var(--forest)] sticky top-0 z-50 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="/" class="flex items-center gap-3 shrink-0">
-                    <div
-                        class="w-10 h-10 rounded-full bg-[color:var(--gold)] flex items-center justify-center font-display font-semibold text-[color:var(--forest)] text-sm">
-                        DS
-                    </div>
-                    <div class="leading-tight">
-                        <p class="font-display text-white text-base font-semibold">Desa Sukosongo</p>
-                        <p class="text-[11px] text-white/60 tracking-wide uppercase">Kabupaten &middot; Provinsi</p>
-                    </div>
-                </a>
+    <x-navbar active="umkm" />
 
-                <x-navbar active="umkm" />
+    {{-- ============ HERO / BREADCRUMB ============ --}}
+    <section class="relative pt-24 pb-10 lg:pt-28 lg:pb-12 bg-[color:var(--forest)] overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
+        <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="reveal">
+                <p class="text-white/50 text-sm mb-3">
+                    <a href="/" class="hover:text-white transition-colors">Beranda</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-white/80">UMKM</span>
+                </p>
+                <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Ekonomi
+                    Desa</p>
+                <h1
+                    class="font-display text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight max-w-2xl">
+                    Katalog UMKM Desa Sukosongo
+                </h1>
+                <p class="text-white/70 text-sm mt-3 max-w-xl">
+                    Temukan toko, produk unggulan, dan pelaku usaha lokal yang tumbuh di Desa Sukosongo.
+                </p>
             </div>
         </div>
-    </header>
+    </section>
 
-    {{-- ============ KATALOG UMKM ============ --}}
-    <section id="umkm-katalog" class="bg-[color:var(--cream)] py-20 lg:py-28 min-h-screen">
+    {{-- ============ SEARCH ============ --}}
+    <section class="bg-[color:var(--cream)] pt-10 pb-4">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-            {{-- Judul --}}
-            <div class="mb-10">
-                <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Ekonomi Desa
-                </p>
-                <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">Katalog UMKM Desa
-                    Sukosongo</h2>
-                <p id="umkmCount" class="text-sm text-[color:var(--ink)]/60 mt-2">
+            <div class="reveal">
+                <p id="umkmCount" class="text-sm text-[color:var(--ink)]/60 mb-4">
                     Menampilkan {{ $umkms->count() }} dari {{ $umkms->count() }} toko
                 </p>
-            </div>
 
-            {{-- Search bar --}}
-            <div class="flex flex-col sm:flex-row gap-3 mb-10">
-                <div class="relative flex-1">
-                    <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-[color:var(--forest)]/40"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    <input type="text" id="umkmSearch" placeholder="Cari nama toko, pemilik, atau produk..."
-                        class="w-full pl-11 pr-4 py-3 rounded-full border border-[color:var(--forest)]/15 bg-white text-sm text-[color:var(--ink)] placeholder:text-[color:var(--ink)]/40 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]/50">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-[color:var(--forest)]/40"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input type="text" id="umkmSearch" autocomplete="off"
+                            placeholder="Cari nama toko, pemilik, atau produk..."
+                            class="w-full pl-11 pr-4 py-3 rounded-full border border-[color:var(--forest)]/15 bg-white text-sm text-[color:var(--ink)] placeholder:text-[color:var(--ink)]/40 outline-none focus:outline-none focus:border-[color:var(--gold)] focus:ring-2 focus:ring-[color:var(--gold)]/50">
+                    </div>
+                    <button id="umkmReset" type="button"
+                        class="hidden sm:flex items-center gap-2 px-5 py-3 rounded-full border border-[color:var(--forest)]/15 bg-white text-sm font-semibold text-[color:var(--forest)] hover:bg-[color:var(--forest)]/5 transition-colors">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        Reset
+                    </button>
                 </div>
-                <button id="umkmReset"
-                    class="hidden sm:flex items-center gap-2 px-5 py-3 rounded-full border border-[color:var(--forest)]/15 bg-white text-sm font-semibold text-[color:var(--forest)] hover:bg-[color:var(--forest)]/5 transition-colors">
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    Reset
-                </button>
             </div>
+        </div>
+    </section>
 
-            {{-- Grid card UMKM --}}
+    {{-- ============ GRID UMKM ============ --}}
+    <section class="bg-[color:var(--cream)] pt-8 pb-14 lg:pb-20">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
             <div id="umkmGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse ($umkms as $umkm)
                     <x-umkm-card nama_umkm="{{ $umkm->nama_umkm }}" alamat_usaha="{{ $umkm->alamat_usaha }}"
@@ -130,7 +129,6 @@
                 @endforelse
             </div>
 
-            {{-- Pesan kalau hasil pencarian kosong --}}
             <div id="umkmEmpty" class="hidden text-center py-16">
                 <p class="text-[color:var(--ink)]/50 text-sm">Tidak ada toko yang cocok dengan pencarian kamu.</p>
             </div>
@@ -142,6 +140,20 @@
     <x-footer />
 
     <script>
+        // ============ REVEAL ON SCROLL ============
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ============ PENCARIAN ============
         const umkmSearch = document.getElementById('umkmSearch');
         const umkmReset = document.getElementById('umkmReset');
         const umkmCards = document.querySelectorAll('.umkm-card');
