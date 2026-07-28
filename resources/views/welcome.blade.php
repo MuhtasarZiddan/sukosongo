@@ -653,12 +653,56 @@
                 <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">Peta Desa
                     Sukosongo</h2>
             </div>
-            <div class="reveal rounded-2xl overflow-hidden border border-[color:var(--forest)]/10 shadow-sm">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7917.444166533023!2d112.32495505!3d-7.1580951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77f42f785b67fd%3A0x98eccb6251b092aa!2sSukosongo%2C%20Kec.%20Kembangbahu%2C%20Kabupaten%20Lamongan%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1784179103863!5m2!1sid!2sid"
-                    class="w-full h-80 lg:h-96 border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                    title="Peta Lokasi Desa Sukosongo">
-                </iframe>
+
+            <div class="grid lg:grid-cols-3 gap-6">
+                {{-- Peta --}}
+                <div
+                    class="reveal lg:col-span-2 rounded-2xl overflow-hidden border border-[color:var(--forest)]/10 shadow-sm">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7917.444166533023!2d112.32495505!3d-7.1580951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77f42f785b67fd%3A0x98eccb6251b092aa!2sSukosongo%2C%20Kec.%20Kembangbahu%2C%20Kabupaten%20Lamongan%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1784179103863!5m2!1sid!2sid"
+                        class="w-full h-80 lg:h-full min-h-[320px] border-0" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Peta Lokasi Desa Sukosongo">
+                    </iframe>
+                </div>
+
+                {{-- Info Kontak --}}
+                <div
+                    class="reveal bg-white rounded-2xl border border-[color:var(--forest)]/10 shadow-sm p-6 lg:p-7 flex flex-col gap-5">
+                    <div>
+                        <p class="text-xs uppercase tracking-wide text-[color:var(--brown)] font-semibold mb-1.5">
+                            Alamat</p>
+                        <p class="text-sm text-[color:var(--ink)]/70 leading-relaxed">
+                            Desa Sukosongo, Kec. Kembangbahu, Kabupaten Lamongan, Jawa Timur
+                        </p>
+                    </div>
+
+                    <div class="h-px bg-[color:var(--forest)]/10"></div>
+
+                    <div>
+                        <p class="text-xs uppercase tracking-wide text-[color:var(--brown)] font-semibold mb-1.5">Jam
+                            Layanan</p>
+                        <p class="text-sm text-[color:var(--ink)]/70 leading-relaxed">
+                            Senin – Jumat, 08.00 – 15.00 WIB
+                        </p>
+                    </div>
+
+                    <div class="h-px bg-[color:var(--forest)]/10"></div>
+
+                    <div>
+                        <p class="text-xs uppercase tracking-wide text-[color:var(--brown)] font-semibold mb-1.5">
+                            Kontak
+                        </p>
+                        <p class="text-sm text-[color:var(--ink)]/70 leading-relaxed">
+                            kantordesasukosongo@email.com
+                        </p>
+                    </div>
+
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=-7.1580951,112.32495505"
+                        target="_blank" rel="noopener"
+                        class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--forest)] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[color:var(--forest-light)] transition-colors">
+                        Buka di Google Maps
+                    </a>
+                </div>
             </div>
         </div>
     </section>

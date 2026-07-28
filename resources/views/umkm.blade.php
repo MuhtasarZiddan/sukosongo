@@ -60,7 +60,8 @@
     <x-navbar active="umkm" />
 
     {{-- ============ HERO / BREADCRUMB ============ --}}
-    <section class="relative pt-24 pb-10 lg:pt-28 lg:pb-12 bg-[color:var(--forest)] overflow-hidden">
+    <section
+        class="relative pt-24 pb-10 lg:pt-28 lg:pb-12 bg-gradient-to-b from-[#14261A] via-[color:var(--forest)] to-[color:var(--forest-light)] overflow-hidden">
         <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
         <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
 
