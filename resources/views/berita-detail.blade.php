@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $berita->judul }} - {{ config('app.name', 'Desa Sukosongo') }}</title>
+    <meta name="description" content="{{ \Illuminate\Support\Str::limit(strip_tags($berita->isi_berita), 150) }}">
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,53 +42,122 @@
         .font-display {
             font-family: 'Fraunces', serif;
         }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            height: 2px;
+            width: 0%;
+            background: var(--gold);
+            transition: width .25s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #mobileMenu {
+            transition: max-height .35s ease;
+            overflow: hidden;
+        }
+
+        .prose img {
+            border-radius: 1rem;
+        }
     </style>
 </head>
 
 <body class="antialiased">
-    {{-- Hero singkat --}}
-    <section class="relative pt-32 pb-14 lg:pt-40 lg:pb-16 bg-[color:var(--forest)] overflow-hidden">
-        <div class="relative max-w-4xl mx-auto px-5 lg:px-8">
-            <p class="text-white/50 text-sm mb-4">
-                <a href="/" class="hover:text-white transition-colors">Beranda</a>
-                <span class="mx-2">/</span>
-                <a href="{{ route('berita.page') }}" class="hover:text-white transition-colors">Berita</a>
-                <span class="mx-2">/</span>
-                <span class="text-white/80">{{ $berita->judul }}</span>
-            </p>
-            <h1 class="font-display text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight">
-                {{ $berita->judul }}
-            </h1>
-            <p class="text-white/60 text-sm mt-4">
-                {{ \Carbon\Carbon::parse($berita->tanggal_publish)->translatedFormat('d F Y') }}
-                &middot; oleh {{ $berita->penulis }}
-            </p>
+
+    {{-- ============ NAVBAR ============ --}}
+    <x-navbar active="berita" />
+
+    {{-- ============ HERO / BREADCRUMB ============ --}}
+    <section class="relative pt-24 pb-10 lg:pt-28 lg:pb-12 bg-[color:var(--forest)] overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
+        <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="reveal">
+                <p class="text-white/50 text-sm mb-3">
+                    <a href="/" class="hover:text-white transition-colors">Beranda</a>
+                    <span class="mx-2">/</span>
+                    <a href="{{ route('berita.page') }}" class="hover:text-white transition-colors">Berita</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-white/80">{{ $berita->judul }}</span>
+                </p>
+                <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Kabar
+                    Desa</p>
+                <h1
+                    class="font-display text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight max-w-2xl">
+                    {{ $berita->judul }}
+                </h1>
+                <p class="text-white/70 text-sm mt-3 max-w-xl">
+                    {{ \Carbon\Carbon::parse($berita->tanggal_publish)->translatedFormat('d F Y') }}
+                    &middot; oleh {{ $berita->penulis }}
+                </p>
+            </div>
         </div>
     </section>
 
-    {{-- Isi berita --}}
+    {{-- ============ ISI BERITA ============ --}}
     <section class="bg-[color:var(--cream)] py-14 lg:py-20">
         <div class="max-w-4xl mx-auto px-5 lg:px-8">
 
-            <div class="rounded-3xl overflow-hidden mb-10 h-72 lg:h-96">
-                <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}"
-                    class="w-full h-full object-cover">
+            <div class="reveal rounded-3xl overflow-hidden mb-10 shadow-sm">
+                <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}" class="w-full h-auto">
             </div>
 
-            <div class="prose max-w-none text-[color:var(--ink)]/80 leading-relaxed">
+            <div class="reveal prose max-w-none text-[color:var(--ink)]/80 leading-relaxed">
                 {!! $berita->isi_berita !!}
             </div>
 
-            <div class="mt-12">
+            <div class="reveal mt-12">
                 <a href="{{ route('berita.page') }}"
-                    class="inline-flex items-center gap-2 rounded-full border border-[color:var(--forest)] px-5 py-2.5 text-sm font-semibold text-[color:var(--forest)] hover:bg-[color:var(--forest)] hover:text-white transition">
-                    ← Kembali ke Semua Berita
+                    class="group inline-flex items-center gap-2.5 rounded-full bg-[color:var(--forest)] pl-6 pr-5 py-3 text-sm font-semibold text-white shadow-sm hover:shadow-lg hover:shadow-[color:var(--forest)]/20 hover:bg-[color:var(--forest-light)] transition-all duration-300">
+                    <svg class="w-4 h-4 rotate-180 transition-transform duration-300 group-hover:-translate-x-1"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                    Kembali ke Semua Berita
                 </a>
             </div>
         </div>
     </section>
 
     <x-footer />
+
+    <script>
+        // ============ REVEAL ON SCROLL ============
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 
 </html>

@@ -114,7 +114,7 @@
                     Berita &amp; Kegiatan Desa Sukosongo
                 </h1>
                 <p class="text-white/70 text-sm mt-3 max-w-xl">
-                    Informasi terbaru seputar pemerintahan, kegiatan warga, dan perkembangan UMKM di Desa Sukosongo.
+                    Informasi terbaru seputar pemerintahan, kegiatan warga, dan perkembangan di Desa Sukosongo.
                 </p>
             </div>
         </div>
@@ -161,6 +161,7 @@
                     ->get()
                     ->map(
                         fn($b) => [
+                            'id' => $b->id,
                             'judul' => $b->judul,
                             'tanggal' => $b->tanggal_publish->translatedFormat('d F Y'),
                             'status' => $b->status,
@@ -256,6 +257,8 @@
         });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+        const beritaDetailUrlTemplate = @json(route('berita.detail', '__ID__'));
+
         // ============ DATA BERITA ============
         const beritaData = @json($berita).map((b, i) => ({
             ...b,
@@ -285,33 +288,34 @@
 
         // ============ RENDER KARTU BERITA ============
         function cardTemplate(b) {
+            const detailUrl = beritaDetailUrlTemplate.replace('__ID__', b.id);
+
             return `
-                <button
-                    type="button"
-                    onclick="openBeritaModal(${b.originalIndex})"
-                    class="reveal in group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 text-left w-full">
+        <a
+            href="${detailUrl}"
+            class="reveal in group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 text-left w-full">
 
-                    <div class="relative overflow-hidden h-40">
-                        <img src="${b.gambar}"
-                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    </div>
+            <div class="relative overflow-hidden h-40">
+                <img src="${b.gambar}"
+                     class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            </div>
 
-                    <div class="p-4">
-                        <p class="text-[11px] uppercase tracking-wider text-[color:var(--brown)] font-semibold mb-1.5">
-                            ${b.tanggal}
-                        </p>
-                        <h3 class="font-display text-base font-semibold text-[color:var(--forest)] group-hover:text-[color:var(--gold)] transition leading-snug">
-                            ${b.judul}
-                        </h3>
-                        <p class="mt-2 text-xs text-[color:var(--ink)]/70 leading-relaxed line-clamp-2">
-                            ${buatRingkasan(b.isi)}
-                        </p>
-                        <div class="mt-3 flex items-center text-xs text-[color:var(--forest)] font-semibold group-hover:text-[color:var(--gold)]">
-                            Baca Selengkapnya →
-                        </div>
-                    </div>
-                </button>
-            `;
+            <div class="p-4">
+                <p class="text-[11px] uppercase tracking-wider text-[color:var(--brown)] font-semibold mb-1.5">
+                    ${b.tanggal}
+                </p>
+                <h3 class="font-display text-base font-semibold text-[color:var(--forest)] group-hover:text-[color:var(--gold)] transition leading-snug">
+                    ${b.judul}
+                </h3>
+                <p class="mt-2 text-xs text-[color:var(--ink)]/70 leading-relaxed line-clamp-2">
+                    ${buatRingkasan(b.isi)}
+                </p>
+                <div class="mt-3 flex items-center text-xs text-[color:var(--forest)] font-semibold group-hover:text-[color:var(--gold)]">
+                    Baca Selengkapnya →
+                </div>
+            </div>
+        </a>
+    `;
         }
 
         function renderBerita() {
@@ -428,7 +432,6 @@
             });
         }
 
-        // ============ PENCARIAN ============
         // ============ PENCARIAN ============
         const searchInput = document.getElementById('searchInput');
         const searchReset = document.getElementById('searchReset');

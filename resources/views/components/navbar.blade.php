@@ -2,8 +2,7 @@
 
 @php
     $hrefBeranda = $active === null ? '#beranda' : '/#beranda';
-    $hrefBerita = $active === null ? '#berita' : '/#berita';
-    $hrefKontak = $active === null ? '#kontak' : '/#kontak';
+    $hrefWisata = $active === null ? '#wisata' : '/#wisata';
 @endphp
 <style>
     .nav-link {
@@ -57,10 +56,10 @@
                     class="nav-link {{ $active === 'beranda' ? 'is-active' : '' }}">Beranda</a>
                 <a href="/profil-desa" class="nav-link {{ $active === 'profil-desa' ? 'is-active' : '' }}">Profil
                     Desa</a>
-                <a href="{{ $hrefBerita }}" class="nav-link {{ $active === 'berita' ? 'is-active' : '' }}">Berita</a>
-                <a href="/umkm" class="nav-link {{ $active === 'umkm' ? 'is-active' : '' }}">UMKM</a>
-                <a href="/wisata" class="nav-link {{ $active === 'wisata' ? 'is-active' : '' }}">Wisata</a>
-                <a href="{{ $hrefKontak }}" class="nav-link">Kontak</a>
+                <a href="/berita" class="nav-link {{ $active === 'berita' ? 'is-active' : '' }}">Berita</a> <a
+                    href="/umkm" class="nav-link {{ $active === 'umkm' ? 'is-active' : '' }}">UMKM</a>
+                <a href="{{ $hrefWisata }}" class="nav-link {{ $active === 'wisata' ? 'is-active' : '' }}">Wisata</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
             </nav>
 
             <button id="menuBtn" aria-label="Buka menu" class="lg:hidden text-white p-2 -mr-2">
@@ -83,13 +82,13 @@
                 <a href="/profil-desa"
                     class="mobile-link px-2 py-2.5 rounded-md {{ $active === 'profil-desa' ? 'is-active' : 'hover:bg-white/10' }}">Profil
                     Desa</a>
-                <a href="{{ $hrefBerita }}"
+                <a href="/berita"
                     class="mobile-link px-2 py-2.5 rounded-md {{ $active === 'berita' ? 'is-active' : 'hover:bg-white/10' }}">Berita</a>
                 <a href="/umkm"
                     class="mobile-link px-2 py-2.5 rounded-md {{ $active === 'umkm' ? 'is-active' : 'hover:bg-white/10' }}">UMKM</a>
-                <a href="/wisata"
-                    class="mobile-link px-2 py-2.5 rounded-md {{ $active === 'wisata' ? 'is-active' : 'hover:bg-white/10' }}">Wisata</a>
-                <a href="{{ $hrefKontak }}" class="mobile-link px-2 py-2.5 rounded-md hover:bg-white/10">Kontak</a>
+                <a href="{{ $hrefWisata }}"
+                    class="mobile-link px-2 py-2.5 rounded-md {{ $active === 'wisata' ? 'is-active' : '' }}">Wisata</a>
+                <a href="#kontak" class="mobile-link px-2 py-2.5 rounded-md hover:bg-white/10">Kontak</a>
             </nav>
         </div>
     </div>
@@ -121,7 +120,7 @@
 
         @if ($transparent)
             const navbar = document.getElementById('navbar');
-            const greenSections = ['menu', 'struktur', 'statistik', 'berita', 'lokasi'];
+            const greenSections = ['menu', 'struktur', 'statistik', 'berita', 'wisata', 'lokasi'];
 
             function updateNavbar() {
                 let isGreen = false;

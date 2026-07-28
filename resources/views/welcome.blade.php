@@ -115,6 +115,91 @@
         .carousel-track {
             transition: transform .5s cubic-bezier(.65, 0, .35, 1);
         }
+
+        .strukturSwiper {
+            overflow: hidden;
+            padding: 4px 2px 8px;
+        }
+
+        .strukturSwiper .swiper-slide {
+            height: auto;
+        }
+
+        .strukturSwiper .swiper-slide>* {
+            height: 100%;
+        }
+
+        .struktur-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .struktur-prev,
+        .struktur-next {
+            position: static;
+            width: 42px;
+            height: 42px;
+            border-radius: 9999px;
+            background: #fff;
+            border: 1px solid rgba(31, 61, 43, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+        }
+
+        .struktur-prev svg,
+        .struktur-next svg {
+            width: 18px;
+            height: 18px;
+            color: var(--forest);
+        }
+
+        .struktur-prev:hover,
+        .struktur-next:hover {
+            background: var(--forest);
+            border-color: var(--forest);
+        }
+
+        .struktur-prev:hover svg,
+        .struktur-next:hover svg {
+            color: #fff;
+        }
+
+        .struktur-prev:active,
+        .struktur-next:active {
+            transform: scale(0.92);
+        }
+
+        .struktur-prev.swiper-button-disabled,
+        .struktur-next.swiper-button-disabled {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .struktur-pagination {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .struktur-pagination .swiper-pagination-bullet {
+            width: 6px;
+            height: 6px;
+            background: var(--forest);
+            opacity: 0.25;
+            transition: opacity .2s ease, width .2s ease;
+            border-radius: 9999px;
+        }
+
+        .struktur-pagination .swiper-pagination-bullet-active {
+            opacity: 1;
+            width: 20px;
+        }
     </style>
 </head>
 
@@ -139,8 +224,8 @@
                     Desa Sukosongo,<br>tumbuh bersama alam&nbsp;dan masyarakat.
                 </h1>
                 <p class="text-white/70 text-base lg:text-lg leading-relaxed max-w-lg mx-auto mb-8">
-                    Portal informasi Desa Sukosongo: profil desa, kabar terbaru, produk UMKM lokal,
-                    hingga wisata religi &mdash; semua dalam satu tempat.
+                    Portal informasi Desa Sukosongo yang menghadirkan profil desa, kabar terbaru, produk UMKM lokal, dan
+                    wisata religi dalam satu tempat.
                 </p>
                 <div class="flex flex-wrap gap-3 justify-center">
                     <a href="/profil-desa"
@@ -233,71 +318,121 @@
     </section>
 
     {{-- ============ STRUKTUR ORGANISASI ============ --}}
-    <section id="struktur" class="bg-[color:var(--paper)] py-20 lg:py-28">
+    <section id="struktur" class="bg-[color:var(--paper)] py-10 lg:py-12">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
             {{-- Judul --}}
-            <div class="reveal max-w-xl mb-14">
-                <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Pemerintahan
+            <div class="reveal max-w-xl mb-6">
+                <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-2">Pemerintahan
                     Desa</p>
-                <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">Kepala Desa &amp;
+                <h2 class="font-display text-2xl lg:text-3xl font-semibold text-[color:var(--forest)]">Kepala Desa &amp;
                     Perangkat</h2>
             </div>
 
             {{-- Kades --}}
-            <div
-                class="reveal flex flex-col sm:flex-row items-center gap-3  bg-white rounded-2xl p-6 sm:p-8 mb-5 border border-[color:var(--forest)]/10">
-                <div
-                    class="w-28 h-28 rounded-full bg-[color:var(--forest)]/10 shrink-0 flex items-center justify-center font-display text-2xl text-[color:var(--forest)]">
-                    Foto
+            <div class="reveal relative overflow-hidden bg-[color:var(--forest)] rounded-2xl mb-5">
+                <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[color:var(--gold)]/10 blur-2xl">
                 </div>
-                <div class="text-center sm:text-left">
-                    <p class="font-display text-2xl font-semibold text-[color:var(--forest)]">Nama Kepala Desa</p>
-                    <p class="text-sm text-[color:var(--gold)] font-semibold uppercase tracking-wide mt-1">Kepala Desa
-                        Sukosongo</p>
-                    <p class="text-sm text-[color:var(--ink)]/60 mt-3 max-w-md">Data akan diperbarui setelah dokumen
-                        resmi diterima dari perangkat desa.</p>
+                <div class="absolute -left-10 -bottom-10 w-48 h-48 rounded-full bg-white/5 blur-2xl"></div>
+
+                <div class="relative flex flex-col sm:flex-row items-center gap-5 p-4 sm:p-5">
+                    <div
+                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-white/10 border border-white/15 flex items-center justify-center">
+                        {{-- Ganti src ini dengan foto asli Kades kalau sudah tersedia --}}
+                        <img src="{{ asset('images/kades.jpg') }}" alt="Kepala Desa Sukosongo"
+                            class="w-full h-full object-cover"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span
+                            class="hidden w-full h-full items-center justify-center font-display text-lg text-white/40">
+                            Foto
+                        </span>
+                    </div>
+
+                    <div class="text-center sm:text-left">
+                        <span
+                            class="inline-block px-2.5 py-0.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] text-[10px] font-semibold uppercase tracking-wide mb-1.5">
+                            Kepala Desa Sukosongo
+                        </span>
+                        <p class="font-display text-lg sm:text-xl font-semibold text-white leading-tight">
+                            Nama Kepala Desa
+                        </p>
+                        <p class="text-xs text-white/50 mt-1">
+                            Masa Jabatan 2026 &ndash; 2032
+                        </p>
+                        <p class="text-xs text-white/60 mt-1.5 max-w-md leading-relaxed">
+                            Data akan diperbarui setelah dokumen resmi diterima dari perangkat desa.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div class="reveal relative pt-8">
+            {{-- Swiper perangkat desa --}}
+            <div class="reveal pt-1">
                 <div class="swiper strukturSwiper">
                     <div class="swiper-wrapper">
                         @php
                             $perangkat = [
-                                'Sekretaris Desa',
-                                'Kaur Keuangan',
-                                'Kaur Perencanaan',
-                                'Kasi Pemerintahan',
-                                'Kasi Kesejahteraan',
-                                'Kadus I',
+                                ['jabatan' => 'Sekretaris Desa', 'periode' => '2023 – 2029'],
+                                ['jabatan' => 'Kaur Keuangan', 'periode' => '2023 – 2029'],
+                                ['jabatan' => 'Kaur Perencanaan', 'periode' => '2023 – 2029'],
+                                ['jabatan' => 'Kasi Pemerintahan', 'periode' => '2023 – 2029'],
+                                ['jabatan' => 'Kasi Kesejahteraan', 'periode' => '2023 – 2029'],
+                                ['jabatan' => 'Kadus I', 'periode' => '2023 – 2029'],
                             ];
                         @endphp
-                        @foreach ($perangkat as $jabatan)
-                            <x-perangkat-card image="{{ asset('images/perangkat/default.jpg') }}"
-                                nama="Nama Perangkat" jabatan="{{ $jabatan }}" />
+                        @foreach ($perangkat as $p)
+                            <div class="swiper-slide">
+                                <div
+                                    class="bg-white rounded-xl overflow-hidden border border-[color:var(--forest)]/10 h-full flex flex-col">
+                                    <div class="relative aspect-square bg-[color:var(--forest)]/5 overflow-hidden">
+                                        <img src="{{ asset('images/perangkat/default.jpg') }}"
+                                            alt="{{ $p['jabatan'] }}" class="w-full h-full object-cover"
+                                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                        <span
+                                            class="hidden absolute inset-0 items-center justify-center font-display text-sm text-[color:var(--forest)]/30">
+                                            Foto
+                                        </span>
+                                    </div>
+                                    <div class="p-2.5 flex-1 flex flex-col">
+                                        <span
+                                            class="inline-block w-fit px-2 py-0.5 rounded-full bg-[color:var(--forest)]/8 text-[color:var(--forest)] text-[9px] font-semibold uppercase tracking-wide mb-1">
+                                            {{ $p['jabatan'] }}
+                                        </span>
+                                        <p
+                                            class="font-display text-xs font-semibold text-[color:var(--forest)] leading-snug">
+                                            Nama Perangkat
+                                        </p>
+                                        <p class="text-[10px] text-[color:var(--ink)]/50 mt-0.5">
+                                            Masa Jabatan {{ $p['periode'] }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="swiper-button-prev struktur-prev">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </div>
+                <div class="struktur-nav">
+                    <div class="struktur-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2.3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </div>
 
-                <div class="swiper-button-next struktur-next">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
+                    <div class="struktur-pagination"></div>
+
+                    <div class="struktur-next">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2.3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
-
 
     {{-- ============ STATISTIK DESA ============ --}}
     <section id="statistik" class="bg-[color:var(--forest)] py-20 lg:py-28">
@@ -426,6 +561,90 @@
         </div>
     </section>
 
+    {{-- ============ WISATA RELIGI ============ --}}
+    <section id="wisata" class="bg-white py-12 lg:py-16">
+
+        <div class="max-w-6xl mx-auto px-5 lg:px-8">
+
+            {{-- Heading --}}
+            <div class="text-center max-w-xl mx-auto mb-8 reveal">
+
+                <p class="uppercase tracking-[0.2em] text-[color:var(--gold)] text-xs font-semibold">
+                    Wisata Religi
+                </p>
+
+                <h2 class="mt-2 font-display text-3xl lg:text-4xl font-bold text-[color:var(--forest)]">
+                    Destinasi Wisata Religi
+                </h2>
+
+                <p class="mt-3 text-sm lg:text-base text-gray-500 leading-7">
+                    Jelajahi salah satu destinasi religi yang menjadi ikon
+                    Desa Sukosongo.
+                </p>
+
+            </div>
+
+            {{-- Content --}}
+            <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+
+                {{-- FOTO --}}
+                <div class="overflow-hidden rounded-2xl shadow-lg reveal">
+
+                    <img src="{{ asset('images/wisata.jpg') }}" alt="Makam Syekh Jamaludin"
+                        class="w-full h-[280px] lg:h-[330px] object-cover hover:scale-105 transition duration-500">
+
+                </div>
+
+                {{-- KONTEN --}}
+                <div class="reveal">
+
+                    <span
+                        class="inline-flex items-center px-3 py-1.5 rounded-full bg-green-100 text-green-700 font-semibold text-xs">
+                        🌿 Wisata Religi
+                    </span>
+
+                    <h3 class="mt-4 font-display text-2xl lg:text-3xl font-bold text-[color:var(--forest)]">
+                        Makam Syekh Jamaludin
+                    </h3>
+
+                    <p class="mt-2 text-sm text-[color:var(--gold)] font-medium">
+                        📍 Desa Sukosongo, Kecamatan Kembangbahu
+                    </p>
+
+                    <p class="mt-4 text-gray-600 text-sm lg:text-base leading-7">
+                        Makam Syekh Jamaludin merupakan salah satu destinasi wisata religi
+                        yang menjadi tujuan masyarakat untuk berziarah serta mengenal
+                        sejarah penyebaran agama Islam di Desa Sukosongo. Tempat ini
+                        menjadi salah satu ikon religi yang masih terjaga dan ramai
+                        dikunjungi pada hari-hari tertentu.
+                    </p>
+
+                    <div class="mt-6">
+
+                        <a href="/wisata"
+                            class="inline-flex items-center px-5 py-2.5 rounded-xl bg-[color:var(--forest)] text-white font-semibold hover:bg-green-700 transition">
+
+                            Lihat Detail
+
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+
+                            </svg>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
     {{-- ============ PETA LOKASI ============ --}}
     <section id="lokasi" class="bg-[color:var(--paper)] py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
@@ -447,6 +666,7 @@
     {{-- ============ FOOTER / KONTAK ============ --}}
     <x-footer />
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         // Mobile hamburger menu
         const menuBtn = document.getElementById('menuBtn');
@@ -509,34 +729,37 @@
         });
         counters.forEach(el => counterObserver.observe(el));
 
-        const track = document.getElementById('orgTrack');
-        const prevBtn = document.getElementById('orgPrev');
-        const nextBtn = document.getElementById('orgNext');
-        let orgIndex = 0;
-
-        function orgStep() {
-            const card = track.children[0];
-            return card ? card.offsetWidth + 20 : 260;
-        }
-
-        function orgMaxIndex() {
-            const visible = Math.floor(track.parentElement.offsetWidth / orgStep());
-            return Math.max(track.children.length - visible, 0);
-        }
-
-        function updateOrgTrack() {
-            track.style.transform = `translateX(-${orgIndex * orgStep()}px)`;
-        }
-        nextBtn.addEventListener('click', () => {
-            orgIndex = Math.min(orgIndex + 1, orgMaxIndex());
-            updateOrgTrack();
+        // ============ SWIPER: PERANGKAT DESA ============
+        const strukturSwiper = new Swiper('.strukturSwiper', {
+            loop: true,
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.struktur-next',
+                prevEl: '.struktur-prev',
+            },
+            pagination: {
+                el: '.struktur-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 14
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 16
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                },
+            },
         });
-        prevBtn.addEventListener('click', () => {
-            orgIndex = Math.max(orgIndex - 1, 0);
-            updateOrgTrack();
-        });
-        window.addEventListener('resize', updateOrgTrack);
 
+        // Smooth scroll offset for fixed navbar
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -551,29 +774,18 @@
                 }
             });
         });
-        const navbar = document.getElementById('navbar');
 
-        const greenSections = [
-            'menu',
-            'struktur',
-            'statistik',
-            'berita',
-            'lokasi'
-        ];
+        const navbar = document.getElementById('navbar');
+        const greenSections = ['menu', 'struktur', 'statistik', 'berita', 'lokasi'];
 
         function updateNavbar() {
             let isGreen = false;
 
             greenSections.forEach(id => {
                 const section = document.getElementById(id);
-
                 if (!section) return;
-
                 const rect = section.getBoundingClientRect();
-
-                if (rect.top <= 80 && rect.bottom >= 80) {
-                    isGreen = true;
-                }
+                if (rect.top <= 80 && rect.bottom >= 80) isGreen = true;
             });
 
             if (isGreen) {
