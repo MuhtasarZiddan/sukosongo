@@ -1,4 +1,4 @@
-<footer id="footer" class="bg-[color:var(--forest)] text-white pt-16 pb-8">
+<footer id="kontak" class="bg-[color:var(--forest)] text-white pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
             <div>

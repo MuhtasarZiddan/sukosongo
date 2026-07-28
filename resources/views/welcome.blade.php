@@ -15,7 +15,6 @@
         href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind (utility classes only, theme handled via CSS variables below) -->
     <script src="https://cdn.tailwindcss.com"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -47,7 +46,6 @@
             font-family: 'Fraunces', serif;
         }
 
-        /* Batik-inspired contour pattern used as a signature motif (topography of the village) */
         .contour-bg {
             background-image:
                 radial-gradient(circle at 20% 30%, transparent 0 38px, rgba(255, 255, 255, 0.05) 39px 40px, transparent 41px),
@@ -262,7 +260,6 @@
                 </div>
             </div>
 
-            {{-- Swiper perangkat desa (foto persegi panjang penuh) --}}
             <div class="reveal relative pt-8">
                 <div class="swiper strukturSwiper">
                     <div class="swiper-wrapper">
@@ -373,94 +370,57 @@
                     <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">
                         Kabar Desa
                     </p>
-
                     <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">
                         Berita Terbaru
                     </h2>
-
                     <p class="mt-3 text-[color:var(--ink)]/70">
                         Ikuti informasi dan kegiatan terbaru yang berlangsung di Desa Sukosongo.
                     </p>
                 </div>
 
                 <a href="{{ route('berita.page') }}"
-                    class="inline-flex items-center gap-2 rounded-full border border-[color:var(--forest)] px-5 py-2.5 text-sm font-semibold text-[color:var(--forest)] hover:bg-[color:var(--forest)] hover:text-white transition">
-                    Lihat Semua Berita ->
+                    class="group inline-flex items-center gap-2.5 rounded-full bg-[color:var(--forest)] pl-6 pr-5 py-3 text-sm font-semibold text-white shadow-sm hover:shadow-lg hover:shadow-[color:var(--forest)]/20 hover:bg-[color:var(--forest-light)] transition-all duration-300">
+                    Lihat Semua Berita
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
                 </a>
             </div>
 
-            @php
-                $berita = [
-                    [
-                        'judul' => 'Musyawarah Desa Bahas Anggaran 2026',
-                        'tanggal' => '10 Juli 2026',
-                        'kategori' => 'Pemerintahan',
-                        'gambar' => asset('images/berita1.jpg'),
-                        'ringkasan' =>
-                            'Pemerintah Desa bersama BPD melaksanakan musyawarah desa dalam penyusunan anggaran tahun 2026.',
-                    ],
-                    [
-                        'judul' => 'Gotong Royong Bersih Sungai Dusun Krajan',
-                        'tanggal' => '5 Juli 2026',
-                        'kategori' => 'Kegiatan',
-                        'gambar' => asset('images/berita2.jpg'),
-                        'ringkasan' =>
-                            'Warga Desa Sukosongo bergotong royong membersihkan aliran sungai untuk menjaga lingkungan tetap bersih.',
-                    ],
-                    [
-                        'judul' => 'Pelatihan Digitalisasi UMKM bagi Warga',
-                        'tanggal' => '28 Juni 2026',
-                        'kategori' => 'UMKM',
-                        'gambar' => asset('images/berita3.jpg'),
-                        'ringkasan' =>
-                            'Pelaku UMKM mendapatkan pelatihan pemasaran digital dan branding produk agar mampu bersaing secara online.',
-                    ],
-                ];
-            @endphp
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                @forelse ($beritaTerbaru as $b)
+                    <a href="{{ route('berita.detail', $b->id) }}"
+                        class="reveal group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                @foreach ($berita as $b)
-                    <a href="/berita"
-                        class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300">
-
-                        <div class="relative overflow-hidden h-56">
-
-                            <img src="{{ $b['gambar'] }}"
+                        <div class="relative overflow-hidden h-40">
+                            <img src="{{ \Storage::url($b->gambar) }}"
                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-
-                            <span
-                                class="absolute top-4 left-4 bg-[color:var(--gold)] text-white text-xs font-semibold px-3 py-1 rounded-full">
-                                {{ $b['kategori'] }}
-                            </span>
-
                         </div>
 
-                        <div class="p-6">
-
-                            <p class="text-xs uppercase tracking-wider text-[color:var(--brown)] font-semibold mb-2">
-                                {{ $b['tanggal'] }}
+                        <div class="p-4">
+                            <p
+                                class="text-[11px] uppercase tracking-wider text-[color:var(--brown)] font-semibold mb-1.5">
+                                {{ $b->tanggal_publish->translatedFormat('d F Y') }}
                             </p>
-
                             <h3
-                                class="font-display text-xl font-semibold text-[color:var(--forest)] group-hover:text-[color:var(--gold)] transition">
-                                {{ $b['judul'] }}
+                                class="font-display text-base font-semibold text-[color:var(--forest)] group-hover:text-[color:var(--gold)] transition leading-snug">
+                                {{ $b->judul }}
                             </h3>
-
-                            <p class="mt-3 text-sm text-[color:var(--ink)]/70 leading-relaxed line-clamp-2">
-                                {{ $b['ringkasan'] }}
+                            <p class="mt-2 text-xs text-[color:var(--ink)]/70 leading-relaxed line-clamp-2">
+                                {{ \Illuminate\Support\Str::limit(strip_tags($b->isi_berita), 110) }}
                             </p>
-
                             <div
-                                class="mt-5 flex items-center text-[color:var(--forest)] font-semibold group-hover:text-[color:var(--gold)]">
+                                class="mt-3 flex items-center text-xs text-[color:var(--forest)] font-semibold group-hover:text-[color:var(--gold)]">
                                 Baca Selengkapnya →
                             </div>
-
                         </div>
-
                     </a>
-                @endforeach
-
+                @empty
+                    <p class="col-span-full text-center text-[color:var(--ink)]/60 py-10">
+                        Belum ada berita yang dipublikasikan.
+                    </p>
+                @endforelse
             </div>
 
         </div>
@@ -556,7 +516,7 @@
 
         function orgStep() {
             const card = track.children[0];
-            return card ? card.offsetWidth + 20 : 260; // width + gap
+            return card ? card.offsetWidth + 20 : 260;
         }
 
         function orgMaxIndex() {
@@ -577,7 +537,6 @@
         });
         window.addEventListener('resize', updateOrgTrack);
 
-        // Smooth scroll offset for fixed navbar
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');

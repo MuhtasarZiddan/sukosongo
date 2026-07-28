@@ -8,6 +8,26 @@ use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
+    public function publicIndex()
+    {
+        $berita = Berita::where('status', 'publish')
+            ->latest('tanggal_publish')
+            ->paginate(6);
+
+        return view('berita', compact('berita'));
+    }
+
+    public function terbaru()
+    {
+        return Berita::where('status', 'publish')
+            ->latest('tanggal_publish')
+            ->take(3)
+            ->get();
+    }
+    public function show(Berita $berita)
+    {
+        return view('berita-detail', compact('berita'));
+    }
     public function index()
     {
         return redirect()->route('dashboard');
@@ -43,7 +63,7 @@ class BeritaController extends Controller
         return redirect()->route('dashboard')->with('success', 'Berita berhasil ditambahkan!');
     }
 
-    public function edit(Berita $beritum) // Laravel memakai $beritum sebagai singular default, biarkan saja
+    public function edit(Berita $beritum)
     {
         return view('berita.edit', compact('beritum'));
     }
