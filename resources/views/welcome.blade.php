@@ -158,81 +158,209 @@
         </div>
     </section>
 
+
     {{-- ============ MENU / ICON NAVIGASI ============ --}}
-    <section id="menu" class="bg-[color:var(--cream)] py-20 lg:py-28">
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="reveal max-w-xl mb-14">
-                <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Jelajahi</p>
-                <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)]">Semua Informasi
-                    Desa, Satu Pintu</h2>
+    <section class="relative overflow-hidden bg-gradient-to-b from-[#FDFBF7] via-[#F8F5EE] to-white py-14 lg:py-16">
+
+        <!-- Background Decoration -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-green-300/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-32 -right-20 w-[28rem] h-[28rem] bg-yellow-200/20 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8">
+
+            <!-- Heading -->
+            <div class="reveal text-center max-w-3xl mx-auto mb-10">
+
+                <span class="inline-flex items-center px-5 py-2 rounded-full bg-green-100 text-green-700 font-semibold text-sm">
+                    🌿 Jelajahi Desa Sukosongo
+                </span>
+
+                <h2 class="mt-4 font-display text-3xl lg:text-4xl font-bold text-[color:var(--forest)] leading-tight">
+                    Semua Informasi Desa
+                    <span class="text-green-600">Dalam Satu Pintu</span>
+                </h2>
+
+                <p class="mt-3 text-base leading-7 text-gray-500">
+                    Temukan informasi desa, berita terbaru, UMKM lokal, hingga wisata religi
+                    dalam tampilan yang mudah diakses oleh seluruh masyarakat.
+                </p>
+
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {{-- Profil Desa --}}
+            <!-- Menu -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+
+                <!-- Profil -->
                 <a href="/profil-desa"
-                    class="menu-card reveal group block bg-white border border-[color:var(--forest)]/10 rounded-2xl p-7">
-                    <div class="w-12 h-12 rounded-xl bg-[color:var(--forest)]/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-[color:var(--forest)]" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="1.7">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                        </svg>
+                    class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100">
+
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+                        style="background:linear-gradient(135deg,var(--forest),var(--forest-light));">
                     </div>
-                    <h3 class="font-display font-semibold text-lg text-[color:var(--forest)] mb-1.5">Profil Desa</h3>
-                    <p class="text-sm text-[color:var(--ink)]/60 leading-relaxed">Sejarah, visi misi, dan galeri foto
-                        Desa Sukosongo.</p>
+
+                    <div class="relative z-10">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4
+                                bg-[linear-gradient(135deg,var(--forest-light),var(--forest))] text-white
+                                group-hover:bg-[color:var(--paper)] group-hover:bg-none group-hover:text-[color:var(--forest)]
+                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"> 
+
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+
+                        </div>
+
+                        <h3 class="text-lg font-bold text-[color:var(--forest)] group-hover:text-white transition">
+                            Profil Desa
+                        </h3>
+
+                        <p class="mt-3 text-[color:var(--brown)]/80 group-hover:text-white/90 transition leading-7">
+                            Sejarah, visi misi, struktur pemerintahan, serta galeri Desa Sukosongo.
+                        </p>
+
+                        <div class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
+                            <span>Lihat Selengkapnya</span>
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+
+                    </div>
+
                 </a>
 
-                {{-- Berita --}}
+                <!-- Berita -->
                 <a href="/berita"
-                    class="menu-card reveal group block bg-white border border-[color:var(--forest)]/10 rounded-2xl p-7">
-                    <div class="w-12 h-12 rounded-xl bg-[color:var(--forest)]/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-[color:var(--forest)]" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="1.7">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v8a2 2 0 01-2 2z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6M9 16h4" />
-                        </svg>
+                    class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100">
+
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+                        style="background:linear-gradient(135deg,var(--forest),var(--forest-light));">
                     </div>
-                    <h3 class="font-display font-semibold text-lg text-[color:var(--forest)] mb-1.5">Berita</h3>
-                    <p class="text-sm text-[color:var(--ink)]/60 leading-relaxed">Kabar dan kegiatan terbaru seputar
-                        warga desa.</p>
+
+                    <div class="relative z-10">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4
+                                bg-[linear-gradient(135deg,var(--forest-light),var(--forest))] text-white
+                                group-hover:bg-[color:var(--paper)] group-hover:bg-none group-hover:text-[color:var(--forest)]
+                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"> 
+
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 5H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 9h10M7 13h6M7 17h4" />
+                            </svg>
+
+                        </div>
+
+                        <h3 class="text-lg font-bold text-[color:var(--forest)] group-hover:text-white transition">
+                            Berita Desa
+                        </h3>
+
+                        <p class="mt-3 text-[color:var(--brown)]/80 group-hover:text-white/90 transition leading-7">
+                            Ikuti informasi terbaru mengenai kegiatan dan perkembangan Desa Sukosongo.
+                        </p>
+
+                        <div class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
+                            <span>Lihat Selengkapnya</span>
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+
+                    </div>
+
                 </a>
 
-                {{-- UMKM --}}
+                <!-- UMKM -->
                 <a href="/umkm"
-                    class="menu-card reveal group block bg-white border border-[color:var(--forest)]/10 rounded-2xl p-7">
-                    <div class="w-12 h-12 rounded-xl bg-[color:var(--forest)]/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-[color:var(--forest)]" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="1.7">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3 7l1.5-3h15L21 7M3 7v12a1 1 0 001 1h16a1 1 0 001-1V7M3 7h18M9 11a3 3 0 006 0" />
-                        </svg>
+                    class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100">
+
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+                        style="background:linear-gradient(135deg,var(--forest),var(--forest-light));">
                     </div>
-                    <h3 class="font-display font-semibold text-lg text-[color:var(--forest)] mb-1.5">UMKM</h3>
-                    <p class="text-sm text-[color:var(--ink)]/60 leading-relaxed">Produk unggulan dan usaha rumahan
-                        warga desa.</p>
+
+                    <div class="relative z-10">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4
+                                bg-[linear-gradient(135deg,var(--forest-light),var(--forest))] text-white
+                                group-hover:bg-[color:var(--paper)] group-hover:bg-none group-hover:text-[color:var(--forest)]
+                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"> 
+
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 7l1.5-3h15L21 7M3 7h18M5 7v11a1 1 0 001 1h12a1 1 0 001-1V7M9 11a3 3 0 006 0" />
+                            </svg>
+
+                        </div>
+
+                        <h3 class="text-lg font-bold text-[color:var(--forest)] group-hover:text-white transition">
+                            UMKM
+                        </h3>
+
+                        <p class="mt-3 text-[color:var(--brown)]/80 group-hover:text-white/90 transition leading-7">
+                            Produk unggulan, usaha rumahan, dan potensi ekonomi masyarakat Desa Sukosongo.
+                        </p>
+
+                        <div class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
+                            <span>Lihat Selengkapnya</span>
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+
+                    </div>
+
                 </a>
 
-                {{-- Wisata --}}
-                <a href="/wisata"
-                    class="menu-card reveal group block bg-white border border-[color:var(--forest)]/10 rounded-2xl p-7">
-                    <div class="w-12 h-12 rounded-xl bg-[color:var(--forest)]/10 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-[color:var(--forest)]" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="1.7">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 21c-4.418-3.5-7-6.686-7-10a7 7 0 1114 0c0 3.314-2.582 6.5-7 10z" />
-                            <circle cx="12" cy="11" r="2.3" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
+                <!-- Wisata -->
+                <a href="#wisata-section"
+                    class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100">
+
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+                        style="background:linear-gradient(135deg,var(--forest),var(--forest-light));">
                     </div>
-                    <h3 class="font-display font-semibold text-lg text-[color:var(--forest)] mb-1.5">Wisata Religi</h3>
-                    <p class="text-sm text-[color:var(--ink)]/60 leading-relaxed">Destinasi religi dan potensi wisata
-                        desa.</p>
+
+                    <div class="relative z-10">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4
+                                bg-[linear-gradient(135deg,var(--forest-light),var(--forest))] text-white
+                                group-hover:bg-[color:var(--paper)] group-hover:bg-none group-hover:text-[color:var(--forest)]
+                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"> 
+
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l2 2-2 2-2-2 2-2zm0 4v16m-5-8h10M8 22h8M7 10l5-2 5 2" />
+                            </svg>
+
+                        </div>
+
+                        <h3 class="text-lg font-bold text-[color:var(--forest)] group-hover:text-white transition">
+                            Wisata Religi
+                        </h3>
+
+                        <p class="mt-3 text-[color:var(--brown)]/80 group-hover:text-white/90 transition leading-7">
+                            Jelajahi destinasi religi dan potensi wisata yang dimiliki Desa Sukosongo.
+                        </p>
+
+                        <div class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
+                            <span>Lihat Selengkapnya</span>
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </div>
                 </a>
-            </div>
-        </div>
-    </section>
+
+            </div><!-- PENUTUP: grid menu (sebelumnya hilang) -->
+
+        </div><!-- PENUTUP: div relative z-10 max-w-7xl (sebelumnya hilang) -->
+
+    </section><!-- PENUTUP: section MENU / ICON NAVIGASI (sebelumnya hilang) -->
+
+
 
     {{-- ============ STRUKTUR ORGANISASI ============ --}}
     <section id="struktur" class="bg-[color:var(--paper)] py-20 lg:py-28">
@@ -316,64 +444,118 @@
 
 
     {{-- ============ STATISTIK DESA ============ --}}
-    <section id="statistik" class="bg-[color:var(--forest)] py-20 lg:py-28">
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="reveal max-w-xl mb-14">
-                <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Data
-                    Kependudukan</p>
+    <section id="statistik-desa" class="relative overflow-hidden bg-[color:var(--forest)] min-h-screen flex flex-col justify-center py-14">
+
+        {{-- Cincin pohon — motif atmosferik --}}
+        <svg class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/3 w-[34rem] h-[34rem] opacity-[0.05] pointer-events-none" viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="95" stroke="white" stroke-width="0.6"/>
+            <circle cx="100" cy="100" r="75" stroke="white" stroke-width="0.6"/>
+            <circle cx="100" cy="100" r="55" stroke="white" stroke-width="0.6"/>
+            <circle cx="100" cy="100" r="35" stroke="white" stroke-width="0.6"/>
+            <circle cx="100" cy="100" r="15" stroke="white" stroke-width="0.6"/>
+        </svg>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 w-full">
+
+            <div class="reveal text-center max-w-xl mx-auto mb-10">
+                <p class="uppercase tracking-[0.25em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Data Kependudukan</p>
                 <h2 class="font-display text-3xl lg:text-4xl font-semibold text-white">Statistik Desa Sukosongo</h2>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
-                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
-                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span
-                            data-count="4">0</span></p>
-                    <p class="text-white/60 text-sm mt-2">Jumlah Dusun</p>
-                </div>
-                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
-                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span
-                            data-count="978">0</span></p>
-                    <p class="text-white/60 text-sm mt-2">Kepala Keluarga</p>
-                </div>
-                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
-                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span
-                            data-count="1720">0</span></p>
-                    <p class="text-white/60 text-sm mt-2">Laki-laki</p>
-                </div>
-                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6">
-                    <p class="stat-num font-display text-4xl text-[color:var(--gold-light)] font-semibold"><span
-                            data-count="1762">0</span></p>
-                    <p class="text-white/60 text-sm mt-2">Perempuan</p>
-                </div>
+            {{-- TOTAL PENDUDUK — tengah, jadi judul bersama untuk dua kolom di bawah --}}
+            <div class="reveal text-center mb-12">
+                <p class="text-white/45 text-xs uppercase tracking-[0.2em] mb-2">Total Penduduk</p>
+                <p class="stat-num font-display text-6xl lg:text-7xl font-semibold text-[color:var(--gold-light)] leading-none tabular-nums">
+                    <span data-count="3482">0</span>
+                </p>
+                <p class="text-white/40 text-sm mt-3">jiwa, tersebar di 6 dusun</p>
             </div>
 
-            {{-- Warga per dusun --}}
-            <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
-                <p class="text-white/80 font-semibold text-sm mb-5 uppercase tracking-wide">Jumlah Warga per Dusun</p>
-                <div class="space-y-4">
+            {{-- LABEL DUA KOLOM — sejajar dalam satu grid row --}}
+            <div class="grid lg:grid-cols-12 gap-x-14 lg:gap-x-20 mb-4">
+                <p class="reveal lg:col-span-5 text-white/45 text-xs uppercase tracking-[0.2em]">Ringkasan</p>
+                <p class="reveal lg:col-span-7 text-white/45 text-xs uppercase tracking-[0.2em]">Sebaran Warga per Dusun</p>
+            </div>
+
+            {{-- KONTEN DUA KOLOM — masing-masing dipecah 2 kolom internal agar ritme baris sama --}}
+            <div class="grid lg:grid-cols-12 gap-x-14 lg:gap-x-20 items-start">
+
+                {{-- KIRI — ringkasan, grid 2x2 --}}
+                <div class="lg:col-span-5 grid grid-cols-2 gap-x-8 border-t border-white/10">
                     @php
-                        $dusun = [
-                            ['nama' => 'Dusun Krajan', 'jumlah' => 40],
-                            ['nama' => 'Dusun Sukosari', 'jumlah' => 28],
-                            ['nama' => 'Dusun Tegalrejo', 'jumlah' => 20],
-                            ['nama' => 'Dusun Sumberasri', 'jumlah' => 12],
+                        $ringkasan = [
+                            ['label' => 'Jumlah Dusun', 'nilai' => 6],
+                            ['label' => 'Kepala Keluarga', 'nilai' => 978],
+                            ['label' => 'Laki-laki', 'nilai' => 1720],
+                            ['label' => 'Perempuan', 'nilai' => 1762],
                         ];
                     @endphp
-                    @foreach ($dusun as $d)
-                        <div>
-                            <div class="flex justify-between text-sm text-white/80 mb-1.5">
-                                <span>{{ $d['nama'] }}</span>
-                                <span class="text-white/50">{{ $d['jumlah'] }}%</span>
+                    @foreach ($ringkasan as $r)
+                        <div class="reveal group border-b border-white/10 py-4">
+                            <p class="text-white/60 text-xs mb-1.5 group-hover:text-white transition-colors">{{ $r['label'] }}</p>
+                            <p class="stat-num font-display text-2xl text-white tabular-nums group-hover:text-[color:var(--gold-light)] transition-colors"><span data-count="{{ $r['nilai'] }}">0</span></p>
+                        </div>
+                    @endforeach
+                </div>
+
+                {{-- KANAN — 6 dusun, grid 2x3 supaya tinggi sejajar dengan kolom kiri --}}
+                <div class="lg:col-span-7 grid grid-cols-2 gap-x-10 gap-y-5">
+                    @php
+                        $dusun = [
+                            ['nama' => 'Dusun Krajan', 'jumlah' => 24],
+                            ['nama' => 'Dusun Sukosari', 'jumlah' => 19],
+                            ['nama' => 'Dusun Tegalrejo', 'jumlah' => 16],
+                            ['nama' => 'Dusun Sumberasri', 'jumlah' => 14],
+                            ['nama' => 'Dusun Karangwaru', 'jumlah' => 15],
+                            ['nama' => 'Dusun Wonorejo', 'jumlah' => 12],
+                        ];
+                    @endphp
+                    @foreach ($dusun as $i => $d)
+                        <div class="reveal">
+                            <div class="flex items-baseline justify-between mb-2">
+                                <span class="font-display text-base text-white">{{ $d['nama'] }}</span>
+                                <span class="font-display text-base text-[color:var(--gold-light)] tabular-nums">{{ $d['jumlah'] }}%</span>
                             </div>
-                            <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-                                <div class="h-full rounded-full bg-[color:var(--gold)]"
-                                    style="width: {{ $d['jumlah'] }}%"></div>
+                            <div class="relative h-[3px] rounded-full bg-white/15">
+                                <div class="dusun-bar absolute inset-y-0 left-0 h-[3px] rounded-full bg-gradient-to-r from-transparent to-[color:var(--gold-light)]"
+                                    style="--target-width: {{ $d['jumlah'] }}%"></div>
+                                <div class="dusun-dot absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[color:var(--gold-light)]"
+                                    style="--target-left: calc({{ $d['jumlah'] }}% - 4px)"></div>
                             </div>
                         </div>
                     @endforeach
                 </div>
+
             </div>
         </div>
+
+        <style>
+            .dusun-bar { width: 0; transition: width 1.1s cubic-bezier(0.16, 1, 0.3, 1); }
+            .dusun-dot { left: 0; opacity: 0; transition: left 1.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease 0.4s; }
+
+            #statistik-desa.in-view .dusun-bar { width: var(--target-width); }
+            #statistik-desa.in-view .dusun-dot { left: var(--target-left); opacity: 1; }
+            #statistik-desa.in-view .dusun-dot { animation: glow 2.4s ease-in-out infinite 1.3s; }
+
+            @keyframes glow {
+                0%, 100% { box-shadow: 0 0 6px 1px var(--gold-light); }
+                50% { box-shadow: 0 0 14px 4px var(--gold-light); }
+            }
+        </style>
+
+        <script>
+            (function () {
+                const section = document.getElementById('statistik-desa');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            section.classList.add('in-view');
+                        }
+                    });
+                }, { threshold: 0.35 });
+                observer.observe(section);
+            })();
+        </script>
     </section>
 
 
@@ -431,7 +613,7 @@
                 ];
             @endphp
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 @foreach ($berita as $b)
                     <a href="/berita"
@@ -477,6 +659,139 @@
             </div>
 
         </div>
+    </section>
+
+{{-- ============ WISATA RELIGI ============ --}}
+    <section id="wisata-section" class="relative overflow-hidden bg-white py-16 lg:py-24">
+
+        {{-- Motif dekoratif tipis, konsisten dengan section lain --}}
+        <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[color:var(--gold)]/5 blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-5xl mx-auto px-5 lg:px-8">
+
+            {{-- Heading --}}
+            <div class="reveal text-center mb-12">
+
+                <p class="uppercase tracking-[0.25em] text-[color:var(--gold)] text-xs font-semibold mb-3">
+                    Wisata Religi
+                </p>
+
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-[color:var(--forest)]">
+                    Makam Syeh Jamaludin
+                </h2>
+
+                <p class="mt-3 text-[color:var(--brown)]/70 max-w-xl mx-auto leading-7 text-sm lg:text-base">
+                    Salah satu destinasi wisata religi yang menjadi ikon Desa Sukosongo
+                    serta memiliki nilai sejarah bagi masyarakat sekitar.
+                </p>
+
+            </div>
+
+            {{-- Card --}}
+            <div class="reveal group grid lg:grid-cols-2 overflow-hidden rounded-3xl border border-[color:var(--forest)]/10 shadow-md hover:shadow-2xl transition-shadow duration-500">
+
+                {{-- FOTO — klik langsung ke Google Maps --}}
+                <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="relative overflow-hidden block h-64 lg:h-auto"
+                    aria-label="Buka lokasi Makam Syeh Jamaludin di Google Maps">
+
+                    <img
+                        src="{{ asset('images/pesarean.jpg') }}"
+                        alt="Makam Syeh Jamaludin"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+                    {{-- Overlay "Buka di Maps" — muncul saat hover --}}
+                    <div class="absolute inset-0 flex items-center justify-center bg-[color:var(--forest)]/0 group-hover:bg-[color:var(--forest)]/40 transition-colors duration-500">
+                        <span class="opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[color:var(--forest)] text-sm font-semibold shadow-lg">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Buka di Google Maps
+                        </span>
+                    </div>
+
+                    <div class="absolute bottom-4 left-4">
+                        <span class="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[color:var(--forest)] text-sm font-semibold">
+                            Wisata Religi
+                        </span>
+                    </div>
+                </a>
+
+                {{-- INFORMASI --}}
+                <div class="bg-white p-6 lg:p-8 flex flex-col justify-center">
+
+                    <h3 class="font-display text-2xl lg:text-3xl font-bold text-[color:var(--forest)] mb-2">
+                        Makam Syeh Jamaludin
+                    </h3>
+
+                    {{-- Lokasi — juga klik ke Maps --}}
+                    <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group/pin inline-flex items-start gap-1.5 text-sm text-[color:var(--gold)] font-medium mb-4 w-fit hover:text-[color:var(--forest)] transition-colors">
+                        <svg class="w-4 h-4 mt-0.5 shrink-0 group-hover/pin:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="underline decoration-dotted underline-offset-4">
+                            Dusun Kedung Kampil, Desa Sukosongo, Kecamatan Kembangbahu, Kabupaten Lamongan
+                        </span>
+                    </a>
+
+                    <p class="text-[color:var(--brown)]/75 leading-7 text-sm lg:text-base">
+                        Makam Syeh Jamaludin merupakan salah satu destinasi wisata religi
+                        yang menjadi kebanggaan masyarakat Desa Sukosongo. Tempat ini
+                        sering dikunjungi peziarah dari berbagai daerah sebagai bentuk
+                        penghormatan terhadap tokoh penyebar agama Islam sekaligus menjadi
+                        bagian dari warisan sejarah dan budaya desa.
+                    </p>
+
+                    {{-- Info --}}
+                    <div class="grid grid-cols-3 gap-3 mt-6">
+
+                        <div class="group/card rounded-xl bg-[color:var(--cream)] p-3 text-center transition-all duration-300 hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default">
+                            <div class="text-xl mb-1 transition-transform duration-300 group-hover/card:scale-125">🕌</div>
+                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors">
+                                Kategori
+                            </p>
+                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors">
+                                Religi
+                            </p>
+                        </div>
+
+                        <div class="group/card rounded-xl bg-[color:var(--cream)] p-3 text-center transition-all duration-300 hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default">
+                            <div class="text-xl mb-1 transition-transform duration-300 group-hover/card:scale-125">📍</div>
+                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors">
+                                Lokasi
+                            </p>
+                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors">
+                                Sukosongo
+                            </p>
+                        </div>
+
+                        <div class="group/card rounded-xl bg-[color:var(--cream)] p-3 text-center transition-all duration-300 hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default">
+                            <div class="text-xl mb-1 transition-transform duration-300 group-hover/card:scale-125">🌿</div>
+                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors">
+                                Status
+                            </p>
+                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors">
+                                Ikon Desa
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
     {{-- ============ PETA LOKASI ============ --}}
