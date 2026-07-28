@@ -2,17 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PerangkatDesa;
 use App\Models\Umkm;
+use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class UmkmController extends Controller
 {
-    // Menampilkan halaman Dashboard beserta data UMKM
     public function index()
     {
-        $umkms = Umkm::latest()->get();
-        return view('dashboard', compact('umkms'));
+        $umkms = Umkm::latest()->paginate(
+     perPage:5,
+     pageName: 'umkm_page'
+     );
+        $perangkat = PerangkatDesa::latest()->paginate(
+        perPage:5,
+        pageName: 'perangkat_page'
+     ); 
+        $berita = Berita::latest()->get(); // <-- Mengambil semua berita
+   
+        return view('dashboard', compact('umkms', 'perangkat', 'berita')); // <-- Mengirim $berita ke view
     }
 
     // Menampilkan form tambah
@@ -90,4 +100,12 @@ class UmkmController extends Controller
 
         return redirect()->route('dashboard')->with('success', 'Data UMKM berhasil dihapus!');
     }
+
+    // Method BARU buat halaman katalog publik
+   public function halamanumkm()
+{
+    $umkms = Umkm::all(); // Mengambil semua data UMKM dari database
+    return view('umkm', compact('umkms'));
+}
+
 }
