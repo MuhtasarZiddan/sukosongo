@@ -11,6 +11,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/profil-desa', function () {
+    return view('profil-desa');
+});
+
 Route::get('/berita', function () {
     return view('berita');
 })->name('berita.page');

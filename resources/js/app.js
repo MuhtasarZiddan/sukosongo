@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
     },
-    freeMode: {
-        enabled: true,
-        momentum: false,
-    },
+    // freeMode: {
+    //     enabled: true,
+    //     momentum: false,
+    // },
     allowTouchMove: true,
     navigation: {
         nextEl: ".struktur-next",
@@ -45,6 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
         1024: { slidesPerView: 3 },
         1280: { slidesPerView: 4 },
     },
+});
+
+document.querySelectorAll('[data-slider]').forEach(slider => {
+    const slides = slider.querySelectorAll('.bg-slide');
+    let current = 0;
+
+    setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, 3000); // ganti tiap 3 detik
 });
 
 });

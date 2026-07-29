@@ -118,7 +118,7 @@
      {{-- Grid card UMKM --}}
     <section class="bg-[color:var(--cream)] pt-8 pb-14 lg:pb-20">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div id="umkmGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="umkmGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             @forelse ($umkms as $umkm)
                 <x-umkm-card
                     nama_umkm="{{ $umkm->nama_umkm }}"
@@ -298,30 +298,6 @@
         filterUmkm();
         umkmSearch.focus();
     });
-
-
-        // ============ NAVBAR MOBILE ============
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const iconOpen = document.getElementById('iconOpen');
-        const iconClose = document.getElementById('iconClose');
-        let menuOpen = false;
-
-        menuBtn?.addEventListener('click', () => {
-            menuOpen = !menuOpen;
-            mobileMenu.style.maxHeight = menuOpen ? mobileMenu.scrollHeight + 'px' : '0px';
-            iconOpen.classList.toggle('hidden', menuOpen);
-            iconClose.classList.toggle('hidden', !menuOpen);
-        });
-
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuOpen = false;
-                mobileMenu.style.maxHeight = '0px';
-                iconOpen.classList.remove('hidden');
-                iconClose.classList.add('hidden');
-            });
-        });
 
         // ============ REVEAL ON SCROLL ============
         const revealObserver = new IntersectionObserver((entries) => {
