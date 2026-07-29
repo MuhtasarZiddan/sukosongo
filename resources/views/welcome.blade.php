@@ -661,26 +661,27 @@
         </div>
     </section>
 
-{{-- ============ WISATA RELIGI ============ --}}
-    <section id="wisata-section" class="relative overflow-hidden bg-white py-16 lg:py-24">
+    {{-- ============ WISATA RELIGI ============ --}}
+    <section id="wisata-section" class="relative overflow-hidden bg-[color:var(--paper)] py-16 lg:py-24">
 
-        {{-- Motif dekoratif tipis, konsisten dengan section lain --}}
-        <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[color:var(--gold)]/5 blur-3xl pointer-events-none"></div>
+        {{-- Motif dekoratif — pakai gold, konsisten dengan aksen situs --}}
+        <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[color:var(--gold)]/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-[color:var(--forest)]/5 blur-3xl pointer-events-none"></div>
 
         <div class="relative max-w-5xl mx-auto px-5 lg:px-8">
 
-            {{-- Heading --}}
-            <div class="reveal text-center mb-12">
+            {{-- Heading — judul utama, di luar card --}}
+            <div class="reveal text-center mb-10" style="transition-delay: 0ms;">
 
-                <p class="uppercase tracking-[0.25em] text-[color:var(--gold)] text-xs font-semibold mb-3">
+                <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[color:var(--gold)]/10 text-[color:var(--gold)] uppercase tracking-[0.25em] text-xs font-semibold mb-4">
                     Wisata Religi
-                </p>
+                </span>
 
-                <h2 class="font-display text-3xl lg:text-4xl font-bold text-[color:var(--forest)]">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-[color:var(--forest)] leading-tight">
                     Makam Syeh Jamaludin
                 </h2>
 
-                <p class="mt-3 text-[color:var(--brown)]/70 max-w-xl mx-auto leading-7 text-sm lg:text-base">
+                <p class="mt-4 text-[color:var(--brown)]/70 max-w-xl mx-auto leading-7 text-sm lg:text-base">
                     Salah satu destinasi wisata religi yang menjadi ikon Desa Sukosongo
                     serta memiliki nilai sejarah bagi masyarakat sekitar.
                 </p>
@@ -688,9 +689,9 @@
             </div>
 
             {{-- Card --}}
-            <div class="reveal group grid lg:grid-cols-2 overflow-hidden rounded-3xl border border-[color:var(--forest)]/10 shadow-md hover:shadow-2xl transition-shadow duration-500">
+            <div class="reveal group grid lg:grid-cols-2 overflow-hidden rounded-3xl bg-white border border-[color:var(--forest)]/10 shadow-md hover:shadow-2xl transition-shadow duration-500" style="transition-delay: 100ms;">
 
-                {{-- FOTO — klik langsung ke Google Maps --}}
+                {{-- FOTO --}}
                 <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -700,13 +701,12 @@
                     <img
                         src="{{ asset('images/pesarean.jpg') }}"
                         alt="Makam Syeh Jamaludin"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110">
 
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[color:var(--forest)]/80 via-[color:var(--forest)]/10 to-transparent"></div>
 
-                    {{-- Overlay "Buka di Maps" — muncul saat hover --}}
-                    <div class="absolute inset-0 flex items-center justify-center bg-[color:var(--forest)]/0 group-hover:bg-[color:var(--forest)]/40 transition-colors duration-500">
-                        <span class="opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[color:var(--forest)] text-sm font-semibold shadow-lg">
+                    <div class="absolute inset-0 flex items-center justify-center bg-[color:var(--forest)]/0 group-hover:bg-[color:var(--forest)]/50 transition-colors duration-500">
+                        <span class="opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 ease-out inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[color:var(--gold)] text-white text-sm font-semibold shadow-lg">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -716,7 +716,7 @@
                     </div>
 
                     <div class="absolute bottom-4 left-4">
-                        <span class="px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-[color:var(--forest)] text-sm font-semibold">
+                        <span class="px-3 py-1.5 rounded-full bg-[color:var(--paper)]/95 backdrop-blur-sm text-[color:var(--forest)] text-sm font-semibold">
                             Wisata Religi
                         </span>
                     </div>
@@ -725,16 +725,12 @@
                 {{-- INFORMASI --}}
                 <div class="bg-white p-6 lg:p-8 flex flex-col justify-center">
 
-                    <h3 class="font-display text-2xl lg:text-3xl font-bold text-[color:var(--forest)] mb-2">
-                        Makam Syeh Jamaludin
-                    </h3>
-
-                    {{-- Lokasi — juga klik ke Maps --}}
+                    {{-- Lokasi --}}
                     <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="group/pin inline-flex items-start gap-1.5 text-sm text-[color:var(--gold)] font-medium mb-4 w-fit hover:text-[color:var(--forest)] transition-colors">
-                        <svg class="w-4 h-4 mt-0.5 shrink-0 group-hover/pin:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        class="group/pin inline-flex items-start gap-1.5 text-sm text-[color:var(--gold)] font-medium mb-4 w-fit hover:text-[color:var(--forest)] transition-colors duration-300">
+                        <svg class="w-4 h-4 mt-0.5 shrink-0 transition-transform duration-300 group-hover/pin:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
@@ -751,37 +747,32 @@
                         bagian dari warisan sejarah dan budaya desa.
                     </p>
 
-                    {{-- Info --}}
+                    {{-- Info — stagger delay per kartu --}}
                     <div class="grid grid-cols-3 gap-3 mt-6">
 
-                        <div class="group/card rounded-xl bg-[color:var(--cream)] p-3 text-center transition-all duration-300 hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default">
-                            <div class="text-xl mb-1 transition-transform duration-300 group-hover/card:scale-125">🕌</div>
-                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors">
-                                Kategori
-                            </p>
-                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors">
-                                Religi
-                            </p>
+                        <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default" style="transition-delay: 200ms;">
+                            <svg class="w-5 h-5 mx-auto mb-1.5 text-[color:var(--gold)] group-hover/card:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" />
+                            </svg>
+                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors duration-300">Kategori</p>
+                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors duration-300">Religi</p>
                         </div>
 
-                        <div class="group/card rounded-xl bg-[color:var(--cream)] p-3 text-center transition-all duration-300 hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default">
-                            <div class="text-xl mb-1 transition-transform duration-300 group-hover/card:scale-125">📍</div>
-                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors">
-                                Lokasi
-                            </p>
-                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors">
-                                Sukosongo
-                            </p>
+                        <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default" style="transition-delay: 280ms;">
+                            <svg class="w-5 h-5 mx-auto mb-1.5 text-[color:var(--gold)] group-hover/card:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors duration-300">Lokasi</p>
+                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors duration-300">Sukosongo</p>
                         </div>
 
-                        <div class="group/card rounded-xl bg-[color:var(--cream)] p-3 text-center transition-all duration-300 hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default">
-                            <div class="text-xl mb-1 transition-transform duration-300 group-hover/card:scale-125">🌿</div>
-                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors">
-                                Status
-                            </p>
-                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors">
-                                Ikon Desa
-                            </p>
+                        <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default" style="transition-delay: 360ms;">
+                            <svg class="w-5 h-5 mx-auto mb-1.5 text-[color:var(--gold)] group-hover/card:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors duration-300">Status</p>
+                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors duration-300">Ikon Desa</p>
                         </div>
 
                     </div>
