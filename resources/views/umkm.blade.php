@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         :root {
@@ -51,6 +51,11 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        #mobileMenu {
+            transition: max-height .35s ease;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -60,7 +65,8 @@
     <x-navbar active="umkm" />
 
     {{-- ============ HERO / BREADCRUMB ============ --}}
-    <section class="relative pt-24 pb-10 lg:pt-28 lg:pb-12 bg-[color:var(--forest)] overflow-hidden">
+    <section
+        class="relative pt-24 pb-10 lg:pt-28 lg:pb-12 bg-gradient-to-b from-[#14261A] via-[color:var(--forest)] to-[color:var(--forest-light)] overflow-hidden">
         <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
         <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
 
@@ -115,30 +121,25 @@
         </div>
     </section>
 
-     {{-- Grid card UMKM --}}
+    {{-- Grid card UMKM --}}
     <section class="bg-[color:var(--cream)] pt-8 pb-14 lg:pb-20">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div id="umkmGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-            @forelse ($umkms as $umkm)
-                <x-umkm-card
-                    nama_umkm="{{ $umkm->nama_umkm }}"
-                    alamat_usaha="{{ $umkm->alamat_usaha }}"
-                    nama_pemilik="{{ $umkm->nama_pemilik }}"
-                    no_wa="{{ $umkm->no_wa }}"
-                    nama_produk="{{ $umkm->nama_produk }}"
-                    foto="{{ $umkm->foto }}"
-                />
-            @empty
-                <p class="col-span-full text-center text-[color:var(--ink)]/50 py-16">Belum ada data UMKM.</p>
-            @endforelse
-        </div>
-        
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div id="umkmGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                @forelse ($umkms as $umkm)
+                    <x-umkm-card nama_umkm="{{ $umkm->nama_umkm }}" alamat_usaha="{{ $umkm->alamat_usaha }}"
+                        nama_pemilik="{{ $umkm->nama_pemilik }}" no_wa="{{ $umkm->no_wa }}"
+                        nama_produk="{{ $umkm->nama_produk }}" foto="{{ $umkm->foto }}" />
+                @empty
+                    <p class="col-span-full text-center text-[color:var(--ink)]/50 py-16">Belum ada data UMKM.</p>
+                @endforelse
+            </div>
+
             {{-- Pesan kalau hasil pencarian kosong --}}
             <div id="umkmEmpty" class="hidden text-center py-16">
                 <p class="text-[color:var(--ink)]/50 text-sm">Tidak ada toko yang cocok dengan pencarian kamu.</p>
             </div>
-             {{-- ============ PAGINATION ============ --}}
-             <x-pagination id="umkmPagination" on-page-change="goToPage" />
+            {{-- ============ PAGINATION ============ --}}
+            <x-pagination id="umkmPagination" on-page-change="goToPage" />
         </div>
     </section>
 
@@ -146,12 +147,35 @@
     <x-footer />
 
     <script>
+        // ============ NAVBAR MOBILE ============
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const iconOpen = document.getElementById('iconOpen');
+        const iconClose = document.getElementById('iconClose');
+        let menuOpen = false;
+
+        menuBtn?.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.style.maxHeight = menuOpen ? mobileMenu.scrollHeight + 'px' : '0px';
+            iconOpen.classList.toggle('hidden', menuOpen);
+            iconClose.classList.toggle('hidden', !menuOpen);
+        });
+
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.style.maxHeight = '0px';
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            });
+        });
+
         const umkmSearch = document.getElementById('umkmSearch');
-        const umkmReset  = document.getElementById('umkmReset');
-        const umkmCards  = document.querySelectorAll('.umkm-card');
-        const umkmCount  = document.getElementById('umkmCount');
-        const umkmEmpty  = document.getElementById('umkmEmpty');
-        const totalUmkm  = umkmCards.length;
+        const umkmReset = document.getElementById('umkmReset');
+        const umkmCards = document.querySelectorAll('.umkm-card');
+        const umkmCount = document.getElementById('umkmCount');
+        const umkmEmpty = document.getElementById('umkmEmpty');
+        const totalUmkm = umkmCards.length;
 
         const state = {
             page: 1,
@@ -174,23 +198,23 @@
                 Math.ceil(filtered.length / state.perPage)
             );
 
-            if(state.page > totalPages){
+            if (state.page > totalPages) {
                 state.page = totalPages;
             }
 
             umkmCards.forEach(card => card.style.display = "none");
 
-            const start = (state.page-1)*state.perPage;
+            const start = (state.page - 1) * state.perPage;
             const end = start + state.perPage;
 
-            filtered.slice(start,end).forEach(card=>{
+            filtered.slice(start, end).forEach(card => {
                 card.style.display = "";
             });
 
             const visibleCount = filtered.slice(start, end).length;
 
             umkmCount.textContent =
-            `Menampilkan ${visibleCount} dari ${filtered.length} toko`;
+                `Menampilkan ${visibleCount} dari ${filtered.length} toko`;
             umkmEmpty.classList.toggle(
                 'hidden',
                 filtered.length !== 0
@@ -201,45 +225,45 @@
 
         function renderPagination(totalPages) {
 
-    const nav = document.getElementById('umkmPagination');
-    if (!nav) return;
+            const nav = document.getElementById('umkmPagination');
+            if (!nav) return;
 
-    const numbersWrap = nav.querySelector('.pagination-numbers');
-    const prevBtn = nav.querySelector('.pagination-prev');
-    const nextBtn = nav.querySelector('.pagination-next');
+            const numbersWrap = nav.querySelector('.pagination-numbers');
+            const prevBtn = nav.querySelector('.pagination-prev');
+            const nextBtn = nav.querySelector('.pagination-next');
 
-    prevBtn.disabled = state.page <= 1;
-    nextBtn.disabled = state.page >= totalPages;
+            prevBtn.disabled = state.page <= 1;
+            nextBtn.disabled = state.page >= totalPages;
 
-    const pages = [];
-    const addPage = (p) => pages.push(p);
-    const addEllipsis = () => pages.push('...');
+            const pages = [];
+            const addPage = (p) => pages.push(p);
+            const addEllipsis = () => pages.push('...');
 
-    if (totalPages <= 5) {
+            if (totalPages <= 5) {
 
-        for (let p = 1; p <= totalPages; p++) {
-            addPage(p);
-        }
+                for (let p = 1; p <= totalPages; p++) {
+                    addPage(p);
+                }
 
-    } else {
+            } else {
 
-        addPage(1);
+                addPage(1);
 
-        if (state.page > 3) addEllipsis();
+                if (state.page > 3) addEllipsis();
 
-        const startP = Math.max(2, state.page - 1);
-        const endP = Math.min(totalPages - 1, state.page + 1);
+                const startP = Math.max(2, state.page - 1);
+                const endP = Math.min(totalPages - 1, state.page + 1);
 
-        for (let p = startP; p <= endP; p++) {
-            addPage(p);
-        }
+                for (let p = startP; p <= endP; p++) {
+                    addPage(p);
+                }
 
-        if (state.page < totalPages - 2) addEllipsis();
+                if (state.page < totalPages - 2) addEllipsis();
 
-        addPage(totalPages);
-    }
+                addPage(totalPages);
+            }
 
-    numbersWrap.innerHTML = pages.map(page => `
+            numbersWrap.innerHTML = pages.map(page => `
     <button
         onclick="goToPage(${page})"
         class="w-10 h-10 rounded-full border transition-colors
@@ -252,31 +276,31 @@
     </button>
 `).join('');
 
-    prevBtn.onclick = () => goToPage(state.page - 1);
-    nextBtn.onclick = () => goToPage(state.page + 1);
-}
+            prevBtn.onclick = () => goToPage(state.page - 1);
+            nextBtn.onclick = () => goToPage(state.page + 1);
+        }
 
-        function goToPage(page){
+        function goToPage(page) {
 
             const totalPages = Math.max(
                 1,
                 Math.ceil(getFilteredCards().length / state.perPage)
             );
 
-            if(page < 1) page = 1;
-            if(page > totalPages) page = totalPages;
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
 
             state.page = page;
 
             renderUmkm();
 
             document.getElementById('umkmGrid').scrollIntoView({
-                behavior:'smooth',
-                block:'start'
+                behavior: 'smooth',
+                block: 'start'
             });
         }
 
-        function filterUmkm(){
+        function filterUmkm() {
 
             state.keyword = umkmSearch.value
                 .trim()
@@ -286,18 +310,18 @@
 
             umkmReset.classList.toggle(
                 'hidden',
-                state.keyword.length===0
-        );
+                state.keyword.length === 0
+            );
 
-        renderUmkm();
+            renderUmkm();
         }
 
         umkmSearch.addEventListener('input', filterUmkm);
         umkmReset.addEventListener('click', () => {
-        umkmSearch.value = '';
-        filterUmkm();
-        umkmSearch.focus();
-    });
+            umkmSearch.value = '';
+            filterUmkm();
+            umkmSearch.focus();
+        });
 
         // ============ REVEAL ON SCROLL ============
         const revealObserver = new IntersectionObserver((entries) => {
@@ -315,4 +339,5 @@
         renderUmkm();
     </script>
 </body>
+
 </html>

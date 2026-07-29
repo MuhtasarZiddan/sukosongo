@@ -2,7 +2,6 @@
 
 @php
     $hrefBeranda = $active === null ? '#beranda' : '/#beranda';
-    $hrefWisata = $active === null ? '#wisata' : '/#wisata';
 @endphp
 <style>
     .nav-link {
@@ -37,10 +36,33 @@
         color: var(--gold-light);
         background: rgba(255, 255, 255, 0.08);
     }
+
+    #navbar {
+        transition: background-color .3s ease, box-shadow .3s ease;
+    }
+
+    /* State 1: transparan (hanya di hero) */
+    #navbar.state-transparent {
+        background-color: transparent;
+        background-image: none;
+        box-shadow: none;
+    }
+
+    /* State 2: hijau solid (sudah lewat hero) */
+    #navbar.state-solid {
+        background-color: var(--forest);
+        background-image: none;
+    }
+
+    /* State 3: hijau gradasi (menu mobile terbuka) */
+    #navbar.state-menu-open {
+        background-color: var(--forest);
+        background-image: linear-gradient(135deg, var(--forest) 0%, #0f3d2e 100%);
+    }
 </style>
 
 <header id="navbar"
-    class="fixed top-0 inset-x-0 z-50 transition-all duration-300 {{ $transparent ? 'bg-transparent' : 'bg-[color:var(--forest)] shadow-lg' }}">
+    class="fixed top-0 inset-x-0 z-50 transition-all duration-300 {{ $transparent ? 'state-transparent' : 'state-solid shadow-lg' }}">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
         <div class="flex items-center justify-between h-16">
             <a href="/" class="flex items-center gap-3 shrink-0">
@@ -56,9 +78,8 @@
                     class="nav-link {{ $active === 'beranda' ? 'is-active' : '' }}">Beranda</a>
                 <a href="/profil-desa" class="nav-link {{ $active === 'profil-desa' ? 'is-active' : '' }}">Profil
                     Desa</a>
-                <a href="/berita" class="nav-link {{ $active === 'berita' ? 'is-active' : '' }}">Berita</a> <a
-                    href="/umkm" class="nav-link {{ $active === 'umkm' ? 'is-active' : '' }}">UMKM</a>
-                <a href="{{ $hrefWisata }}" class="nav-link {{ $active === 'wisata' ? 'is-active' : '' }}">Wisata</a>
+                <a href="/berita" class="nav-link {{ $active === 'berita' ? 'is-active' : '' }}">Berita</a>
+                <a href="/umkm" class="nav-link {{ $active === 'umkm' ? 'is-active' : '' }}">UMKM</a>
                 <a href="#kontak" class="nav-link">Kontak</a>
             </nav>
 
@@ -75,7 +96,7 @@
         </div>
 
         {{-- Mobile menu --}}
-        <div id="mobileMenu" class="lg:hidden max-h-0">
+        <div id="mobileMenu" class="lg:hidden max-h-0 overflow-hidden">
             <nav class="flex flex-col gap-1 pb-5 text-white/90 text-sm font-medium">
                 <a href="{{ $hrefBeranda }}"
                     class="mobile-link px-2 py-2.5 rounded-md {{ $active === 'beranda' ? 'is-active' : 'hover:bg-white/10' }}">Beranda</a>
@@ -86,8 +107,6 @@
                     class="mobile-link px-2 py-2.5 rounded-md {{ $active === 'berita' ? 'is-active' : 'hover:bg-white/10' }}">Berita</a>
                 <a href="/umkm"
                     class="mobile-link px-2 py-2.5 rounded-md {{ $active === 'umkm' ? 'is-active' : 'hover:bg-white/10' }}">UMKM</a>
-                <a href="{{ $hrefWisata }}"
-                    class="mobile-link px-2 py-2.5 rounded-md {{ $active === 'wisata' ? 'is-active' : '' }}">Wisata</a>
                 <a href="#kontak" class="mobile-link px-2 py-2.5 rounded-md hover:bg-white/10">Kontak</a>
             </nav>
         </div>
@@ -100,13 +119,36 @@
         const mobileMenu = document.getElementById('mobileMenu');
         const iconOpen = document.getElementById('iconOpen');
         const iconClose = document.getElementById('iconClose');
+        const navbar = document.getElementById('navbar');
+
         let menuOpen = false;
+        let pastHero = {{ $transparent ? 'false' : 'true' }};
+
+        function applyNavbarState() {
+            navbar.classList.remove('state-transparent', 'state-solid', 'state-menu-open', 'shadow-lg');
+
+            if (menuOpen) {
+                navbar.classList.add('state-menu-open');
+                return;
+            }
+
+            @if ($transparent)
+                if (pastHero) {
+                    navbar.classList.add('state-solid', 'shadow-lg');
+                } else {
+                    navbar.classList.add('state-transparent');
+                }
+            @else
+                navbar.classList.add('state-solid', 'shadow-lg');
+            @endif
+        }
 
         menuBtn.addEventListener('click', () => {
             menuOpen = !menuOpen;
             mobileMenu.style.maxHeight = menuOpen ? mobileMenu.scrollHeight + 'px' : '0px';
             iconOpen.classList.toggle('hidden', menuOpen);
             iconClose.classList.toggle('hidden', !menuOpen);
+            applyNavbarState();
         });
 
         document.querySelectorAll('#mobileMenu a').forEach(link => {
@@ -115,33 +157,28 @@
                 mobileMenu.style.maxHeight = '0px';
                 iconOpen.classList.remove('hidden');
                 iconClose.classList.add('hidden');
+                applyNavbarState();
             });
         });
 
         @if ($transparent)
-            const navbar = document.getElementById('navbar');
-            const greenSections = ['menu', 'struktur', 'statistik', 'berita', 'wisata', 'lokasi'];
-
-            function updateNavbar() {
-                let isGreen = false;
-                greenSections.forEach(id => {
-                    const section = document.getElementById(id);
-                    if (!section) return;
-                    const rect = section.getBoundingClientRect();
-                    if (rect.top <= 80 && rect.bottom >= 80) isGreen = true;
-                });
-
-                if (isGreen) {
-                    navbar.classList.remove('bg-transparent');
-                    navbar.classList.add('bg-[color:var(--forest)]', 'shadow-lg');
+            function updateScrollState() {
+                const heroSection = document.getElementById('beranda') || document.querySelector('section');
+                if (!heroSection) {
+                    // hero belum ke-render, anggap masih di atas → tetap transparan
+                    pastHero = false;
                 } else {
-                    navbar.classList.remove('bg-[color:var(--forest)]', 'shadow-lg');
-                    navbar.classList.add('bg-transparent');
+                    const heroBottom = heroSection.getBoundingClientRect().bottom;
+                    pastHero = heroBottom <= 80; // 80 = perkiraan tinggi navbar
                 }
+                if (!menuOpen) applyNavbarState();
             }
 
-            window.addEventListener('scroll', updateNavbar);
-            window.addEventListener('load', updateNavbar);
+            window.addEventListener('scroll', updateScrollState);
+            window.addEventListener('load', updateScrollState);
+            document.addEventListener('DOMContentLoaded', updateScrollState);
         @endif
+
+        applyNavbarState();
     })();
 </script>
