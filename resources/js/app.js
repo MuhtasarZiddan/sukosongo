@@ -45,16 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
         1280: { slidesPerView: 4 },
     },
 });
-
-document.querySelectorAll('[data-slider]').forEach(slider => {
-    const slides = slider.querySelectorAll('.bg-slide');
-    let current = 0;
-
-    setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-    }, 3000); // ganti tiap 3 detik
-});
-
 });

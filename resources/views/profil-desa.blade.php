@@ -138,58 +138,145 @@
     </section>
 
     {{-- ============ KONDISI UMUM DESA ============ --}}
-    <section class="bg-[color:var(--cream)] py-20 lg:py-28">
-        <div class="max-w-6xl mx-auto px-5 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-start">
+<section class="bg-[color:var(--cream)] py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
 
-                {{-- Kolom kiri: judul + deskripsi --}}
-                <div class="reveal">
-                    <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Gambaran
-                        Umum</p>
-                    <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)] mb-6">
-                        Kondisi Umum Desa
-                    </h2>
-                    <p class="text-[color:var(--ink)]/70 leading-relaxed">
-                        Desa Sukosongo merupakan salah satu desa agraris di Kabupaten Lamongan
-                        yang mengandalkan sektor pertanian dan perdagangan sebagai penggerak
-                        utama perekonomian warganya.
-                    </p>
-                </div>
+        {{-- Heading --}}
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
 
-                {{-- Kolom kanan: card poin-poin dengan aksen sudut gold --}}
-                <div
-                    class="reveal corner-fold bg-[color:var(--paper)] rounded-2xl p-8 lg:p-10 border border-[color:var(--forest)]/10">
-                    <ul class="space-y-5">
-                        <li class="flex gap-3">
-                            <span class="w-2 h-2 rounded-full bg-[color:var(--forest)] mt-2 shrink-0"></span>
-                            <span class="text-[color:var(--ink)]/80 leading-relaxed">
-                                Desa Sukosongo berada di wilayah bagian tengah Kabupaten Lamongan
-                            </span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="w-2 h-2 rounded-full bg-[color:var(--forest)] mt-2 shrink-0"></span>
-                            <span class="text-[color:var(--ink)]/80 leading-relaxed">
-                                Sebagian besar wilayah Desa Sukosongo merupakan daerah persawahan
-                            </span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="w-2 h-2 rounded-full bg-[color:var(--forest)] mt-2 shrink-0"></span>
-                            <span class="text-[color:var(--ink)]/80 leading-relaxed">
-                                Masyarakat Desa Sukosongo sebagian besar mata pencahariannya adalah petani dan berdagang
-                            </span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="w-2 h-2 rounded-full bg-[color:var(--forest)] mt-2 shrink-0"></span>
-                            <span class="text-[color:var(--ink)]/80 leading-relaxed">
-                                Tingkat pendidikan masyarakat Desa Sukosongo sebagian besar tamatan SMA/Sederajat
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+    {{-- ================= KIRI ================= --}}
+    <div class="reveal">
+
+        <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">
+            Gambaran Umum
+        </p>
+
+        <h2 class="font-display text-3xl lg:text-4xl font-semibold text-[color:var(--forest)] mb-6">
+            Kondisi Umum Desa
+        </h2>
+
+        <p class="text-[color:var(--ink)]/75 leading-8 text-justify">
+            Desa Sukosongo merupakan salah satu desa di Kecamatan
+            Kembangbahu, Kabupaten Lamongan, Provinsi Jawa Timur.
+            Sebagai desa yang memiliki potensi besar pada sektor
+            pertanian dan ekonomi masyarakat, Sukosongo terus
+            mengembangkan berbagai inovasi melalui penguatan UMKM,
+            pemanfaatan sumber daya lokal, serta pembangunan yang
+            berkelanjutan. Semangat gotong royong masyarakat menjadi
+            modal utama dalam mewujudkan desa yang mandiri, produktif,
+            dan berdaya saing.
+        </p>
+
+    </div>
+
+    {{-- ================= KANAN ================= --}}
+    <div class="reveal space-y-5">
+
+        {{-- FOTO ATAS --}}
+        <div class="flip-card flip-up h-20 lg:h-40">
+
+            <div class="flip-inner">
+
+                <img
+                    src="{{ asset('images/profil-desa/kantordesa.jpg') }}"
+                    class="flip-front">
+
+                <img
+                    src="{{ asset('images/profil-desa/hasil1.jpg') }}"
+                    class="flip-back">
 
             </div>
+
         </div>
-    </section>
+
+        {{-- FOTO BAWAH --}}
+        <div class="flip-card flip-down h-20 lg:h-40">
+
+            <div class="flip-inner">
+
+                <img
+                    src="{{ asset('images/profil-desa/padi1.jpg') }}"
+                    class="flip-front">
+
+                <img
+                    src="{{ asset('images/profil-desa/pertanian.jpg') }}"
+                    class="flip-back">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+{{-- ================= DUSUN ================= --}}
+@php
+    $dusun = [
+        ['nama' => 'Dusun Jati',         'gambar' => 'padi1.jpg'],
+        ['nama' => 'Dusun Sukowati',     'gambar' => 'kantordesa.jpg'],
+        ['nama' => 'Dusun Songo',        'gambar' => 'irigasi.png'],
+        ['nama' => 'Dusun Kedungkampil', 'gambar' => 'pekarangan1.jpg'],
+        ['nama' => 'Dusun Karangtengah', 'gambar' => 'pertanian.jpg'],
+        ['nama' => 'Dusun Sukolilo',     'gambar' => 'pesarean.jpg'],
+    ];
+@endphp
+
+<div class="mt-8 mb-14 reveal max-w-6xl mx-auto">
+    <div class="flex items-end justify-between mb-7">
+        <div>
+            <p class="uppercase tracking-[0.18em] text-[color:var(--brown)] text-xs font-semibold mb-2">
+                Wilayah Desa
+            </p>
+
+            <h3 class="font-display text-xl lg:text-2xl font-semibold text-[color:var(--forest)]">
+                Dusun di Desa Sukosongo
+            </h3>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+        @foreach($dusun as $item)
+            <div
+                class="group relative h-30 lg:h-40 overflow-hidden rounded-2xl cursor-pointer border border-[color:var(--forest)]/10 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+                {{-- FOTO --}}
+                <img
+                    src="{{ asset('images/profil-desa/'.$item['gambar']) }}"
+                    alt="{{ $item['nama'] }}"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+
+                {{-- OVERLAY --}}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+
+                {{-- BADGE --}}
+                <div class="absolute top-4 left-4">
+                    <span class="bg-white/20 backdrop-blur-md text-white text-[10px] px-2.5 py-1 rounded-full">
+                        Dusun
+                    </span>
+                </div>
+
+                {{-- NAMA --}}
+                <div class="absolute bottom-0 left-0 right-0 p-5 transition-all duration-500 group-hover:-translate-y-1">
+                    <div class="flex items-center gap-2">
+
+                        {{-- ICON --}}
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-4 h-4 text-[color:var(--gold-light)] shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path d="M10 2a6 6 0 016 6c0 4.2-6 10-6 10S4 12.2 4 8a6 6 0 016-6z"/>
+                        </svg>
+                        <p class="text-white font-semibold text-[13px] lg:text-lg drop-shadow">
+                            {{ $item['nama'] }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
 
     {{-- ============ VISI MISI ============ --}}
     <section class="relative py-20 lg:py-28 overflow-hidden">
@@ -400,6 +487,32 @@
             threshold: 0.15
         });
         revealEls.forEach(el => revealObserver.observe(el));
+
+document.querySelectorAll('[data-slider]').forEach(slider => {
+    const slides = slider.querySelectorAll('.bg-slide');
+    let current = 0;
+
+    setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, 2000); // ganti tiap 2 detik
+});
+
+const topCard = document.querySelector(".flip-up");
+const bottomCard = document.querySelector(".flip-down");
+
+setInterval(() => {
+    topCard.classList.toggle("flip");
+}, 4000);
+
+setTimeout(() => {
+
+    setInterval(() => {
+        bottomCard.classList.toggle("flip");
+    }, 4000);
+
+}, 700);
     </script>
 </body>
 
