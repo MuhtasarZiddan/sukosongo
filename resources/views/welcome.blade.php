@@ -466,7 +466,7 @@
             <div class="reveal text-center mb-12">
                 <p class="text-white/45 text-xs uppercase tracking-[0.2em] mb-2">Total Penduduk</p>
                 <p class="stat-num font-display text-6xl lg:text-7xl font-semibold text-[color:var(--gold-light)] leading-none tabular-nums">
-                    <span data-count="3482">0</span>
+                    <span data-count="3097">0</span>
                 </p>
                 <p class="text-white/40 text-sm mt-3">jiwa, tersebar di 6 dusun</p>
             </div>
@@ -485,9 +485,9 @@
                     @php
                         $ringkasan = [
                             ['label' => 'Jumlah Dusun', 'nilai' => 6],
-                            ['label' => 'Kepala Keluarga', 'nilai' => 978],
-                            ['label' => 'Laki-laki', 'nilai' => 1720],
-                            ['label' => 'Perempuan', 'nilai' => 1762],
+                            ['label' => 'Kepala Keluarga', 'nilai' => 680],
+                            ['label' => 'Laki-laki', 'nilai' => 1615],
+                            ['label' => 'Perempuan', 'nilai' => 1682],
                         ];
                     @endphp
                     @foreach ($ringkasan as $r)
@@ -502,12 +502,12 @@
                 <div class="lg:col-span-7 grid grid-cols-2 gap-x-10 gap-y-5">
                     @php
                         $dusun = [
-                            ['nama' => 'Dusun Krajan', 'jumlah' => 24],
-                            ['nama' => 'Dusun Sukosari', 'jumlah' => 19],
-                            ['nama' => 'Dusun Tegalrejo', 'jumlah' => 16],
-                            ['nama' => 'Dusun Sumberasri', 'jumlah' => 14],
-                            ['nama' => 'Dusun Karangwaru', 'jumlah' => 15],
-                            ['nama' => 'Dusun Wonorejo', 'jumlah' => 12],
+                                    ['nama' => 'Dusun Kedung Kampil', 'jumlah' => 30],
+                                    ['nama' => 'Dusun Songo', 'jumlah' => 24],
+                                    ['nama' => 'Dusun Sukowati', 'jumlah' => 19],
+                                    ['nama' => 'Dusun Sukolilo', 'jumlah' => 15],
+                                    ['nama' => 'Dusun Karang Tengah', 'jumlah' => 16],
+                                    ['nama' => 'Dusun Djati', 'jumlah' => 14],
                         ];
                     @endphp
                     @foreach ($dusun as $i => $d)
@@ -662,36 +662,37 @@
     </section>
 
     {{-- ============ WISATA RELIGI ============ --}}
-    <section id="wisata-section" class="relative overflow-hidden bg-[color:var(--paper)] py-16 lg:py-24">
+    <section id="wisata-section" class="relative overflow-hidden bg-[color:var(--forest)] pt-10 lg:pt-14 pb-10 lg:pb-14">
 
-        {{-- Motif dekoratif — pakai gold, konsisten dengan aksen situs --}}
-        <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[color:var(--gold)]/10 blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-[color:var(--forest)]/5 blur-3xl pointer-events-none"></div>
+        {{-- Motif dekoratif — sekarang melayang pelan, bukan statis --}}
+        <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[color:var(--gold)]/10 blur-3xl pointer-events-none animate-[float1_9s_ease-in-out_infinite]"></div>
+        <div class="absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-white/5 blur-3xl pointer-events-none animate-[float2_11s_ease-in-out_infinite]"></div>
 
         <div class="relative max-w-5xl mx-auto px-5 lg:px-8">
 
-            {{-- Heading — judul utama, di luar card --}}
-            <div class="reveal text-center mb-10" style="transition-delay: 0ms;">
+            <div class="reveal text-center mb-6" style="transition-delay: 0ms;">
 
-                <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[color:var(--gold)]/10 text-[color:var(--gold)] uppercase tracking-[0.25em] text-xs font-semibold mb-4">
+                <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] uppercase tracking-[0.25em] text-xs font-semibold mb-3 animate-[pulseGlow_3s_ease-in-out_infinite]">
                     Wisata Religi
                 </span>
 
-                <h2 class="font-display text-4xl lg:text-5xl font-bold text-[color:var(--forest)] leading-tight">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
                     Makam Syeh Jamaludin
                 </h2>
 
-                <p class="mt-4 text-[color:var(--brown)]/70 max-w-xl mx-auto leading-7 text-sm lg:text-base">
+                <p class="mt-3 text-white/60 max-w-xl mx-auto leading-7 text-sm lg:text-base">
                     Salah satu destinasi wisata religi yang menjadi ikon Desa Sukosongo
                     serta memiliki nilai sejarah bagi masyarakat sekitar.
                 </p>
 
             </div>
 
-            {{-- Card --}}
-            <div class="reveal group grid lg:grid-cols-2 overflow-hidden rounded-3xl bg-white border border-[color:var(--forest)]/10 shadow-md hover:shadow-2xl transition-shadow duration-500" style="transition-delay: 100ms;">
+            {{-- Card — border menyala gold saat hover, bukan cuma shadow polos --}}
+            <div class="reveal group relative grid lg:grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-md hover:shadow-2xl transition-shadow duration-500" style="transition-delay: 100ms;">
 
-                {{-- FOTO --}}
+                {{-- Ring border yang muncul & menyala saat card di-hover --}}
+                <div class="absolute inset-0 rounded-3xl ring-1 ring-[color:var(--forest)]/10 group-hover:ring-2 group-hover:ring-[color:var(--gold)]/60 transition-all duration-500 pointer-events-none z-10"></div>
+
                 <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -722,10 +723,8 @@
                     </div>
                 </a>
 
-                {{-- INFORMASI --}}
                 <div class="bg-white p-6 lg:p-8 flex flex-col justify-center">
 
-                    {{-- Lokasi --}}
                     <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -747,7 +746,6 @@
                         bagian dari warisan sejarah dan budaya desa.
                     </p>
 
-                    {{-- Info — stagger delay per kartu --}}
                     <div class="grid grid-cols-3 gap-3 mt-6">
 
                         <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default" style="transition-delay: 200ms;">
@@ -783,10 +781,25 @@
 
         </div>
 
+        <style>
+            @keyframes float1 {
+                0%, 100% { transform: translate(0, 0); }
+                50% { transform: translate(-20px, 25px); }
+            }
+            @keyframes float2 {
+                0%, 100% { transform: translate(0, 0); }
+                50% { transform: translate(20px, -20px); }
+            }
+            @keyframes pulseGlow {
+                0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--gold) 30%, transparent); }
+                50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--gold) 0%, transparent); }
+            }
+        </style>
+
     </section>
 
     {{-- ============ PETA LOKASI ============ --}}
-    <section id="lokasi" class="bg-[color:var(--paper)] py-20 lg:py-28">
+    <section id="lokasi" class="bg-[color:var(--paper)] pt-4 lg:pt-8 pb-20 lg:pb-28">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
             <div class="reveal max-w-xl mb-10">
                 <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-3">Lokasi</p>
