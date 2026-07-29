@@ -15,6 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @hasanyrole('admin|superadmin')
+                        <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                            {{ __('User') }}
+                        </x-nav-link>
+                    @endhasanyrole
                 </div>
             </div>
 
@@ -70,15 +75,11 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            {{-- <x-responsive-nav-link :href="route('berita')" :active="request()->routeIs('berita')">
-                {{ __('Berita') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('umkm')" :active="request()->routeIs('umkm')">
-                {{ __('UMKM') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('settings')" :active="request()->routeIs('settings')">
-                {{ __('Settings') }}
-            </x-responsive-nav-link> --}}
+            @hasanyrole('admin|superadmin')
+                <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                    {{ __('User') }}
+                </x-responsive-nav-link>
+            @endhasanyrole
         </div>
 
         <!-- Responsive Settings Options -->
