@@ -308,7 +308,7 @@
                 <div class="relative">
                     <h3 class="font-['Fraunces',serif] font-semibold text-lg text-white mb-2">Hasil Pertanian Desa Sukosongo</h3>
                     <p class="text-sm text-white/70 leading-relaxed">
-                        Padi menjadi komoditas utama, dipanen secara berkala dengan hasil yang mencukupi kebutuhan warga.
+                        Padi menjadi komoditas utamaa, dipanen secara berkala dengan hasil yang mencukupi kebutuhan warga.
                     </p>
                 </div>
             </div>
