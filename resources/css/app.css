@@ -141,3 +141,23 @@
 .struktur-next{
     right: -8px;
 }
+
+.potensi-bg-slider{
+    position: relative;
+    overflow: hidden;
+}
+
+.potensi-bg-slider .bg-slide{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1.2s ease, transform 6s ease;
+}
+
+.potensi-bg-slider .bg-slide.active{
+    opacity: 1;
+    transform: scale(1);
+}

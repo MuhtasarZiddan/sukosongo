@@ -13,6 +13,10 @@ Route::get('/', function (BeritaController $beritaController) {
     return view('welcome', compact('beritaTerbaru'));
 });
 
+Route::get('/profil-desa', function () {
+    return view('profil-desa');
+});
+
 Route::get('/berita', [BeritaController::class, 'publicIndex'])->name('berita.page');
 
 Route::get('/berita/{berita}', [BeritaController::class, 'show'])->name('berita.detail');
