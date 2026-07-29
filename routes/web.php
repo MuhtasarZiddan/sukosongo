@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UmkmController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PerangkatDesaController; // <-- Ini tambahan barunya
 use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
@@ -40,5 +41,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Memanggil route khusus login/register
+route::middleware(['auth', 'role:superadmin|admin'])->group(function () {
+    Route::get('/user', [UserController::class, 'index'])->name('users.index');
+    Route::get('/user-create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/user-store', [UserController::class, 'store'])->name('users.store');
+    Route::get('/user-edit/{user}', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/user-update/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/user-delete/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+});
+
 require __DIR__.'/auth.php';
