@@ -16,7 +16,6 @@
                     <li><a href="/profil-desa" class="hover:text-white transition-colors">Profil Desa</a></li>
                     <li><a href="/berita" class="hover:text-white transition-colors">Berita</a></li>
                     <li><a href="/umkm" class="hover:text-white transition-colors">UMKM</a></li>
-                    <li><a href="/wisata" class="hover:text-white transition-colors">Wisata</a></li>
                 </ul>
             </div>
 
