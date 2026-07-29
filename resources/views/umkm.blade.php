@@ -146,20 +146,6 @@
     <x-footer />
 
     <script>
-        // ============ REVEAL ON SCROLL ============
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.15
-        });
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // ============ PENCARIAN ============
         const umkmSearch = document.getElementById('umkmSearch');
         const umkmReset  = document.getElementById('umkmReset');
         const umkmCards  = document.querySelectorAll('.umkm-card');
@@ -329,5 +315,4 @@
         renderUmkm();
     </script>
 </body>
-
 </html>
