@@ -1,120 +1,191 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth bg-[#FAF6EC]">
+<html lang="id" class="scroll-smooth">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profil Desa — Desa Sukosongo</title>
-    <meta name="description" content="Profil Desa Sukosongo: kondisi umum, visi misi, dan potensi desa.">
+    <title>Profil — Desa Sukosongo</title>
+    <meta name="description" content="Katalog UMKM Desa Sukosongo: temukan toko, produk, dan pelaku usaha lokal.">
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        :root {
+            --forest: #1F3D2B;
+            --forest-light: #3B6B4A;
+            --gold: #C99A2E;
+            --gold-light: #E4C46C;
+            --cream: #FAF6EC;
+            --paper: #F3EDDD;
+            --brown: #6B4226;
+            --ink: #23281F;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-display {
+            font-family: 'Fraunces', serif;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #mobileMenu {
+            transition: max-height .35s ease;
+            overflow: hidden;
+        }
+    </style>
 </head>
-<body class="antialiased bg-[#FAF6EC] text-[#23281F] font-['Plus_Jakarta_Sans',sans-serif]">
+
+<body class="antialiased">
 
     {{-- ============ NAVBAR ============ --}}
     <x-navbar active="profil-desa" />
 
     {{-- ============ HERO / BREADCRUMB ============ --}}
-    <section class="relative pt-24 pb-10 lg:pt-28 lg:pb-12 bg-[#1F3D2B] overflow-hidden">
-        <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[#C99A2E]/10 blur-3xl"></div>
+    <section
+        class="relative pt-24 pb-10 lg:pt-28 lg:pb-12 bg-gradient-to-b from-[#14261A] via-[color:var(--forest)] to-[color:var(--forest-light)] overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
         <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
 
         <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
-            <div data-reveal class="opacity-0 translate-y-6 transition-all duration-700 ease-out">
+            <div class="data-reveal">
                 <p class="text-white/50 text-sm mb-3">
                     <a href="/" class="hover:text-white transition-colors">Beranda</a>
                     <span class="mx-2">/</span>
                     <span class="text-white/80">Profil Desa</span>
                 </p>
-                <p class="uppercase tracking-[0.2em] text-[#E4C46C] text-xs font-semibold mb-3">Mengenal lebih dekat Desa Sukosongo</p>
+                <p class="uppercase tracking-[0.2em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Mengenal lebih dekat Desa Sukosongo</p>
                 <h1
-                    class="font-['Fraunces',serif] text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight max-w-2xl">
-                    Profil Desa Sukosongo
+                    class="font-display text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight max-w-2xl">
+                   Profil Desa Sukosongo
                 </h1>
                 <p class="text-white/70 text-sm mt-3 max-w-xl">
-                   Mengenal profil, potensi, dan perkembangan Desa Sukosongo
+                    Mengenal profil, potensi, dan perkembangan Desa Sukosongo
                 </p>
             </div>
         </div>
     </section>
 
     {{-- ============ KONDISI UMUM DESA ============ --}}
-<section class="bg-[#FAF6EC] py-20 lg:py-28">
-    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <section class="bg-[#FAF6EC] py-20 lg:py-28">
+        <div class="max-w-6xl mx-auto px-5 lg:px-8">
 
-        {{-- Heading --}}
-        <div class="grid lg:grid-cols-2 gap-14 items-center">
+            {{-- Heading --}}
+            <div class="grid lg:grid-cols-2 gap-14 items-center">
 
-    {{-- ================= KIRI ================= --}}
-    <div data-reveal class="opacity-0 translate-y-6 transition-all duration-700 ease-out">
+        {{-- ================= KIRI ================= --}}
+        <div data-reveal class="opacity-0 translate-y-6 transition-all duration-700 ease-out">
 
-        <p class="uppercase tracking-[0.2em] text-[#6B4226] text-xs font-semibold mb-3">
-            Gambaran Umum
-        </p>
+            <p class="uppercase tracking-[0.2em] text-[#6B4226] text-xs font-semibold mb-3">
+                Gambaran Umum
+            </p>
 
-        <h2 class="font-['Fraunces',serif] text-3xl lg:text-4xl font-semibold text-[#1F3D2B] mb-6">
-            Kondisi Umum Desa
-        </h2>
+            <h2 class="font-['Fraunces',serif] text-3xl lg:text-4xl font-semibold text-[#1F3D2B] mb-6">
+                Kondisi Umum Desa
+            </h2>
 
-        <p class="text-[#23281F]/75 leading-8 text-justify">
-            Desa Sukosongo merupakan salah satu desa di Kecamatan
-            Kembangbahu, Kabupaten Lamongan, Provinsi Jawa Timur.
-            Sebagai desa yang memiliki potensi besar pada sektor
-            pertanian dan ekonomi masyarakat, Sukosongo terus
-            mengembangkan berbagai inovasi melalui penguatan UMKM,
-            pemanfaatan sumber daya lokal, serta pembangunan yang
-            berkelanjutan. Semangat gotong royong masyarakat menjadi
-            modal utama dalam mewujudkan desa yang mandiri, produktif,
-            dan berdaya saing.
-        </p>
-
-    </div>
-
-    {{-- ================= KANAN ================= --}}
-    <div data-reveal class="opacity-0 translate-y-6 transition-all duration-700 ease-out space-y-5">
-
-        {{-- FOTO ATAS --}}
-        <div class="flip-card flip-up h-20 lg:h-40">
-
-            <div class="flip-inner">
-
-                <img
-                    src="{{ asset('images/profil-desa/kantordesa.jpg') }}"
-                    class="flip-front">
-
-                <img
-                    src="{{ asset('images/profil-desa/hasil1.jpg') }}"
-                    class="flip-back">
-
-            </div>
+            <p class="text-[#23281F]/75 leading-8 text-justify">
+                Desa Sukosongo merupakan salah satu desa di Kecamatan
+                Kembangbahu, Kabupaten Lamongan, Provinsi Jawa Timur.
+                Sebagai desa yang memiliki potensi besar pada sektor
+                pertanian dan ekonomi masyarakat, Sukosongo terus
+                mengembangkan berbagai inovasi melalui penguatan UMKM,
+                pemanfaatan sumber daya lokal, serta pembangunan yang
+                berkelanjutan. Semangat gotong royong masyarakat menjadi
+                modal utama dalam mewujudkan desa yang mandiri, produktif,
+                dan berdaya saing.
+            </p>
 
         </div>
 
-        {{-- FOTO BAWAH --}}
-        <div class="flip-card flip-down h-20 lg:h-40">
+       {{-- ================= KANAN ================= --}}
+<div
+    data-reveal
+    class="opacity-0 translate-y-6 transition-all duration-700 ease-out space-y-5">
 
-            <div class="flip-inner">
+        <div class="group h-20 lg:h-40 [perspective:1200px]">
 
-                <img
-                    src="{{ asset('images/profil-desa/padi1.jpg') }}"
-                    class="flip-front">
+    <div
+        id="flipTop"
+        class="relative h-full w-full transition-transform duration-1000
+               [transform-style:preserve-3d]">
 
-                <img
-                    src="{{ asset('images/profil-desa/pertanian.jpg') }}"
-                    class="flip-back">
+        {{-- Depan --}}
+        <div class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]">
+            <img
+                src="{{ asset('images/profil-desa/kantordesa.jpg') }}"
+                class="w-full h-full object-cover">
+        </div>
 
-            </div>
+        {{-- Belakang --}}
+        <div
+            class="absolute inset-0 rounded-2xl overflow-hidden
+                   [transform:rotateX(180deg)]
+                   [backface-visibility:hidden]">
 
+            <img
+                src="{{ asset('images/profil-desa/hasil1.jpg') }}"
+                class="w-full h-full object-cover">
         </div>
 
     </div>
 
 </div>
-</section>
 
+    {{-- FOTO BAWAH --}}
+    <div class="group h-20 lg:h-40 [perspective:1200px]">
+
+    <div
+        id="flipBottom"
+        class="relative h-full w-full transition-transform duration-1000
+               [transform-style:preserve-3d]">
+
+        {{-- Depan --}}
+        <div class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]">
+
+            <img
+                src="{{ asset('images/profil-desa/padi1.jpg') }}"
+                class="w-full h-full object-cover">
+
+        </div>
+
+        {{-- Belakang --}}
+        <div
+            class="absolute inset-0 rounded-2xl overflow-hidden
+                   [transform:rotateX(180deg)]
+                   [backface-visibility:hidden]">
+
+            <img
+                src="{{ asset('images/profil-desa/pertanian.jpg') }}"
+                class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+</section>
 {{-- ================= DUSUN ================= --}}
 @php
     $dusun = [
@@ -181,6 +252,7 @@
         @endforeach
     </div>
 </div>
+
 
    {{-- ============ VISI MISI ============ --}}
    <section class="relative py-20 lg:py-28 overflow-hidden">
@@ -369,20 +441,18 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
     }, 2000); // ganti tiap 2 detik
 });
 
-const topCard = document.querySelector(".flip-up");
-const bottomCard = document.querySelector(".flip-down");
+const topCard = document.getElementById("flipTop");
+const bottomCard = document.getElementById("flipBottom");
 
 setInterval(() => {
-    topCard.classList.toggle("flip");
-}, 4000);
+    topCard.classList.toggle("flip-active");
+}, 3500);
 
 setTimeout(() => {
-
     setInterval(() => {
-        bottomCard.classList.toggle("flip");
-    }, 4000);
-
-}, 700);
+        bottomCard.classList.toggle("flip-active");
+    }, 3500);
+}, 800);
     </script>
 </body>
 </html>

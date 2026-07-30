@@ -464,79 +464,79 @@
                 <div class="absolute -left-10 -bottom-10 w-48 h-48 rounded-full bg-white/5 blur-2xl"></div>
 
                 <div class="relative flex flex-col sm:flex-row items-center gap-5 p-4 sm:p-5">
-                    <div
-                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-white/10 border border-white/15 flex items-center justify-center">
-                        {{-- Ganti src ini dengan foto asli Kades kalau sudah tersedia --}}
-                        <img src="{{ asset('images/kades.jpg') }}" alt="Kepala Desa Sukosongo"
+                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-white/10 border border-white/15 flex items-center justify-center">
+                        <img src="{{ $kades && $kades->foto ? asset('storage/'.$kades->foto) : asset('images/kades.jpg') }}"
+                            alt="Kepala Desa Sukosongo"
                             class="w-full h-full object-cover"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <span
-                            class="hidden w-full h-full items-center justify-center font-display text-lg text-white/40">
+                        <span class="hidden w-full h-full items-center justify-center font-display text-lg text-white/40">
                             Foto
                         </span>
                     </div>
-
-                    <div class="text-center sm:text-left">
-                        <span
-                            class="inline-block px-2.5 py-0.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] text-[10px] font-semibold uppercase tracking-wide mb-1.5">
-                            Kepala Desa Sukosongo
+                    <<div class="text-center sm:text-left">
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] text-[10px] font-semibold uppercase tracking-wide mb-1.5">
+                            {{ $kades->jabatan ?? 'Kepala Desa Sukosongo' }}
                         </span>
                         <p class="font-display text-lg sm:text-xl font-semibold text-white leading-tight">
-                            Nama Kepala Desa
+                            {{ $kades->nama ?? 'Nama Kepala Desa' }}
                         </p>
                         <p class="text-xs text-white/50 mt-1">
-                            Masa Jabatan 2026 &ndash; 2032
+                            @if($kades && $kades->tanggal_menjabat)
+                                Masa Jabatan {{ \Carbon\Carbon::parse($kades->tanggal_menjabat)->format('Y') }}
+                                &ndash;
+                                {{ $kades->tanggal_akhir_menjabat ? \Carbon\Carbon::parse($kades->tanggal_akhir_menjabat)->format('Y') : 'Sekarang' }}
+                            @else
+                                Masa Jabatan 2026 &ndash; 2032
+                            @endif
                         </p>
                         <p class="text-xs text-white/60 mt-1.5 max-w-md leading-relaxed">
                             Data akan diperbarui setelah dokumen resmi diterima dari perangkat desa.
                         </p>
                     </div>
-                </div>
+                                    </div>
             </div>
 
             {{-- Swiper perangkat desa --}}
             <div class="reveal pt-1">
                 <div class="swiper strukturSwiper">
                     <div class="swiper-wrapper">
-                        @php
-                            $perangkat = [
-                                ['jabatan' => 'Sekretaris Desa', 'periode' => '2023 – 2029'],
-                                ['jabatan' => 'Kaur Keuangan', 'periode' => '2023 – 2029'],
-                                ['jabatan' => 'Kaur Perencanaan', 'periode' => '2023 – 2029'],
-                                ['jabatan' => 'Kasi Pemerintahan', 'periode' => '2023 – 2029'],
-                                ['jabatan' => 'Kasi Kesejahteraan', 'periode' => '2023 – 2029'],
-                                ['jabatan' => 'Kadus I', 'periode' => '2023 – 2029'],
-                            ];
-                        @endphp
-                        @foreach ($perangkat as $p)
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-white rounded-xl overflow-hidden border border-[color:var(--forest)]/10 h-full flex flex-col">
-                                    <div class="relative aspect-square bg-[color:var(--forest)]/5 overflow-hidden">
-                                        <img src="{{ asset('images/perangkat/default.jpg') }}"
-                                            alt="{{ $p['jabatan'] }}" class="w-full h-full object-cover"
-                                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                        <span
-                                            class="hidden absolute inset-0 items-center justify-center font-display text-sm text-[color:var(--forest)]/30">
-                                            Foto
-                                        </span>
-                                    </div>
-                                    <div class="p-2.5 flex-1 flex flex-col">
-                                        <span
-                                            class="inline-block w-fit px-2 py-0.5 rounded-full bg-[color:var(--forest)]/8 text-[color:var(--forest)] text-[9px] font-semibold uppercase tracking-wide mb-1">
-                                            {{ $p['jabatan'] }}
-                                        </span>
-                                        <p
-                                            class="font-display text-xs font-semibold text-[color:var(--forest)] leading-snug">
-                                            Nama Perangkat
-                                        </p>
-                                        <p class="text-[10px] text-[color:var(--ink)]/50 mt-0.5">
-                                            Masa Jabatan {{ $p['periode'] }}
-                                        </p>
-                                    </div>
+                       @forelse ($perangkat as $p)
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden border border-[color:var(--forest)]/10 h-full flex flex-col">
+                                <div class="relative aspect-square bg-[color:var(--forest)]/5 overflow-hidden">
+                                    <img src="{{ $p->foto ? asset('storage/'.$p->foto) : asset('images/perangkat/default.jpg') }}"
+                                        alt="{{ $p->jabatan }}" class="w-full h-full object-cover"
+                                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <span class="hidden absolute inset-0 items-center justify-center font-display text-sm text-[color:var(--forest)]/30">
+                                        Foto
+                                    </span>
+                                </div>
+                                <div class="p-2.5 flex-1 flex flex-col">
+                                    <span class="inline-block w-fit px-2 py-0.5 rounded-full bg-[color:var(--forest)]/8 text-[color:var(--forest)] text-[9px] font-semibold uppercase tracking-wide mb-1">
+                                        {{ $p->jabatan }}
+                                    </span>
+                                    <p class="font-display text-xs font-semibold text-[color:var(--forest)] leading-snug">
+                                        {{ $p->nama }}
+                                    </p>
+                                    <p class="text-[10px] text-[color:var(--ink)]/50 mt-0.5">
+                                        @if($p->tanggal_menjabat)
+                                            Masa Jabatan {{ \Carbon\Carbon::parse($p->tanggal_menjabat)->format('Y') }}
+                                            &ndash;
+                                            {{ $p->tanggal_akhir_menjabat ? \Carbon\Carbon::parse($p->tanggal_akhir_menjabat)->format('Y') : 'Sekarang' }}
+                                        @else
+                                            Belum diatur
+                                        @endif
+                                    </p>
                                 </div>
                             </div>
-                        @endforeach
+                        </div>
+                    @empty
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-xl border border-[color:var(--forest)]/10 h-full flex items-center justify-center p-6">
+                                <p class="text-sm text-[color:var(--ink)]/40 text-center">Belum ada data perangkat desa.</p>
+                            </div>
+                        </div>
+                    @endforelse
                     </div>
                 </div>
 

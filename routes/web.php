@@ -8,10 +8,14 @@ use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 
 // Route halaman utama (welcome)
-// SESUDAH
-Route::get('/', function (BeritaController $beritaController) {
+Route::get('/', function (BeritaController $beritaController, PerangkatDesaController $perangkatController) {
     $beritaTerbaru = $beritaController->terbaru();
-    return view('welcome', compact('beritaTerbaru'));
+    $strukturData = $perangkatController->dataStruktur();
+
+    return view('welcome', array_merge(
+        compact('beritaTerbaru'),
+        $strukturData
+    ));
 });
 
 Route::get('/profil-desa', function () {

@@ -77,4 +77,18 @@ class PerangkatDesaController extends Controller
         // Arahkan kembali ke dashboard
         return redirect()->route('dashboard')->with('success', 'Data Perangkat Desa berhasil dihapus!');
     }
+
+    public function dataStruktur()
+    {
+        $kades = PerangkatDesa::where('jabatan', 'like', '%Kepala Desa%')
+            ->orWhere('jabatan', 'like', '%kades%')
+            ->first();
+
+        $perangkat = PerangkatDesa::where('jabatan', 'not like', '%Kepala Desa%')
+            ->where('jabatan', 'not like', '%kades%')
+            ->orderBy('nama')
+            ->get();
+
+        return compact('kades', 'perangkat');
+    }
 }
