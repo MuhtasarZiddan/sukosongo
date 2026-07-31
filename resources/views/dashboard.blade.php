@@ -16,7 +16,7 @@
             @endif
 
             <!-- ================= BAGIAN 1: TABEL UMKM ================= -->
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+            <div class="bg-white overflow-x-auto pb-4 shadow-sm sm:rounded-lg p-6">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-bold">Daftar UMKM Desa Sukosongo</h3>
                     <a href="{{ route('umkm.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -65,7 +65,7 @@
             </div>
 
             <!-- ================= BAGIAN 2: TABEL PERANGKAT DESA ================= -->
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+            <div class="bg-white overflow-x-auto pb-4 shadow-sm sm:rounded-lg p-6">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-bold">Perangkat Desa</h3>
                     <a href="{{ route('perangkat.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -112,7 +112,7 @@
                     </div>
             </div>
            <!-- ================= BAGIAN 3: TABEL BERITA ================= -->
-           <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+           <div class="bg-white overflow-x-auto pb-4 shadow-sm sm:rounded-lg p-6">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-bold">Manajemen Berita Desa</h3>
                     <a href="{{ route('berita.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
