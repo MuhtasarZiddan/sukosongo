@@ -436,12 +436,9 @@
                         </div>
                     </div>
                 </a>
-
-            </div><!-- PENUTUP: grid menu (sebelumnya hilang) -->
-
-        </div><!-- PENUTUP: div relative z-10 max-w-7xl (sebelumnya hilang) -->
-
-    </section><!-- PENUTUP: section MENU / ICON NAVIGASI (sebelumnya hilang) -->
+            </div>
+        </div>
+    </section>
 
 
 
@@ -489,50 +486,52 @@
                                 Masa Jabatan 2026 &ndash; 2032
                             @endif
                         </p>
-                        <p class="text-xs text-white/60 mt-1.5 max-w-md leading-relaxed">
+                        {{-- <p class="text-xs text-white/60 mt-1.5 max-w-md leading-relaxed">
                             Data akan diperbarui setelah dokumen resmi diterima dari perangkat desa.
-                        </p>
+                        </p> --}}
                     </div>
-                                    </div>
+                 </div>
             </div>
 
             {{-- Swiper perangkat desa --}}
             <div class="reveal pt-1">
                 <div class="swiper strukturSwiper">
                     <div class="swiper-wrapper">
-                       @forelse ($perangkat as $p)
+                    @forelse ($perangkat as $p)
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-xl overflow-hidden border border-[color:var(--forest)]/10 h-full flex flex-col">
+                            <div class="group relative bg-white rounded-2xl overflow-hidden border border-[color:var(--forest)]/10 h-full flex flex-col shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+
+                                {{-- Foto dengan overlay gradient --}}
                                 <div class="relative aspect-square bg-[color:var(--forest)]/5 overflow-hidden">
                                     <img src="{{ $p->foto ? asset('storage/'.$p->foto) : asset('images/perangkat/default.jpg') }}"
-                                        alt="{{ $p->jabatan }}" class="w-full h-full object-cover"
+                                        alt="{{ $p->jabatan }}"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                     <span class="hidden absolute inset-0 items-center justify-center font-display text-sm text-[color:var(--forest)]/30">
                                         Foto
                                     </span>
+
+                                    {{-- Gradient overlay dari bawah, biar nama nempel elegan di atas foto --}}
+                                    <div class="absolute inset-0 bg-gradient-to-t from-[color:var(--forest)] via-[color:var(--forest)]/10 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300"></div>
                                 </div>
-                                <div class="p-2.5 flex-1 flex flex-col">
-                                    <span class="inline-block w-fit px-2 py-0.5 rounded-full bg-[color:var(--forest)]/8 text-[color:var(--forest)] text-[9px] font-semibold uppercase tracking-wide mb-1">
-                                        {{ $p->jabatan }}
-                                    </span>
-                                    <p class="font-display text-xs font-semibold text-[color:var(--forest)] leading-snug">
+
+                                {{-- Info nama & jabatan --}}
+                                <div class="relative p-3 flex-1 flex flex-col justify-center text-center">
+                                    {{-- Garis aksen gold kecil di atas jabatan --}}
+                                    <div class="w-8 h-0.5 bg-[color:var(--gold)] mx-auto mb-2 rounded-full"></div>
+
+                                    <p class="font-display text-sm font-semibold text-[color:var(--forest)] leading-snug mb-1">
                                         {{ $p->nama }}
                                     </p>
-                                    <p class="text-[10px] text-[color:var(--ink)]/50 mt-0.5">
-                                        @if($p->tanggal_menjabat)
-                                            Masa Jabatan {{ \Carbon\Carbon::parse($p->tanggal_menjabat)->format('Y') }}
-                                            &ndash;
-                                            {{ $p->tanggal_akhir_menjabat ? \Carbon\Carbon::parse($p->tanggal_akhir_menjabat)->format('Y') : 'Sekarang' }}
-                                        @else
-                                            Belum diatur
-                                        @endif
-                                    </p>
+                                    <span class="inline-block w-fit mx-auto px-2.5 py-0.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--brown)] text-[10px] font-semibold uppercase tracking-wide">
+                                        {{ $p->jabatan }}
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     @empty
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-xl border border-[color:var(--forest)]/10 h-full flex items-center justify-center p-6">
+                            <div class="bg-white rounded-2xl border border-[color:var(--forest)]/10 h-full flex items-center justify-center p-6">
                                 <p class="text-sm text-[color:var(--ink)]/40 text-center">Belum ada data perangkat desa.</p>
                             </div>
                         </div>
@@ -558,7 +557,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -928,7 +926,7 @@
                             Kontak
                         </p>
                         <p class="text-sm text-[color:var(--ink)]/70 leading-relaxed">
-                            kantordesasukosongo@email.com
+                            Sukosongo2004@gmail.com
                         </p>
                     </div>
 

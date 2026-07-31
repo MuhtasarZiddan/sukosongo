@@ -22,10 +22,10 @@
             <div>
                 <p class="font-semibold text-sm mb-4 uppercase tracking-wide text-white/80">Kontak</p>
                 <ul class="space-y-2.5 text-sm text-white/60">
-                    <li><a href="mailto:desasukosongo@gmail.com"
-                            class="hover:text-white transition-colors">desasukosongo@gmail.com</a></li>
-                    <li><a href="https://wa.me/6281234567890" target="_blank"
-                            class="hover:text-white transition-colors">+62 812-3456-7890</a></li>
+                    <li><a href="mailto:Sukosongo2004@gmail.com"
+                            class="hover:text-white transition-colors">Sukosongo2004@gmail.com</a></li>
+                    <li><a href="https://wa.me/6283172933639" target="_blank"
+                            class="hover:text-white transition-colors">+62 831-7293-3639 (Sekdes)</a></li>
                 </ul>
 
                 <div class="flex items-center gap-3 mt-5">
@@ -50,7 +50,7 @@
 
             <div>
                 <p class="font-semibold text-sm mb-4 uppercase tracking-wide text-white/80">Alamat</p>
-                <p class="text-sm text-white/60 leading-relaxed">Kantor Desa Sukosongo,<br>R8VH+VHX, Sukowati,
+                <p class="text-sm text-white/60 leading-relaxed">Kantor Desa Sukosongo,<br>R8VH+VHX, Karang Tengah,
                     Sukosongo, Kec. Kembangbahu, Kabupaten Lamongan</p>
             </div>
         </div>

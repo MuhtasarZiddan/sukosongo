@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\PerangkatDesaController; // <-- Ini tambahan barunya
+use App\Http\Controllers\PerangkatDesaController; 
 use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 
