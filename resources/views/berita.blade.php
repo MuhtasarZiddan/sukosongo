@@ -312,7 +312,11 @@
                     ${buatRingkasan(b.isi)}
                 </p>
                 <div class="mt-3 flex items-center text-xs text-[color:var(--forest)] font-semibold group-hover:text-[color:var(--gold)]">
-                    Baca Selengkapnya →
+                    Baca Selengkapnya
+                    <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
                 </div>
             </div>
         </a>

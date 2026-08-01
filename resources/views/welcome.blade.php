@@ -254,7 +254,8 @@
             <!-- Heading -->
             <div class="reveal text-center max-w-3xl mx-auto mb-10">
 
-                <span class="inline-flex items-center px-5 py-2 rounded-full bg-green-100 text-green-700 font-semibold text-sm">
+                <span
+                    class="inline-flex items-center px-5 py-2 rounded-full bg-green-100 text-green-700 font-semibold text-sm">
                     🌿 Jelajahi Desa Sukosongo
                 </span>
 
@@ -287,9 +288,10 @@
                             class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4
                                 bg-[linear-gradient(135deg,var(--forest-light),var(--forest))] text-white
                                 group-hover:bg-[color:var(--paper)] group-hover:bg-none group-hover:text-[color:var(--forest)]
-                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"> 
+                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
 
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="1.8">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
@@ -304,10 +306,13 @@
                             Sejarah, visi misi, struktur pemerintahan, serta galeri Desa Sukosongo.
                         </p>
 
-                        <div class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
+                        <div
+                            class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
                             <span>Lihat Selengkapnya</span>
-                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
                             </svg>
                         </div>
 
@@ -329,10 +334,12 @@
                             class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4
                                 bg-[linear-gradient(135deg,var(--forest-light),var(--forest))] text-white
                                 group-hover:bg-[color:var(--paper)] group-hover:bg-none group-hover:text-[color:var(--forest)]
-                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"> 
+                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 5H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19 5H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 9h10M7 13h6M7 17h4" />
                             </svg>
 
@@ -346,10 +353,13 @@
                             Ikuti informasi terbaru mengenai kegiatan dan perkembangan Desa Sukosongo.
                         </p>
 
-                        <div class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
+                        <div
+                            class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
                             <span>Lihat Selengkapnya</span>
-                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
                             </svg>
                         </div>
 
@@ -371,10 +381,12 @@
                             class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4
                                 bg-[linear-gradient(135deg,var(--forest-light),var(--forest))] text-white
                                 group-hover:bg-[color:var(--paper)] group-hover:bg-none group-hover:text-[color:var(--forest)]
-                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"> 
+                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
 
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 7l1.5-3h15L21 7M3 7h18M5 7v11a1 1 0 001 1h12a1 1 0 001-1V7M9 11a3 3 0 006 0" />
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 7l1.5-3h15L21 7M3 7h18M5 7v11a1 1 0 001 1h12a1 1 0 001-1V7M9 11a3 3 0 006 0" />
                             </svg>
 
                         </div>
@@ -387,10 +399,13 @@
                             Produk unggulan, usaha rumahan, dan potensi ekonomi masyarakat Desa Sukosongo.
                         </p>
 
-                        <div class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
+                        <div
+                            class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
                             <span>Lihat Selengkapnya</span>
-                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
                             </svg>
                         </div>
 
@@ -412,10 +427,12 @@
                             class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4
                                 bg-[linear-gradient(135deg,var(--forest-light),var(--forest))] text-white
                                 group-hover:bg-[color:var(--paper)] group-hover:bg-none group-hover:text-[color:var(--forest)]
-                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"> 
+                                group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
 
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l2 2-2 2-2-2 2-2zm0 4v16m-5-8h10M8 22h8M7 10l5-2 5 2" />
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 2l2 2-2 2-2-2 2-2zm0 4v16m-5-8h10M8 22h8M7 10l5-2 5 2" />
                             </svg>
 
                         </div>
@@ -428,10 +445,13 @@
                             Jelajahi destinasi religi dan potensi wisata yang dimiliki Desa Sukosongo.
                         </p>
 
-                        <div class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
+                        <div
+                            class="mt-4 flex items-center font-semibold text-[color:var(--gold)] group-hover:text-white transition">
                             <span>Lihat Selengkapnya</span>
-                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
@@ -453,7 +473,8 @@
             <div class="reveal max-w-xl mb-6">
                 <p class="uppercase tracking-[0.2em] text-[color:var(--brown)] text-xs font-semibold mb-2">Pemerintahan
                     Desa</p>
-                <h2 class="font-display text-2xl lg:text-3xl font-semibold text-[color:var(--forest)]">Kepala Desa &amp;
+                <h2 class="font-display text-2xl lg:text-3xl font-semibold text-[color:var(--forest)]">Kepala Desa
+                    &amp;
                     Perangkat</h2>
             </div>
 
@@ -464,24 +485,26 @@
                 <div class="absolute -left-10 -bottom-10 w-48 h-48 rounded-full bg-white/5 blur-2xl"></div>
 
                 <div class="relative flex flex-col sm:flex-row items-center gap-5 p-4 sm:p-5">
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-white/10 border border-white/15 flex items-center justify-center">
-                        <img src="{{ $kades && $kades->foto ? asset('storage/'.$kades->foto) : asset('images/kades.jpg') }}"
-                            alt="Kepala Desa Sukosongo"
-                            class="w-full h-full object-cover"
+                    <div
+                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-white/10 border border-white/15 flex items-center justify-center">
+                        <img src="{{ $kades && $kades->foto ? asset('storage/' . $kades->foto) : asset('images/kades.jpg') }}"
+                            alt="Kepala Desa Sukosongo" class="w-full h-full object-cover"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <span class="hidden w-full h-full items-center justify-center font-display text-lg text-white/40">
+                        <span
+                            class="hidden w-full h-full items-center justify-center font-display text-lg text-white/40">
                             Foto
                         </span>
                     </div>
                     <<div class="text-center sm:text-left">
-                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] text-[10px] font-semibold uppercase tracking-wide mb-1.5">
+                        <span
+                            class="inline-block px-2.5 py-0.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] text-[10px] font-semibold uppercase tracking-wide mb-1.5">
                             {{ $kades->jabatan ?? 'Kepala Desa Sukosongo' }}
                         </span>
                         <p class="font-display text-lg sm:text-xl font-semibold text-white leading-tight">
                             {{ $kades->nama ?? 'Nama Kepala Desa' }}
                         </p>
                         <p class="text-xs text-white/50 mt-1">
-                            @if($kades && $kades->tanggal_menjabat)
+                            @if ($kades && $kades->tanggal_menjabat)
                                 Masa Jabatan {{ \Carbon\Carbon::parse($kades->tanggal_menjabat)->format('Y') }}
                                 &ndash;
                                 {{ $kades->tanggal_akhir_menjabat ? \Carbon\Carbon::parse($kades->tanggal_akhir_menjabat)->format('Y') : 'Sekarang' }}
@@ -492,34 +515,38 @@
                         <p class="text-xs text-white/60 mt-1.5 max-w-md leading-relaxed">
                             Data akan diperbarui setelah dokumen resmi diterima dari perangkat desa.
                         </p>
-                    </div>
-                                    </div>
+                </div>
             </div>
+        </div>
 
-            {{-- Swiper perangkat desa --}}
-            <div class="reveal pt-1">
-                <div class="swiper strukturSwiper">
-                    <div class="swiper-wrapper">
-                       @forelse ($perangkat as $p)
+        {{-- Swiper perangkat desa --}}
+        <div class="reveal pt-1">
+            <div class="swiper strukturSwiper">
+                <div class="swiper-wrapper">
+                    @forelse ($perangkat as $p)
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-xl overflow-hidden border border-[color:var(--forest)]/10 h-full flex flex-col">
+                            <div
+                                class="bg-white rounded-xl overflow-hidden border border-[color:var(--forest)]/10 h-full flex flex-col">
                                 <div class="relative aspect-square bg-[color:var(--forest)]/5 overflow-hidden">
-                                    <img src="{{ $p->foto ? asset('storage/'.$p->foto) : asset('images/perangkat/default.jpg') }}"
+                                    <img src="{{ $p->foto ? asset('storage/' . $p->foto) : asset('images/perangkat/default.jpg') }}"
                                         alt="{{ $p->jabatan }}" class="w-full h-full object-cover"
                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                    <span class="hidden absolute inset-0 items-center justify-center font-display text-sm text-[color:var(--forest)]/30">
+                                    <span
+                                        class="hidden absolute inset-0 items-center justify-center font-display text-sm text-[color:var(--forest)]/30">
                                         Foto
                                     </span>
                                 </div>
                                 <div class="p-2.5 flex-1 flex flex-col">
-                                    <span class="inline-block w-fit px-2 py-0.5 rounded-full bg-[color:var(--forest)]/8 text-[color:var(--forest)] text-[9px] font-semibold uppercase tracking-wide mb-1">
+                                    <span
+                                        class="inline-block w-fit px-2 py-0.5 rounded-full bg-[color:var(--forest)]/8 text-[color:var(--forest)] text-[9px] font-semibold uppercase tracking-wide mb-1">
                                         {{ $p->jabatan }}
                                     </span>
-                                    <p class="font-display text-xs font-semibold text-[color:var(--forest)] leading-snug">
+                                    <p
+                                        class="font-display text-xs font-semibold text-[color:var(--forest)] leading-snug">
                                         {{ $p->nama }}
                                     </p>
                                     <p class="text-[10px] text-[color:var(--ink)]/50 mt-0.5">
-                                        @if($p->tanggal_menjabat)
+                                        @if ($p->tanggal_menjabat)
                                             Masa Jabatan {{ \Carbon\Carbon::parse($p->tanggal_menjabat)->format('Y') }}
                                             &ndash;
                                             {{ $p->tanggal_akhir_menjabat ? \Carbon\Carbon::parse($p->tanggal_akhir_menjabat)->format('Y') : 'Sekarang' }}
@@ -532,59 +559,65 @@
                         </div>
                     @empty
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-xl border border-[color:var(--forest)]/10 h-full flex items-center justify-center p-6">
-                                <p class="text-sm text-[color:var(--ink)]/40 text-center">Belum ada data perangkat desa.</p>
+                            <div
+                                class="bg-white rounded-xl border border-[color:var(--forest)]/10 h-full flex items-center justify-center p-6">
+                                <p class="text-sm text-[color:var(--ink)]/40 text-center">Belum ada data perangkat
+                                    desa.</p>
                             </div>
                         </div>
                     @endforelse
-                    </div>
-                </div>
-
-                <div class="struktur-nav">
-                    <div class="struktur-prev">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2.3">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </div>
-
-                    <div class="struktur-pagination"></div>
-
-                    <div class="struktur-next">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2.3">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
                 </div>
             </div>
+
+            <div class="struktur-nav">
+                <div class="struktur-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2.3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+
+                <div class="struktur-pagination"></div>
+
+                <div class="struktur-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2.3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </div>
+        </div>
 
         </div>
     </section>
 
     {{-- ============ STATISTIK DESA ============ --}}
-    <section id="statistik-desa" class="relative overflow-hidden bg-[color:var(--forest)] min-h-screen flex flex-col justify-center py-14">
+    <section id="statistik-desa"
+        class="relative overflow-hidden bg-[color:var(--forest)] min-h-screen flex flex-col justify-center py-14">
 
         {{-- Cincin pohon — motif atmosferik --}}
-        <svg class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/3 w-[34rem] h-[34rem] opacity-[0.05] pointer-events-none" viewBox="0 0 200 200" fill="none">
-            <circle cx="100" cy="100" r="95" stroke="white" stroke-width="0.6"/>
-            <circle cx="100" cy="100" r="75" stroke="white" stroke-width="0.6"/>
-            <circle cx="100" cy="100" r="55" stroke="white" stroke-width="0.6"/>
-            <circle cx="100" cy="100" r="35" stroke="white" stroke-width="0.6"/>
-            <circle cx="100" cy="100" r="15" stroke="white" stroke-width="0.6"/>
+        <svg class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/3 w-[34rem] h-[34rem] opacity-[0.05] pointer-events-none"
+            viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="95" stroke="white" stroke-width="0.6" />
+            <circle cx="100" cy="100" r="75" stroke="white" stroke-width="0.6" />
+            <circle cx="100" cy="100" r="55" stroke="white" stroke-width="0.6" />
+            <circle cx="100" cy="100" r="35" stroke="white" stroke-width="0.6" />
+            <circle cx="100" cy="100" r="15" stroke="white" stroke-width="0.6" />
         </svg>
 
         <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 w-full">
 
             <div class="reveal text-center max-w-xl mx-auto mb-10">
-                <p class="uppercase tracking-[0.25em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Data Kependudukan</p>
+                <p class="uppercase tracking-[0.25em] text-[color:var(--gold-light)] text-xs font-semibold mb-3">Data
+                    Kependudukan</p>
                 <h2 class="font-display text-3xl lg:text-4xl font-semibold text-white">Statistik Desa Sukosongo</h2>
             </div>
 
             {{-- TOTAL PENDUDUK — tengah, jadi judul bersama untuk dua kolom di bawah --}}
             <div class="reveal text-center mb-12">
                 <p class="text-white/45 text-xs uppercase tracking-[0.2em] mb-2">Total Penduduk</p>
-                <p class="stat-num font-display text-6xl lg:text-7xl font-semibold text-[color:var(--gold-light)] leading-none tabular-nums">
+                <p
+                    class="stat-num font-display text-6xl lg:text-7xl font-semibold text-[color:var(--gold-light)] leading-none tabular-nums">
                     <span data-count="3097">0</span>
                 </p>
                 <p class="text-white/40 text-sm mt-3">jiwa, tersebar di 6 dusun</p>
@@ -593,7 +626,8 @@
             {{-- LABEL DUA KOLOM — sejajar dalam satu grid row --}}
             <div class="grid lg:grid-cols-12 gap-x-14 lg:gap-x-20 mb-4">
                 <p class="reveal lg:col-span-5 text-white/45 text-xs uppercase tracking-[0.2em]">Ringkasan</p>
-                <p class="reveal lg:col-span-7 text-white/45 text-xs uppercase tracking-[0.2em]">Sebaran Warga per Dusun</p>
+                <p class="reveal lg:col-span-7 text-white/45 text-xs uppercase tracking-[0.2em]">Sebaran Warga per
+                    Dusun</p>
             </div>
 
             {{-- KONTEN DUA KOLOM — masing-masing dipecah 2 kolom internal agar ritme baris sama --}}
@@ -611,8 +645,12 @@
                     @endphp
                     @foreach ($ringkasan as $r)
                         <div class="reveal group border-b border-white/10 py-4">
-                            <p class="text-white/60 text-xs mb-1.5 group-hover:text-white transition-colors">{{ $r['label'] }}</p>
-                            <p class="stat-num font-display text-2xl text-white tabular-nums group-hover:text-[color:var(--gold-light)] transition-colors"><span data-count="{{ $r['nilai'] }}">0</span></p>
+                            <p class="text-white/60 text-xs mb-1.5 group-hover:text-white transition-colors">
+                                {{ $r['label'] }}</p>
+                            <p
+                                class="stat-num font-display text-2xl text-white tabular-nums group-hover:text-[color:var(--gold-light)] transition-colors">
+                                <span data-count="{{ $r['nilai'] }}">0</span>
+                            </p>
                         </div>
                     @endforeach
                 </div>
@@ -621,19 +659,20 @@
                 <div class="lg:col-span-7 grid grid-cols-2 gap-x-10 gap-y-5">
                     @php
                         $dusun = [
-                                    ['nama' => 'Dusun Kedung Kampil', 'jumlah' => 30],
-                                    ['nama' => 'Dusun Songo', 'jumlah' => 24],
-                                    ['nama' => 'Dusun Sukowati', 'jumlah' => 19],
-                                    ['nama' => 'Dusun Sukolilo', 'jumlah' => 15],
-                                    ['nama' => 'Dusun Karang Tengah', 'jumlah' => 16],
-                                    ['nama' => 'Dusun Djati', 'jumlah' => 14],
+                            ['nama' => 'Dusun Kedung Kampil', 'jumlah' => 30],
+                            ['nama' => 'Dusun Songo', 'jumlah' => 24],
+                            ['nama' => 'Dusun Sukowati', 'jumlah' => 19],
+                            ['nama' => 'Dusun Sukolilo', 'jumlah' => 15],
+                            ['nama' => 'Dusun Karang Tengah', 'jumlah' => 16],
+                            ['nama' => 'Dusun Djati', 'jumlah' => 14],
                         ];
                     @endphp
                     @foreach ($dusun as $i => $d)
                         <div class="reveal">
                             <div class="flex items-baseline justify-between mb-2">
                                 <span class="font-display text-base text-white">{{ $d['nama'] }}</span>
-                                <span class="font-display text-base text-[color:var(--gold-light)] tabular-nums">{{ $d['jumlah'] }}%</span>
+                                <span
+                                    class="font-display text-base text-[color:var(--gold-light)] tabular-nums">{{ $d['jumlah'] }}%</span>
                             </div>
                             <div class="relative h-[3px] rounded-full bg-white/15">
                                 <div class="dusun-bar absolute inset-y-0 left-0 h-[3px] rounded-full bg-gradient-to-r from-transparent to-[color:var(--gold-light)]"
@@ -649,21 +688,45 @@
         </div>
 
         <style>
-            .dusun-bar { width: 0; transition: width 1.1s cubic-bezier(0.16, 1, 0.3, 1); }
-            .dusun-dot { left: 0; opacity: 0; transition: left 1.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease 0.4s; }
+            .dusun-bar {
+                width: 0;
+                transition: width 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+            }
 
-            #statistik-desa.in-view .dusun-bar { width: var(--target-width); }
-            #statistik-desa.in-view .dusun-dot { left: var(--target-left); opacity: 1; }
-            #statistik-desa.in-view .dusun-dot { animation: glow 2.4s ease-in-out infinite 1.3s; }
+            .dusun-dot {
+                left: 0;
+                opacity: 0;
+                transition: left 1.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease 0.4s;
+            }
+
+            #statistik-desa.in-view .dusun-bar {
+                width: var(--target-width);
+            }
+
+            #statistik-desa.in-view .dusun-dot {
+                left: var(--target-left);
+                opacity: 1;
+            }
+
+            #statistik-desa.in-view .dusun-dot {
+                animation: glow 2.4s ease-in-out infinite 1.3s;
+            }
 
             @keyframes glow {
-                0%, 100% { box-shadow: 0 0 6px 1px var(--gold-light); }
-                50% { box-shadow: 0 0 14px 4px var(--gold-light); }
+
+                0%,
+                100% {
+                    box-shadow: 0 0 6px 1px var(--gold-light);
+                }
+
+                50% {
+                    box-shadow: 0 0 14px 4px var(--gold-light);
+                }
             }
         </style>
 
         <script>
-            (function () {
+            (function() {
                 const section = document.getElementById('statistik-desa');
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach((entry) => {
@@ -671,7 +734,9 @@
                             section.classList.add('in-view');
                         }
                     });
-                }, { threshold: 0.35 });
+                }, {
+                    threshold: 0.35
+                });
                 observer.observe(section);
             })();
         </script>
@@ -698,9 +763,9 @@
                 <a href="{{ route('berita.page') }}"
                     class="group inline-flex items-center gap-2.5 rounded-full bg-[color:var(--forest)] pl-6 pr-5 py-3 text-sm font-semibold text-white shadow-sm hover:shadow-lg hover:shadow-[color:var(--forest)]/20 hover:bg-[color:var(--forest-light)] transition-all duration-300">
                     Lihat Semua Berita
-                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                 </a>
             </div>
@@ -729,7 +794,12 @@
                             </p>
                             <div
                                 class="mt-3 flex items-center text-xs text-[color:var(--forest)] font-semibold group-hover:text-[color:var(--gold)]">
-                                Baca Selengkapnya →
+                                Baca Selengkapnya
+                                <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
                             </div>
                         </div>
                     </a>
@@ -744,17 +814,23 @@
     </section>
 
     {{-- ============ WISATA RELIGI ============ --}}
-    <section id="wisata-section" class="relative overflow-hidden bg-[color:var(--forest)] pt-10 lg:pt-14 pb-10 lg:pb-14">
+    <section id="wisata-section"
+        class="relative overflow-hidden bg-[color:var(--forest)] pt-10 lg:pt-14 pb-10 lg:pb-14">
 
         {{-- Motif dekoratif — sekarang melayang pelan, bukan statis --}}
-        <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[color:var(--gold)]/10 blur-3xl pointer-events-none animate-[float1_9s_ease-in-out_infinite]"></div>
-        <div class="absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-white/5 blur-3xl pointer-events-none animate-[float2_11s_ease-in-out_infinite]"></div>
+        <div
+            class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[color:var(--gold)]/10 blur-3xl pointer-events-none animate-[float1_9s_ease-in-out_infinite]">
+        </div>
+        <div
+            class="absolute -bottom-24 -left-16 w-64 h-64 rounded-full bg-white/5 blur-3xl pointer-events-none animate-[float2_11s_ease-in-out_infinite]">
+        </div>
 
         <div class="relative max-w-5xl mx-auto px-5 lg:px-8">
 
             <div class="reveal text-center mb-6" style="transition-delay: 0ms;">
 
-                <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] uppercase tracking-[0.25em] text-xs font-semibold mb-3 animate-[pulseGlow_3s_ease-in-out_infinite]">
+                <span
+                    class="inline-flex items-center px-4 py-1.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] uppercase tracking-[0.25em] text-xs font-semibold mb-3 animate-[pulseGlow_3s_ease-in-out_infinite]">
                     Wisata Religi
                 </span>
 
@@ -770,36 +846,43 @@
             </div>
 
             {{-- Card — border menyala gold saat hover, bukan cuma shadow polos --}}
-            <div class="reveal group relative grid lg:grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-md hover:shadow-2xl transition-shadow duration-500" style="transition-delay: 100ms;">
+            <div class="reveal group relative grid lg:grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-md hover:shadow-2xl transition-shadow duration-500"
+                style="transition-delay: 100ms;">
 
                 {{-- Ring border yang muncul & menyala saat card di-hover --}}
-                <div class="absolute inset-0 rounded-3xl ring-1 ring-[color:var(--forest)]/10 group-hover:ring-2 group-hover:ring-[color:var(--gold)]/60 transition-all duration-500 pointer-events-none z-10"></div>
+                <div
+                    class="absolute inset-0 rounded-3xl ring-1 ring-[color:var(--forest)]/10 group-hover:ring-2 group-hover:ring-[color:var(--gold)]/60 transition-all duration-500 pointer-events-none z-10">
+                </div>
 
-                <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6" target="_blank" rel="noopener noreferrer"
                     class="relative overflow-hidden block h-64 lg:h-auto"
                     aria-label="Buka lokasi Makam Syeh Jamaludin di Google Maps">
 
-                    <img
-                        src="{{ asset('images/pesarean.jpg') }}"
-                        alt="Makam Syeh Jamaludin"
+                    <img src="{{ asset('images/pesarean.jpg') }}" alt="Makam Syeh Jamaludin"
                         class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110">
 
-                    <div class="absolute inset-0 bg-gradient-to-t from-[color:var(--forest)]/80 via-[color:var(--forest)]/10 to-transparent"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[color:var(--forest)]/80 via-[color:var(--forest)]/10 to-transparent">
+                    </div>
 
-                    <div class="absolute inset-0 flex items-center justify-center bg-[color:var(--forest)]/0 group-hover:bg-[color:var(--forest)]/50 transition-colors duration-500">
-                        <span class="opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 ease-out inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[color:var(--gold)] text-white text-sm font-semibold shadow-lg">
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-[color:var(--forest)]/0 group-hover:bg-[color:var(--forest)]/50 transition-colors duration-500">
+                        <span
+                            class="opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 ease-out inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[color:var(--gold)] text-white text-sm font-semibold shadow-lg">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                             Buka di Google Maps
                         </span>
                     </div>
 
                     <div class="absolute bottom-4 left-4">
-                        <span class="px-3 py-1.5 rounded-full bg-[color:var(--paper)]/95 backdrop-blur-sm text-[color:var(--forest)] text-sm font-semibold">
+                        <span
+                            class="px-3 py-1.5 rounded-full bg-[color:var(--paper)]/95 backdrop-blur-sm text-[color:var(--forest)] text-sm font-semibold">
                             Wisata Religi
                         </span>
                     </div>
@@ -807,13 +890,14 @@
 
                 <div class="bg-white p-6 lg:p-8 flex flex-col justify-center">
 
-                    <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6" target="_blank" rel="noopener noreferrer"
                         class="group/pin inline-flex items-start gap-1.5 text-sm text-[color:var(--gold)] font-medium mb-4 w-fit hover:text-[color:var(--forest)] transition-colors duration-300">
-                        <svg class="w-4 h-4 mt-0.5 shrink-0 transition-transform duration-300 group-hover/pin:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <svg class="w-4 h-4 mt-0.5 shrink-0 transition-transform duration-300 group-hover/pin:-translate-y-0.5"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                         <span class="underline decoration-dotted underline-offset-4">
                             Dusun Kedung Kampil, Desa Sukosongo, Kecamatan Kembangbahu, Kabupaten Lamongan
@@ -830,29 +914,50 @@
 
                     <div class="grid grid-cols-3 gap-3 mt-6">
 
-                        <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default" style="transition-delay: 200ms;">
-                            <svg class="w-5 h-5 mx-auto mb-1.5 text-[color:var(--gold)] group-hover/card:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" />
+                        <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default"
+                            style="transition-delay: 200ms;">
+                            <svg class="w-5 h-5 mx-auto mb-1.5 text-[color:var(--gold)] group-hover/card:text-white transition-colors duration-300"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" />
                             </svg>
-                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors duration-300">Kategori</p>
-                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors duration-300">Religi</p>
+                            <p
+                                class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors duration-300">
+                                Kategori</p>
+                            <p
+                                class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors duration-300">
+                                Religi</p>
                         </div>
 
-                        <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default" style="transition-delay: 280ms;">
-                            <svg class="w-5 h-5 mx-auto mb-1.5 text-[color:var(--gold)] group-hover/card:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default"
+                            style="transition-delay: 280ms;">
+                            <svg class="w-5 h-5 mx-auto mb-1.5 text-[color:var(--gold)] group-hover/card:text-white transition-colors duration-300"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors duration-300">Lokasi</p>
-                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors duration-300">Sukosongo</p>
+                            <p
+                                class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors duration-300">
+                                Lokasi</p>
+                            <p
+                                class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors duration-300">
+                                Sukosongo</p>
                         </div>
 
-                        <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default" style="transition-delay: 360ms;">
-                            <svg class="w-5 h-5 mx-auto mb-1.5 text-[color:var(--gold)] group-hover/card:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <div class="reveal group/card rounded-xl bg-[color:var(--paper)] border border-[color:var(--forest)]/10 p-3 text-center transition-all duration-300 ease-out hover:bg-[color:var(--forest)] hover:-translate-y-1 hover:shadow-md cursor-default"
+                            style="transition-delay: 360ms;">
+                            <svg class="w-5 h-5 mx-auto mb-1.5 text-[color:var(--gold)] group-hover/card:text-white transition-colors duration-300"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                             </svg>
-                            <p class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors duration-300">Status</p>
-                            <p class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors duration-300">Ikon Desa</p>
+                            <p
+                                class="text-[11px] text-[color:var(--brown)]/60 uppercase group-hover/card:text-white/60 transition-colors duration-300">
+                                Status</p>
+                            <p
+                                class="font-semibold text-[color:var(--forest)] text-sm mt-1 group-hover/card:text-white transition-colors duration-300">
+                                Ikon Desa</p>
                         </div>
 
                     </div>
@@ -865,16 +970,39 @@
 
         <style>
             @keyframes float1 {
-                0%, 100% { transform: translate(0, 0); }
-                50% { transform: translate(-20px, 25px); }
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(-20px, 25px);
+                }
             }
+
             @keyframes float2 {
-                0%, 100% { transform: translate(0, 0); }
-                50% { transform: translate(20px, -20px); }
+
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+
+                50% {
+                    transform: translate(20px, -20px);
+                }
             }
+
             @keyframes pulseGlow {
-                0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--gold) 30%, transparent); }
-                50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--gold) 0%, transparent); }
+
+                0%,
+                100% {
+                    box-shadow: 0 0 0 0 color-mix(in srgb, var(--gold) 30%, transparent);
+                }
+
+                50% {
+                    box-shadow: 0 0 0 6px color-mix(in srgb, var(--gold) 0%, transparent);
+                }
             }
         </style>
 
