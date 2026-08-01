@@ -91,101 +91,83 @@
     </section>
 
     {{-- ============ KONDISI UMUM DESA ============ --}}
-    <section class="bg-[#FAF6EC] py-20 lg:py-28">
-        <div class="max-w-6xl mx-auto px-5 lg:px-8">
+<section class="bg-[#FAF6EC] py-16 sm:py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+        <div class="grid sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-14 items-center">
 
-            {{-- Heading --}}
-            <div class="grid lg:grid-cols-2 gap-14 items-center">
+            {{-- ================= KIRI (judul) ================= --}}
+            <div data-reveal class="opacity-0 translate-y-6 transition-all duration-700 ease-out">
 
-        {{-- ================= KIRI ================= --}}
-        <div data-reveal class="opacity-0 translate-y-6 transition-all duration-700 ease-out">
+                <p class="uppercase tracking-[0.2em] text-[#6B4226] text-xs font-semibold mb-3">
+                    Gambaran Umum
+                </p>
 
-            <p class="uppercase tracking-[0.2em] text-[#6B4226] text-xs font-semibold mb-3">
-                Gambaran Umum
-            </p>
+                <h2 class="font-['Fraunces',serif] text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1F3D2B] mb-4 sm:mb-6">
+                    Kondisi Umum Desa
+                </h2>
 
-            <h2 class="font-['Fraunces',serif] text-3xl lg:text-4xl font-semibold text-[#1F3D2B] mb-6">
-                Kondisi Umum Desa
-            </h2>
+                <p class="hidden sm:block text-[#23281F]/75 text-sm lg:text-base leading-7 lg:leading-8 text-justify">
+                    Desa Sukosongo merupakan salah satu desa di Kecamatan
+                    Kembangbahu, Kabupaten Lamongan, Provinsi Jawa Timur.
+                    Sebagai desa yang memiliki potensi besar pada sektor
+                    pertanian dan ekonomi masyarakat, Sukosongo terus
+                    mengembangkan berbagai inovasi melalui penguatan UMKM,
+                    pemanfaatan sumber daya lokal, serta pembangunan yang
+                    berkelanjutan. Semangat gotong royong masyarakat menjadi
+                    modal utama dalam mewujudkan desa yang mandiri, produktif,
+                    dan berdaya saing.
+                </p>
+            </div>
 
-            <p class="text-[#23281F]/75 leading-8 text-justify">
-                Desa Sukosongo merupakan salah satu desa di Kecamatan
-                Kembangbahu, Kabupaten Lamongan, Provinsi Jawa Timur.
-                Sebagai desa yang memiliki potensi besar pada sektor
-                pertanian dan ekonomi masyarakat, Sukosongo terus
-                mengembangkan berbagai inovasi melalui penguatan UMKM,
-                pemanfaatan sumber daya lokal, serta pembangunan yang
-                berkelanjutan. Semangat gotong royong masyarakat menjadi
-                modal utama dalam mewujudkan desa yang mandiri, produktif,
-                dan berdaya saing.
-            </p>
+            {{-- ================= KANAN (gambar) ================= --}}
+            <div data-reveal class="opacity-0 translate-y-6 transition-all duration-700 ease-out">
 
-        </div>
+                {{-- Mobile: grid-cols-2 (sejajar kiri-kanan) | Tablet & Desktop: grid-cols-1 (stack) --}}
+                <div class="grid grid-cols-2 sm:grid-cols-1 gap-3 sm:gap-3 lg:gap-5">
 
-       {{-- ================= KANAN ================= --}}
-<div
-    data-reveal
-    class="opacity-0 translate-y-6 transition-all duration-700 ease-out space-y-5">
+                    {{-- Foto 1 (flipTop) --}}
+                    <div class="aspect-square sm:aspect-auto sm:h-24 md:h-32 lg:h-40 [perspective:1200px]">
+                        <div id="flipTop" class="relative h-full w-full transition-transform duration-1000 [transform-style:preserve-3d]">
+                            <div class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]">
+                                <img src="{{ asset('images/profil-desa/kantordesa.jpg') }}" alt="Kantor Desa" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute inset-0 rounded-2xl overflow-hidden [transform:rotateX(180deg)] [backface-visibility:hidden]">
+                                <img src="{{ asset('images/profil-desa/hasil1.jpg') }}" alt="Hasil Pertanian" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="group h-20 lg:h-40 [perspective:1200px]">
+                    {{-- Foto 2 (flipBottom) --}}
+                    <div class="aspect-square sm:aspect-auto sm:h-24 md:h-32 lg:h-40 [perspective:1200px]">
+                        <div id="flipBottom" class="relative h-full w-full transition-transform duration-1000 [transform-style:preserve-3d]">
+                            <div class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]">
+                                <img src="{{ asset('images/profil-desa/padi1.jpg') }}" alt="Sawah Desa" class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute inset-0 rounded-2xl overflow-hidden [transform:rotateX(180deg)] [backface-visibility:hidden]">
+                                <img src="{{ asset('images/profil-desa/pertanian.jpg') }}" alt="Pertanian Desa" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
 
-    <div
-        id="flipTop"
-        class="relative h-full w-full transition-transform duration-1000
-               [transform-style:preserve-3d]">
+                </div>
 
-        {{-- Depan --}}
-        <div class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]">
-            <img
-                src="{{ asset('images/profil-desa/kantordesa.jpg') }}"
-                class="w-full h-full object-cover">
-        </div>
-
-        {{-- Belakang --}}
-        <div
-            class="absolute inset-0 rounded-2xl overflow-hidden
-                   [transform:rotateX(180deg)]
-                   [backface-visibility:hidden]">
-
-            <img
-                src="{{ asset('images/profil-desa/hasil1.jpg') }}"
-                class="w-full h-full object-cover">
-        </div>
-
-    </div>
-
-</div>
-
-    {{-- FOTO BAWAH --}}
-    <div class="group h-20 lg:h-40 [perspective:1200px]">
-
-    <div
-        id="flipBottom"
-        class="relative h-full w-full transition-transform duration-1000
-               [transform-style:preserve-3d]">
-
-        {{-- Depan --}}
-        <div class="absolute inset-0 rounded-2xl overflow-hidden [backface-visibility:hidden]">
-
-            <img
-                src="{{ asset('images/profil-desa/padi1.jpg') }}"
-                class="w-full h-full object-cover">
-
-        </div>
-
-        {{-- Belakang --}}
-        <div
-            class="absolute inset-0 rounded-2xl overflow-hidden
-                   [transform:rotateX(180deg)]
-                   [backface-visibility:hidden]">
-
-            <img
-                src="{{ asset('images/profil-desa/pertanian.jpg') }}"
-                class="w-full h-full object-cover">
+                {{-- Paragraf: hanya muncul di mobile, di bawah gambar --}}
+                <p class="sm:hidden text-[#23281F]/75 leading-7 text-justify mt-5">
+                    Desa Sukosongo merupakan salah satu desa di Kecamatan
+                    Kembangbahu, Kabupaten Lamongan, Provinsi Jawa Timur.
+                    Sebagai desa yang memiliki potensi besar pada sektor
+                    pertanian dan ekonomi masyarakat, Sukosongo terus
+                    mengembangkan berbagai inovasi melalui penguatan UMKM,
+                    pemanfaatan sumber daya lokal, serta pembangunan yang
+                    berkelanjutan. Semangat gotong royong masyarakat menjadi
+                    modal utama dalam mewujudkan desa yang mandiri, produktif,
+                    dan berdaya saing.
+                </p>
+            </div>
         </div>
     </div>
-</div>
 </section>
+
 {{-- ================= DUSUN ================= --}}
 @php
     $dusun = [
@@ -198,13 +180,12 @@
     ];
 @endphp
 
-<div data-reveal class="opacity-0 translate-y-6 transition-all duration-700 ease-out mt-8 mb-14 max-w-6xl mx-auto">
+<div data-reveal class="opacity-0 translate-y-6 transition-all duration-700 ease-out lg:mt-8 mt-4 mb-14 max-w-6xl mx-auto px-5 lg:px-8">
     <div class="flex items-end justify-between mb-7">
         <div>
             <p class="uppercase tracking-[0.18em] text-[#6B4226] text-xs font-semibold mb-2">
                 Wilayah Desa
             </p>
-
             <h3 class="font-['Fraunces',serif] text-xl lg:text-2xl font-semibold text-[#1F3D2B]">
                 Dusun di Desa Sukosongo
             </h3>
@@ -214,29 +195,23 @@
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
         @foreach($dusun as $item)
             <div
-                class="group relative h-30 lg:h-40 overflow-hidden rounded-2xl cursor-pointer border border-[#1F3D2B]/10 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                class="group relative h-32 sm:h-36 lg:h-40 overflow-hidden rounded-2xl cursor-pointer border border-[#1F3D2B]/10 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
 
-                {{-- FOTO --}}
                 <img
                     src="{{ asset('images/profil-desa/'.$item['gambar']) }}"
                     alt="{{ $item['nama'] }}"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
 
-                {{-- OVERLAY --}}
                 <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
 
-                {{-- BADGE --}}
                 <div class="absolute top-4 left-4">
                     <span class="bg-white/20 backdrop-blur-md text-white text-[10px] px-2.5 py-1 rounded-full">
                         Dusun
                     </span>
                 </div>
 
-                {{-- NAMA --}}
                 <div class="absolute bottom-0 left-0 right-0 p-5 transition-all duration-500 group-hover:-translate-y-1">
                     <div class="flex items-center gap-2">
-
-                        {{-- ICON --}}
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="w-4 h-4 text-[#E4C46C] shrink-0"
                             fill="currentColor"
@@ -252,7 +227,6 @@
         @endforeach
     </div>
 </div>
-
 
    {{-- ============ VISI MISI ============ --}}
    <section class="relative py-20 lg:py-28 overflow-hidden">
