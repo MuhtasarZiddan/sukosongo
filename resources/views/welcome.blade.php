@@ -211,7 +211,7 @@
     {{-- ============ HERO / PROFIL SINGKAT ============ --}}
     <section id="beranda"
         class="relative pt-32 pb-24 lg:pt-44 lg:pb-32 bg-cover bg-center bg-no-repeat overflow-hidden"
-        style="background-image: url('{{ asset('images/hero.jpg') }}');">
+        style="background-image: url('{{ asset('images/hero.webp') }}');">
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
         <div class="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-white/5 blur-3xl"></div>
@@ -855,11 +855,11 @@
                 </div>
 
                 <a href="https://maps.app.goo.gl/EbpSfmsVoKndoX7Y6" target="_blank" rel="noopener noreferrer"
-                    class="relative overflow-hidden block h-64 lg:h-auto"
+                    class="relative overflow-hidden block h-64 lg:h-full"
                     aria-label="Buka lokasi Makam Syeh Jamaludin di Google Maps">
 
-                    <img src="{{ asset('images/pesarean.jpg') }}" alt="Makam Syeh Jamaludin"
-                        class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110">
+                    <img src="{{ asset('images/pesarean.webp') }}" alt="Makam Syeh Jamaludin"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110">
 
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-[color:var(--forest)]/80 via-[color:var(--forest)]/10 to-transparent">
