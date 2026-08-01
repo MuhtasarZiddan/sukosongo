@@ -1056,12 +1056,11 @@
                             Kontak
                         </p>
                         <p class="text-sm text-[color:var(--ink)]/70 leading-relaxed">
-                            kantordesasukosongo@email.com
+                            sukosongo2004@gmail.com
                         </p>
                     </div>
 
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=-7.1580951,112.32495505"
-                        target="_blank" rel="noopener"
+                    <a href="https://maps.app.goo.gl/2iftXGEMv8KbXUk5A" target="_blank" rel="noopener"
                         class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--forest)] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[color:var(--forest-light)] transition-colors">
                         Buka di Google Maps
                     </a>
