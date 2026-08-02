@@ -124,7 +124,7 @@
     {{-- Grid card UMKM --}}
     <section class="bg-[color:var(--cream)] pt-8 pb-14 lg:pb-20">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
-            <div id="umkmGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+            <div id="umkmGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4 lg:gap-6">
                 @forelse ($umkms as $umkm)
                     <x-umkm-card nama_umkm="{{ $umkm->nama_umkm }}" alamat_usaha="{{ $umkm->alamat_usaha }}"
                         nama_pemilik="{{ $umkm->nama_pemilik }}" no_wa="{{ $umkm->no_wa }}"
