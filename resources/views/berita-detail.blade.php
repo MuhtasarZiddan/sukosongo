@@ -132,9 +132,9 @@
             <div class="reveal mt-12">
                 <a href="{{ route('berita.page') }}"
                     class="group inline-flex items-center gap-2.5 rounded-full bg-[color:var(--forest)] pl-6 pr-5 py-3 text-sm font-semibold text-white shadow-sm hover:shadow-lg hover:shadow-[color:var(--forest)]/20 hover:bg-[color:var(--forest-light)] transition-all duration-300">
-                    <svg class="w-4 h-4 rotate-180 transition-transform duration-300 group-hover:-translate-x-1"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <svg class="w-5 h-5 mr-2 rotate-180 group-hover:-translate-x-2 transition" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                     Kembali ke Semua Berita
                 </a>
