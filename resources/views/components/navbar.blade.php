@@ -65,13 +65,14 @@
     class="fixed top-0 inset-x-0 z-50 transition-all duration-300 {{ $transparent ? 'state-transparent' : 'state-solid shadow-lg' }}">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="/" class="flex items-center gap-3 shrink-0">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo Desa Sukosongo" class="w-7 h-8 object-cover" />
-                <div class="leading-tight">
-                    <p class="font-display text-white text-base font-semibold">Desa Sukosongo</p>
-                    <p class="text-[11px] text-white/60 tracking-wide uppercase">Lamongan &middot; Jawa Timur</p>
-                </div>
-            </a>
+           <a href="/" class="flex items-center gap-2 sm:gap-3 shrink-0">
+            <img src="{{ asset('images/lamongan.png') }}" alt="Logo Kabupaten Lamongan" class="w-7 h-8 object-contain" />
+            <img src="{{ asset('images/logo.png') }}" alt="Logo Desa Sukosongo" class="w-7 h-8 object-cover" />
+            <div class="leading-tight">
+                <p class="font-display text-white text-base font-semibold">Desa Sukosongo</p>
+                <p class="text-[11px] text-white/60 tracking-wide uppercase">Lamongan &middot; Jawa Timur</p>
+            </div>
+        </a>
 
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/85">
                 <a href="{{ $hrefBeranda }}"
