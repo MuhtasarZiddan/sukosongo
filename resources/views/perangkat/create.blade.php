@@ -24,11 +24,11 @@
                     <div class="mb-4 flex gap-4">
      <div class="w-1/2">
          <label class="block text-gray-700 text-sm font-bold mb-2">Tanggal Mulai Menjabat</label>
-         <input type="date" name="tanggal_menjabat" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+         <input type="date" name="tanggal_menjabat" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
      </div>
      <div class="w-1/2">
          <label class="block text-gray-700 text-sm font-bold mb-2">Tanggal Berakhir Menjabat</label>
-         <input type="date" name="tanggal_akhir_menjabat" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+         <input type="date" name="tanggal_akhir_menjabat" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
      </div>
  </div>
                     <div class="mb-4">

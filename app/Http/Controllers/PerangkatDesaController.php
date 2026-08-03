@@ -25,8 +25,8 @@ class PerangkatDesaController extends Controller
          'nama' => 'required',
          'jabatan' => 'required',
          'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-         'tanggal_menjabat' => 'required|date',
-         'tanggal_akhir_menjabat' => 'required|date',
+         'tanggal_menjabat' => 'nullable|date',
+         'tanggal_akhir_menjabat' => 'nullable|date',
      ]);
 
      $fotoPath = $request->file('foto')->store('foto-perangkat', 'public');
@@ -52,8 +52,8 @@ class PerangkatDesaController extends Controller
          'nama' => 'required',
          'jabatan' => 'required',
          'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-         'tanggal_menjabat' => 'required|date',
-         'tanggal_akhir_menjabat' => 'required|date',
+         'tanggal_menjabat' => 'nullable|date',
+         'tanggal_akhir_menjabat' => 'nullable|date',
      ]);
 
         $data = $request->all();
