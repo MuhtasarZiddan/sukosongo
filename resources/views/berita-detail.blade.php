@@ -125,7 +125,7 @@
                 <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}" class="w-full h-auto">
             </div>
 
-            <div class="reveal prose max-w-none text-[color:var(--ink)]/80 leading-relaxed">
+            <div class="reveal prose max-w-none text-[color:var(--ink)]/80 leading-relaxed text-justify">
                 {!! $berita->isi_berita !!}
             </div>
 

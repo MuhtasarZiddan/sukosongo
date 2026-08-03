@@ -2,14 +2,14 @@
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
             <div>
-                <div class="flex items-center gap-3 mb-4">
+                <div class="flex items-center gap-2 mb-4">
+                    <img src="{{ asset('images/lamongan.png') }}" alt="Logo Kabupaten Lamongan" class="w-7 h-8 object-contain" />
                     <img src="{{ asset('images/logo.png') }}" alt="Logo Desa Sukosongo" class="w-7 h-8 object-cover" />
                     <p class="font-display font-semibold">Desa Sukosongo</p>
                 </div>
                 <p class="text-white/60 text-sm leading-relaxed">Website Desa Sukosongo sebagai sarana informasi Desa
-                    Sukosongo</p>
+    Sukosongo</p>
             </div>
-
             <div>
                 <p class="font-semibold text-sm mb-4 uppercase tracking-wide text-white/80">Navigasi</p>
                 <ul class="space-y-2.5 text-sm text-white/60">

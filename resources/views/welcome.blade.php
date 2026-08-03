@@ -455,42 +455,45 @@
             </div>
 
             {{-- Kades --}}
+            {{-- Kades --}}
 <div class="reveal relative overflow-hidden bg-[color:var(--forest)] rounded-2xl mb-5">
     <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[color:var(--gold)]/10 blur-2xl"></div>
     <div class="absolute -left-10 -bottom-10 w-48 h-48 rounded-full bg-white/5 blur-2xl"></div>
 
-    <div class="relative flex flex-col sm:flex-row items-center gap-5 p-6 sm:p-7 lg:p-8">
-        <div class="w-32 h-32 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-2xl overflow-hidden shrink-0 bg-white/10 border border-white/15 flex items-center justify-center">
+    <div class="relative flex flex-col sm:flex-row items-center">
+
+        {{-- Foto — lebih besar, full height di sisi kiri --}}
+        <div class="w-full sm:w-48 lg:w-56 h-48 sm:h-full shrink-0 relative overflow-hidden">
             <img src="{{ $kades && $kades->foto ? asset('storage/'.$kades->foto) : asset('images/kades.jpg') }}"
                 alt="Kepala Desa Sukosongo"
                 class="w-full h-full object-cover"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="hidden w-full h-full items-center justify-center font-display text-lg text-white/40">
+            <span class="hidden absolute inset-0 items-center justify-center font-display text-lg text-white/40 bg-white/5">
                 Foto
             </span>
+
+            {{-- Gradient fade di tepi foto, biar nyatu halus ke background hijau (khusus desktop) --}}
+            <div class="hidden sm:block absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-[color:var(--forest)]"></div>
         </div>
-        <div class="text-center sm:text-left">
-            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] text-[10px] font-semibold uppercase tracking-wide mb-1.5">
+
+        {{-- Teks --}}
+        <div class="relative flex-1 text-center sm:text-left px-6 py-7 sm:py-8 lg:py-10 sm:pl-8 lg:pl-10">
+
+            {{-- Garis aksen gold kecil, biar ada "penanda" visual sebelum label --}}
+            <div class="hidden sm:block w-10 h-0.5 bg-[color:var(--gold)] mb-3"></div>
+
+            <span class="inline-block px-3 py-1 rounded-full bg-[color:var(--gold)]/15 text-[color:var(--gold-light)] text-[11px] font-semibold uppercase tracking-[0.15em] mb-3">
                 {{ $kades->jabatan ?? 'Kepala Desa Sukosongo' }}
             </span>
-            <p class="font-display text-xl sm:text-lg lg:text-xl font-semibold text-white leading-tight">
+
+            <p class="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold text-white leading-tight">
                 {{ $kades->nama ?? 'Nama Kepala Desa' }}
             </p>
-            <p class="text-xs text-white/50 mt-1">
-                @if($kades && $kades->tanggal_menjabat)
-                    Masa Jabatan {{ \Carbon\Carbon::parse($kades->tanggal_menjabat)->format('Y') }}
-                    &ndash;
-                    {{ $kades->tanggal_akhir_menjabat ? \Carbon\Carbon::parse($kades->tanggal_akhir_menjabat)->format('Y') : 'Sekarang' }}
-                @else
-                    Masa Jabatan 2026 &ndash; 2027
-                @endif
-            </p>
+
         </div>
+
     </div>
 </div>
-                    </div>
-                 </div>
-            </div>
 
             {{-- Swiper perangkat desa --}}
             <div class="reveal pt-1">
@@ -779,7 +782,7 @@
                     aria-label="Buka lokasi Makam Syeh Jamaludin di Google Maps">
 
                     <img
-                        src="{{ asset('images/pesarean.jpg') }}"
+                        src="{{ asset('images/pesarean.webp') }}"
                         alt="Makam Syeh Jamaludin"
                         class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110">
 
@@ -914,7 +917,7 @@
                         <p class="text-xs uppercase tracking-wide text-[color:var(--brown)] font-semibold mb-1.5">Jam
                             Layanan</p>
                         <p class="text-sm text-[color:var(--ink)]/70 leading-relaxed">
-                            Senin – Jumat, 07.30 – 15.00 WIgitB
+                            Senin – Jumat, 07.30 – 15.00 WIB
                         </p>
                     </div>
 
