@@ -181,7 +181,7 @@
                             @foreach ($berita as $b)
                                 <tr class="border-b border-[#1F3D2B]/10 hover:bg-[#FAF6EC]/60 transition-colors">
                                     <td class="py-3 px-4">
-                                        <img src="{{ asset('storage/' . ($b->gambar[0] ?? 'default.jpg')) }}"
+                                        <img src="{{ asset('storage/' . ($b->gambar ?? 'default.jpg')) }}"
                                             class="w-20 h-16 object-cover rounded-xl border border-[#1F3D2B]/10">
                                     </td>
                                     <td class="py-3 px-4">
