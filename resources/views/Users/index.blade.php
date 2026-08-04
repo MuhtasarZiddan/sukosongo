@@ -22,7 +22,7 @@
                     </h3>
 
                     <a href="{{ route('users.create') }}"
-                        class="bg-[#1F3D2B] hover:bg-[#3B6B4A] text-white text-sm font-medium py-2 px-4 rounded transition-colors">
+                        class="bg-[#1F3D2B] hover:bg-[#3B6B4A] text-white text-sm font-medium py-2 px-4 rounded-2xl transition-colors">
                         + Tambah User
                     </a>
                 </div>
@@ -86,30 +86,28 @@
                                         @endforeach
 
                                     </td>
-
+                                    
                                     <td class="px-6 py-4 text-center">
-                                        <div class="flex justify-center gap-2">
+    <div class="flex justify-center items-center gap-2">
 
-                                            <a href="{{ route('users.edit', $user) }}"
-                                                class="inline-flex items-center border border-[#1F3D2B]/20 text-[#1F3D2B] hover:bg-[#1F3D2B] hover:text-white px-3 py-1.5 rounded text-xs font-medium transition-colors">
-                                                Edit
-                                            </a>
+        <a href="{{ route('users.edit', $user) }}"
+            class="border border-[#C99A2E] text-[#C99A2E] hover:bg-[#C99A2E] hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold transition-colors">
+            Edit
+        </a>
 
-                                            <form action="{{ route('users.destroy', $user) }}" method="POST"
-                                                onsubmit="return confirm('Yakin ingin menghapus user ini?')">
+        <form action="{{ route('users.destroy', $user) }}" method="POST"
+            onsubmit="return confirm('Yakin ingin menghapus user ini?')">
+            @csrf
+            @method('DELETE')
 
-                                                @csrf
-                                                @method('DELETE')
+            <button type="submit"
+                class="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold transition-colors">
+                Hapus
+            </button>
+        </form>
 
-                                                <button type="submit"
-                                                    class="inline-flex items-center border border-red-300 text-red-600 hover:bg-red-600 hover:text-white px-3 py-1.5 rounded text-xs font-medium transition-colors">
-                                                    Hapus
-                                                </button>
-
-                                            </form>
-
-                                        </div>
-                                    </td>
+    </div>
+</td>
                                 </tr>
 
                             @empty

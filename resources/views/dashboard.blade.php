@@ -21,7 +21,7 @@
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-bold text-[#1F3D2B]">Daftar UMKM Desa Sukosongo</h3>
                     <a href="{{ route('umkm.create') }}"
-                        class="bg-[#1F3D2B] hover:bg-[#3B6B4A] text-white text-sm font-semibold py-2 px-4 rounded-full transition-colors">
+                       class="bg-[#1F3D2B] hover:bg-[#3B6B4A] text-white text-sm font-semibold py-2 px-4 rounded-full transition-colors">
                         + Tambah
                     </a>
                 </div>
@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="mt-6">
-                    {{ $umkms->links('components.pagination') }}
+                   {{ $umkms->links('components.paginationdb') }}
                 </div>
             </div>
 
@@ -145,7 +145,7 @@
                 </div>
 
                 <div class="mt-6">
-                    {{ $perangkat->links('components.pagination') }}
+                   {{ $perangkat->links('components.paginationdb') }}
                 </div>
             </div>
 
@@ -215,6 +215,11 @@
                         </tbody>
                     </table>
                 </div>
+
+                {{-- belum mau kepanggil --}}
+                {{-- <div class="mt-6">
+                   {{ $berita->links('components.paginationdb') }}
+                </div> --}}
             </div>
 
         </div>
