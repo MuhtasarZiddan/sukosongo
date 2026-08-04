@@ -10,7 +10,7 @@
 
         <div class="max-w-3xl mx-auto">
 
-            <div class="bg-white rounded shadow p-6">
+            <div class="bg-[#FAF6EC] rounded shadow p-6">
 
                 <form action="{{ route('users.update', $user) }}" method="POST">
 
