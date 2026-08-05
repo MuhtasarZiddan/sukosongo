@@ -264,3 +264,23 @@
 #flipBottom > div:last-child{
     transform: rotateX(180deg);
 }
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* ==========================
+   ADMIN HEADER
+========================== */
+
+.admin-header h1,
+.admin-header h2{
+    font-family: 'Fraunces', serif;
+    color: white;
+    font-weight: 600;
+}
+
+.admin-header p{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: rgba(255,255,255,.75);
+}

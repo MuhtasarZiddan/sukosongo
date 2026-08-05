@@ -1,9 +1,10 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-[#1F3D2B] leading-tight">
-            {{ __('Tambah User') }}
-        </h2>
+    <x-admin-header
+        title="Tambah User"
+        description="Tambahkan informasi user baru untuk Desa Sukosongo"
+    />
     </x-slot>
 
     <div class="py-12 bg-[#FAF6EC] min-h-screen">

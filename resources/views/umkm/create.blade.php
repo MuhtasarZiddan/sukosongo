@@ -1,9 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-[#1F3D2B] leading-tight">
-            {{ __('Tambah Data UMKM Baru') }}
-        </h2>
-    </x-slot>
+    <x-admin-header
+        title="Tambah UMKM"
+        description="Tambahkan informasi UMKM baru untuk Desa Sukosongo"
+    />
+</x-slot>
 
     <div class="py-12 bg-[#FAF6EC] min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

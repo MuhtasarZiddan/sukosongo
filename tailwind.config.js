@@ -10,12 +10,11 @@ export default {
     ],
 
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+         fontFamily: {
+            display: ['Fraunces', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
         },
-    },
+        },
 
     plugins: [forms],
 };

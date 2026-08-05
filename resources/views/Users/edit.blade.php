@@ -1,16 +1,17 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl">
-            Edit User
-        </h2>
-    </x-slot>
+    <x-admin-header
+        title="Edit User"
+        description="Perbarui informasi user yang akan ditampilkan."
+    />
+</x-slot>
 
-    <div class="py-6">
+    <div class="py-12 bg-[#FAF6EC] min-h-screen">
 
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-            <div class="bg-[#FAF6EC] rounded shadow p-6">
+            <div class="bg-white overflow-hidden shadow-sm rounded-2xl border border-[#1F3D2B]/10 p-6">
 
                 <form action="{{ route('users.update', $user) }}" method="POST">
 
@@ -84,12 +85,12 @@
                     <div class="flex justify-end gap-2">
 
                     <a href="{{ route('users.index') }}"
-                    class="inline-flex items-center px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-md transition duration-200">
+                    class="inline-flex items-center px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition duration-200">
                         Batal
                     </a>
 
                     <button type="submit"
-                        class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md transition duration-200">
+                        class="bg-[#1F3D2B] hover:bg-[#3B6B4A] text-white font-bold py-2 px-5 rounded-full transition-colors outline-none focus:outline-none">
                         Simpan
                     </button>
                     </div>
