@@ -5,7 +5,13 @@
         </h2>
     </x-slot>
 
-    <div class="py-12 bg-[#FAF6EC] min-h-screen">
+    <div 
+     x-data="{
+        openDelete: false,
+        deleteForm: null,
+        deleteTitle: ''
+    }"
+    class="py-12 bg-[#FAF6EC] min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
 
             <!-- Notifikasi Sukses Global -->
@@ -63,13 +69,26 @@
                                     <td class="py-3 px-4 flex gap-2">
                                         <a href="{{ route('umkm.edit', $u->id) }}"
                                             class="border border-[#C99A2E] text-[#C99A2E] hover:bg-[#C99A2E] hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold mt-2 transition-colors">Edit</a>
-                                        <form action="{{ route('umkm.destroy', $u->id) }}" method="POST"
-                                            onsubmit="return confirm('Yakin ingin menghapus?');" class="mt-2">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold transition-colors">Hapus</button>
-                                        </form>
+                                       <form
+                                        action="{{ route('umkm.destroy', $u->id) }}"
+                                        method="POST"
+                                        x-ref="deleteFormUmkm{{ $u->id }}"
+                                        class="mt-2">
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button
+                                            type="button"
+                                            @click="
+                                                deleteTitle='{{ addslashes($u->nama_umkm) }}';
+                                                deleteForm=$refs.deleteFormUmkm{{ $u->id }};
+                                                openDelete=true;
+                                            "
+                                            class="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold transition-colors">
+                                            Hapus
+                                        </button>
+                                    </form>
                                     </td>
                                 </tr>
                             @endforeach
@@ -130,14 +149,27 @@
                                     <td class="py-3 px-4 flex gap-2">
                                         <a href="{{ route('perangkat.edit', $p->id) }}"
                                             class="border border-[#C99A2E] text-[#C99A2E] hover:bg-[#C99A2E] hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold mt-2 transition-colors">Edit</a>
-                                        <form action="{{ route('perangkat.destroy', $p->id) }}" method="POST"
-                                            onsubmit="return confirm('Yakin ingin menghapus?');" class="mt-2">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold transition-colors">Hapus</button>
-                                        </form>
-                                    </td>
+                                        <form
+                                    action="{{ route('perangkat.destroy', $p->id) }}"
+                                    method="POST"
+                                    x-ref="deleteFormPerangkat{{ $p->id }}"
+                                    class="mt-2">
+
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button
+                                        type="button"
+                                        @click="
+                                            deleteTitle='{{ addslashes($p->nama) }}';
+                                            deleteForm=$refs.deleteFormPerangkat{{ $p->id }};
+                                            openDelete=true;
+                                        "
+                                        class="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold transition-colors">
+                                        Hapus
+                                    </button>
+                                </form>
+                                 </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -181,7 +213,7 @@
                             @foreach ($berita as $b)
                                 <tr class="border-b border-[#1F3D2B]/10 hover:bg-[#FAF6EC]/60 transition-colors">
                                     <td class="py-3 px-4">
-                                        <img src="{{ asset('storage/' . ($b->gambar[0] ?? 'default.jpg')) }}"
+                                         <img src="{{ asset('storage/' . ($b->gambar ?? 'default.jpg')) }}"
                                             class="w-20 h-16 object-cover rounded-xl border border-[#1F3D2B]/10">
                                     </td>
                                     <td class="py-3 px-4">
@@ -201,27 +233,114 @@
                                     <td class="py-3 px-4 flex gap-2">
                                         <a href="{{ route('berita.edit', $b->id) }}"
                                             class="border border-[#C99A2E] text-[#C99A2E] hover:bg-[#C99A2E] hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold mt-2 transition-colors">Edit</a>
-                                        <form action="{{ route('berita.destroy', $b->id) }}" method="POST"
-                                            onsubmit="return confirm('Yakin ingin menghapus berita ini?');"
-                                            class="mt-2">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold transition-colors">Hapus</button>
-                                        </form>
+                                       <form
+                                        action="{{ route('berita.destroy', $b->id) }}"
+                                        method="POST"
+                                        x-ref="deleteFormBerita{{ $b->id }}"
+                                        class="mt-2">
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button
+                                            type="button"
+                                            @click="
+                                                deleteTitle='{{ addslashes($b->judul) }}';
+                                                deleteForm=$refs.deleteFormBerita{{ $b->id }};
+                                                openDelete=true;
+                                            "
+                                            class="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white px-3 py-1.5 rounded-full text-xs font-semibold transition-colors">
+
+                                            Hapus
+                                        </button>
+                                    </form>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
-
-                {{-- belum mau kepanggil --}}
                 {{-- <div class="mt-6">
                    {{ $berita->links('components.paginationdb') }}
                 </div> --}}
             </div>
 
+            <div
+                x-show="openDelete"
+                x-cloak
+                x-transition.opacity
+                class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+
+                <div
+                    @click.outside="openDelete=false"
+                    x-transition.scale
+                    class="bg-white rounded-2xl shadow-2xl w-full max-w-md p-7">
+
+                    <!-- Icon -->
+
+                    <div class="flex justify-center">
+
+                        <div class="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center">
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="w-10 h-10 text-red-500"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 9v2m0 4h.01M5.07 19h13.86c1.54 0 2.5-1.67 1.73-3L13.73 4c-.77-1.33-2.69-1.33-3.46 0L3.34 16c-.77 1.33.19 3 1.73 3z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Judul -->
+                    <h2 class="mt-5 text-center text-2xl font-bold text-[#1F3D2B]">
+                        Hapus Data
+                    </h2>
+                    <!-- Isi -->
+                    <p class="text-center text-[#23281F]/70 mt-4 leading-relaxed">
+
+                        Apakah Anda yakin ingin menghapus
+
+                        <br>
+
+                        <span
+                            class="font-semibold text-[#1F3D2B]"
+                            x-text="deleteTitle">
+                        </span>
+
+                        ?
+
+                    </p>
+
+                    <p class="text-center text-red-500 text-sm mt-3">
+                        Data yang sudah dihapus tidak dapat dikembalikan.
+                    </p>
+
+                    <!-- Tombol -->
+
+                    <div class="mt-8 flex justify-center gap-3">
+
+                        <button
+                            @click="openDelete=false"
+                            class="px-6 py-2.5 rounded-full border border-[#1F3D2B]/20 hover:bg-gray-100 transition">
+                            Batal
+                        </button>
+
+                        <button
+                            @click="deleteForm.submit()"
+                            class="px-6 py-2.5 rounded-full bg-red-500 hover:bg-red-600 text-white font-semibold transition">
+
+                            Ya, Hapus
+
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>

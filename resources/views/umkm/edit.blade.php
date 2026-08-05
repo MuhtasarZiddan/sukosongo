@@ -1,9 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit Data UMKM') }}
-        </h2>
-    </x-slot>
+    <x-admin-header
+        title="Edit UMKM"
+        description="Perbarui informasi UMKM yang akan ditampilkan."
+    />
+</x-slot>
 
     <div class="py-12 bg-[#FAF6EC]">
         <div class="bg-[#FAF6EC] max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -17,12 +18,14 @@
 
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Nama UMKM</label>
-                        <input type="text" name="nama_umkm" value="{{ $umkm->nama_umkm }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <input type="text" name="nama_umkm" value="{{ $umkm->nama_umkm }}" 
+                        class="shadow-sm appearance-none border border-[#1F3D2B]/15 rounded-lg w-full py-2 px-3 text-[#23281F] leading-tight outline-none focus:outline-none focus:border-[#3B6B4A] focus:ring-2 focus:ring-[#3B6B4A]/20 transition-colors" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Nama Produk</label>
-                        <input type="text" name="nama_produk" value="{{ $umkm->nama_produk }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <input type="text" name="nama_produk" value="{{ $umkm->nama_produk }}" 
+                        class="shadow-sm appearance-none border border-[#1F3D2B]/15 rounded-lg w-full py-2 px-3 text-[#23281F] leading-tight outline-none focus:outline-none focus:border-[#3B6B4A] focus:ring-2 focus:ring-[#3B6B4A]/20 transition-colors" required>
                     </div>
 
                     <!-- Menampilkan foto lama dan opsi upload foto baru -->
@@ -33,31 +36,35 @@
                         </div>
                         <label class="block text-gray-700 text-sm font-bold mb-2">Ganti Foto (Opsional)</label>
                         <!-- Hapus kata 'required' karena ganti foto tidak wajib -->
-                        <input type="file" name="foto" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" accept="image/png, image/jpeg, image/jpg">
+                        <input type="file" name="foto" 
+                        class="shadow-sm appearance-none border border-[#1F3D2B]/15 rounded-lg w-full py-2 px-3 text-[#23281F] leading-tight outline-none focus:outline-none focus:border-[#3B6B4A] focus:ring-2 focus:ring-[#3B6B4A]/20 transition-colors" accept="image/png, image/jpeg, image/jpg">
                         <p class="text-xs text-gray-500 mt-1">Biarkan kosong jika tidak ingin mengganti foto.</p>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Alamat Usaha</label>
-                        <textarea name="alamat_usaha" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>{{ $umkm->alamat_usaha }}</textarea>
+                        <textarea name="alamat_usaha" rows="3" class="shadow-sm appearance-none border border-[#1F3D2B]/15 rounded-lg w-full py-2 px-3 text-[#23281F] leading-tight outline-none focus:outline-none focus:border-[#3B6B4A] focus:ring-2 focus:ring-[#3B6B4A]/20 transition-colors" required>{{ $umkm->alamat_usaha }}</textarea>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Nama Pemilik</label>
-                        <input type="text" name="nama_pemilik" value="{{ $umkm->nama_pemilik }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <input type="text" name="nama_pemilik" value="{{ $umkm->nama_pemilik }}" 
+                        class="shadow-sm appearance-none border border-[#1F3D2B]/15 rounded-lg w-full py-2 px-3 text-[#23281F] leading-tight outline-none focus:outline-none focus:border-[#3B6B4A] focus:ring-2 focus:ring-[#3B6B4A]/20 transition-colors" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Nomor WhatsApp</label>
-                        <input type="number" name="no_wa" value="{{ $umkm->no_wa }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <input type="number" name="no_wa" value="{{ $umkm->no_wa }}" 
+                        class="shadow-sm appearance-none border border-[#1F3D2B]/15 rounded-lg w-full py-2 px-3 text-[#23281F] leading-tight outline-none focus:outline-none focus:border-[#3B6B4A] focus:ring-2 focus:ring-[#3B6B4A]/20 transition-colors" required>
                     </div>
 
                     <div class="flex items-center justify-between mt-6">
                         <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             Update Data
                         </button>
-                        <a href="{{ route('dashboard') }}" class="inline-block align-baseline font-bold text-sm text-gray-500 hover:text-gray-800">
-                            Batal & Kembali
+                         <a href="{{ route('dashboard') }}"
+                            class="inline-flex items-center font-semibold text-sm text-red-500 hover:text-red-600 transition-colors">
+                            Batal &amp; Kembali
                         </a>
                     </div>
                 </form>

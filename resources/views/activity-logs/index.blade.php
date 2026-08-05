@@ -269,7 +269,7 @@
                 </div>
 
                 <div class="mt-6">
-                    {{ $logs->withQueryString()->links('components.pagination') }}
+                    {{ $logs->withQueryString()->links('components.paginationdb') }}
                 </div>
             </div>
 
