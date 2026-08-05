@@ -260,9 +260,9 @@
                         </tbody>
                     </table>
                 </div>
-                {{-- <div class="mt-6">
+                <div class="mt-6">
                    {{ $berita->links('components.paginationdb') }}
-                </div> --}}
+                </div>
             </div>
 
             <div

@@ -20,7 +20,10 @@ class UmkmController extends Controller
         perPage:5,
         pageName: 'perangkat_page'
      ); 
-        $berita = Berita::latest()->get(); // <-- Mengambil semua berita
+        $berita = Berita::latest()->paginate(
+            perPage: 5,
+            pageName: 'berita_page'
+        );
    
         return view('dashboard', compact('umkms', 'perangkat', 'berita')); // <-- Mengirim $berita ke view
     }
